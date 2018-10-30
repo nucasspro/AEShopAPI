@@ -1,6 +1,6 @@
-﻿using Shop.Domain.Entities;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Shop.Domain.Entities;
 
 namespace Shop.Domain.EntitiesConfiguration
 {

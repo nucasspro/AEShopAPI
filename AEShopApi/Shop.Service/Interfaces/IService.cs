@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Shop.Service
+﻿namespace Shop.Service
 {
     public interface IService<T> where T : class
     {

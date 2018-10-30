@@ -1,7 +1,5 @@
 ﻿using Shop.Domain.Entities;
 using Shop.Domain.Repositories.Interfaces;
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Shop.Service
@@ -20,7 +18,6 @@ namespace Shop.Service
             product.Sku = "SKU001";
             ProductRepository.Insert(product);
         }
-
 
         public async Task<Product> GetByName(string name)
         {

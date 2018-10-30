@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Text;
+﻿using Shop.Domain.Entities;
 using System.Threading.Tasks;
-using Shop.Domain.Entities;
-using Shop.Domain.Repositories.Implements;
 
 namespace Shop.Domain.SeedWork
 {
@@ -14,12 +9,10 @@ namespace Shop.Domain.SeedWork
         private Repository<Product> productRepository;
         //private Repository<Category> categoryRepository;
 
-
         public Repository<Product> ProductRepository
         {
             get
             {
-
                 if (productRepository == null)
                 {
                     productRepository = new Repository<Product>(DbContext);
@@ -27,7 +20,6 @@ namespace Shop.Domain.SeedWork
                 return productRepository;
             }
         }
-
 
         public AeDbContext DbContext
         {

@@ -1,8 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Text;
 
 namespace Shop.Domain.SeedWork
 {
@@ -21,6 +18,7 @@ namespace Shop.Domain.SeedWork
         //    UnitOfWork = unitOfWork;
         //}
         public AeDbContext Context;
+
         public DbSet<T> DbSet;
         public IDbConnection Connection;
 
