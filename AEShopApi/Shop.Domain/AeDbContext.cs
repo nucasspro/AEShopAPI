@@ -25,7 +25,7 @@ namespace Shop.Domain
             if (optionsBuilder.IsConfigured)
                 return;
             //optionsBuilder.UseSqlServer(Context.Database.GetDbConnection());
-            optionsBuilder.UseSqlServer(@"Server = DESKTOP-9VB67KJ; Database = ShopAE4; Trusted_Connection = True; ConnectRetryCount = 0");
+            optionsBuilder.UseSqlServer(@"Server = DESKTOP-9VB67KJ; Database = ShopAE5; Trusted_Connection = True; ConnectRetryCount = 0");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
