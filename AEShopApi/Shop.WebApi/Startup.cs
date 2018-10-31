@@ -1,15 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
+using Shop.Domain;
+using Shop.Domain.Repositories.Implements;
+using Shop.Domain.Repositories.Interfaces;
+using Shop.Domain.SeedWork;
+using Shop.Service.Implements;
+using System;
 
 namespace Shop.WebApi
 {
@@ -26,6 +27,20 @@ namespace Shop.WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDbContext<AeDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            Console.WriteLine(Configuration.GetConnectionString("DefaultConnection"));
+
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            //services.AddScoped<IDbFactory, DbFactory>();  
+
+            services.AddScoped<IProductRepository, ProductRepository>();
+            //services.AddScoped<ICategoryRepository, CategoryRepository>();
+
+            services.AddScoped<IProductService, ProductService>();
+            //services.AddScoped<ICategoryService, CategoryService>();
+
+            services.AddAutoMapper();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
