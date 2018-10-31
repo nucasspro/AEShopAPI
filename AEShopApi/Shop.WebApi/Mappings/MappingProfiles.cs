@@ -16,7 +16,6 @@ namespace Shop.WebApi.Mappings
         public MappingProfiles()
         {
             CreateMap<Product, ProductViewModel>();
-
             CreateMap<ProductCategory, ProductCategoryViewModel>();
             CreateMap<Category, CategoryViewModel>()
                 .ForMember(destination => destination.ParentName,

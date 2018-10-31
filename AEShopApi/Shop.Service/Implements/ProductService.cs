@@ -1,27 +1,55 @@
 ﻿using Shop.Domain.Entities;
-using Shop.Domain.Repositories.Interfaces;
-using System.Threading.Tasks;
+using Shop.Domain.SeedWork;
 
-namespace Shop.Service
+namespace Shop.Service.Implements
 {
-    public class ProductService : Service<Product>, IProductService
+    public class ProductService : IProductService
     {
-        public IProductRepository ProductRepository;
+        #region Variables
 
-        public ProductService(IProductRepository productRepository)
+        private readonly IUnitOfWork _unitOfWork;
+
+        #endregion Variables
+
+        #region Constructor
+
+        public ProductService(IUnitOfWork unitOfWork)
         {
-            ProductRepository = productRepository;
+            _unitOfWork = unitOfWork;
         }
 
-        public override void Insert(Product product)
+        #endregion Constructor
+
+        #region Implements
+
+        public Product GetById(int id)
         {
-            product.Sku = "SKU001";
-            ProductRepository.Insert(product);
+            return _unitOfWork._productRepository.GetById(id);
         }
 
-        public async Task<Product> GetByName(string name)
+        public void Insert(Product product)
         {
-            return await ProductRepository.GetProductsByName(name);
+            _unitOfWork._productRepository.Insert(product);
+            _unitOfWork.SaveChanges();
         }
+
+        public void Update(Product product)
+        {
+            _unitOfWork._productRepository.Update(product);
+            _unitOfWork.SaveChanges();
+        }
+
+        public void Delete(Product product)
+        {
+            _unitOfWork._productRepository.Delete(product);
+            _unitOfWork.SaveChanges();
+        }
+
+        public bool CheckExistsById(int id)
+        {
+            return _unitOfWork._productRepository.CheckExistsById(id);
+        }
+
+        #endregion Implements
     }
 }

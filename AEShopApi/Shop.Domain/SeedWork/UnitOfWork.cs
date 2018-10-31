@@ -1,40 +1,39 @@
-﻿using Shop.Domain.Entities;
-using System.Threading.Tasks;
+﻿using Shop.Domain.Repositories.Implements;
+using Shop.Domain.Repositories.Interfaces;
 
 namespace Shop.Domain.SeedWork
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private AeDbContext _dbContext = new AeDbContext();
-        private Repository<Product> productRepository;
-        //private Repository<Category> categoryRepository;
+        #region Variables
 
-        public Repository<Product> ProductRepository
+        private readonly AeDbContext _context;
+        public IProductRepository _productRepository { get; private set; }
+
+        #endregion Variables
+
+        #region Constructor
+
+        public UnitOfWork(AeDbContext context)
         {
-            get
-            {
-                if (productRepository == null)
-                {
-                    productRepository = new Repository<Product>(DbContext);
-                }
-                return productRepository;
-            }
+            _context = context;
+            _productRepository = new ProductRepository(_context);
         }
 
-        public AeDbContext DbContext
-        {
-            get => _dbContext;
-            set => _dbContext = value;
-        }
+        #endregion Constructor
 
-        public async Task SaveChange()
+        #region Implements
+
+        public void SaveChanges()
         {
-            await DbContext.SaveChangesAsync();
+            _context.SaveChanges();
         }
 
         public void Dispose()
         {
-            DbContext?.Dispose();
+            _context.Dispose();
         }
+
+        #endregion Implements
     }
 }

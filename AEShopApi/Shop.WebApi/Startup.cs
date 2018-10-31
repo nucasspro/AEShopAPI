@@ -9,7 +9,7 @@ using Shop.Domain;
 using Shop.Domain.Repositories.Implements;
 using Shop.Domain.Repositories.Interfaces;
 using Shop.Domain.SeedWork;
-using Shop.Service;
+using Shop.Service.Implements;
 using System;
 
 namespace Shop.WebApi
@@ -32,11 +32,13 @@ namespace Shop.WebApi
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
+            //services.AddScoped<IDbFactory, DbFactory>();  
+
             services.AddScoped<IProductRepository, ProductRepository>();
-            services.AddScoped<ICategoryRepository, CategoryRepository>();
+            //services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             services.AddScoped<IProductService, ProductService>();
-            services.AddScoped<ICategoryService, CategoryService>();
+            //services.AddScoped<ICategoryService, CategoryService>();
 
             services.AddAutoMapper();
         }

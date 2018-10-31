@@ -1,10 +1,17 @@
 ﻿using Shop.Domain.Entities;
-using System.Threading.Tasks;
 
-namespace Shop.Service
+namespace Shop.Service.Implements
 {
-    public interface IProductService : IService<Product>
+    public interface IProductService
     {
-        Task<Product> GetByName(string name);
+        Product GetById(int id);
+
+        void Insert(Product product);
+
+        void Update(Product product);
+
+        void Delete(Product product);
+
+        bool CheckExistsById(int id);
     }
 }

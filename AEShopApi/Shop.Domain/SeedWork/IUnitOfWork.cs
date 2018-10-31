@@ -1,12 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
+﻿using Shop.Domain.Repositories.Interfaces;
+using System;
 
 namespace Shop.Domain.SeedWork
 {
     public interface IUnitOfWork : IDisposable
     {
-        //IRepository<T> GetRepository<T>() where T : Entity;
+        IProductRepository _productRepository { get; }
 
-        Task SaveChange();
+        void SaveChanges();
     }
 }

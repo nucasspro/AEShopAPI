@@ -1,10 +1,7 @@
-﻿using Dapper;
-using Shop.Domain.Entities;
+﻿using Shop.Domain.Entities;
 using Shop.Domain.Repositories.Interfaces;
 using Shop.Domain.SeedWork;
-using System.Data;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace Shop.Domain.Repositories.Implements
 {
@@ -14,15 +11,13 @@ namespace Shop.Domain.Repositories.Implements
         {
         }
 
-        public async Task<Product> GetProductsByName(string name)
+        #region Implements
+
+        public bool CheckExistsById(int id)
         {
-            using (IDbConnection conn = Connection)
-            {
-                var query = "SELECT * FROM Products WHERE Products.Name = @Name;";
-                conn.Open();
-                var result = await conn.QueryAsync<Product>(query, new { Name = name });
-                return result.SingleOrDefault();
-            }
+            return _context.Set<Product>().Any(x => x.Id == id);
         }
+
+        #endregion Implements
     }
 }

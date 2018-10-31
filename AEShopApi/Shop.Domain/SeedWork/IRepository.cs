@@ -1,11 +1,21 @@
-﻿namespace Shop.Domain.SeedWork
+﻿using System.Collections.Generic;
+
+namespace Shop.Domain.SeedWork
 {
-    public interface IRepository<T> where T : class
+    public interface IRepository<T> where T : Entity
     {
-        void Insert(T entity);
+        IEnumerable<T> GetAll(string[] includes = null);
 
-        void Update(T entity);
+        T GetById(int id);
 
-        void Delete(T entity);
+        T Insert(T entity);
+
+        T Update(T entity);
+
+        T Delete(T entity);
+
+        void Delete(int id);
+
+
     }
 }

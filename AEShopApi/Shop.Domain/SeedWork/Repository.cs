@@ -1,47 +1,57 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System.Data;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Shop.Domain.SeedWork
 {
     public class Repository<T> : IRepository<T> where T : Entity
     {
-        //public AeDbContext DbContext;
-        //public DbSet<T> DbSet;
-        //public IConfiguration Configuration;
-        //public IUnitOfWork UnitOfWork;
+        #region Variables
 
-        //public Repository(AeDbContext context, IConfiguration configuration, IUnitOfWork unitOfWork)
-        //{
-        //    DbContext = context;
-        //    Configuration = configuration;
-        //    DbSet = context.Set<T>();
-        //    UnitOfWork = unitOfWork;
-        //}
-        public AeDbContext Context;
+        public readonly AeDbContext _context;
 
-        public DbSet<T> DbSet;
-        public IDbConnection Connection;
+        #endregion Variables
+
+        #region Constructor
 
         public Repository(AeDbContext context)
         {
-            Context = context;
-            DbSet = context.Set<T>();
-            Connection = context.Database.GetDbConnection();
+            _context = context;
         }
 
-        public virtual void Insert(T entity)
+        #endregion Constructor
+
+        #region Implements
+
+        public T GetById(int id)
         {
-            DbSet.Add(entity);
+            return _context.Set<T>().Find(id);
         }
 
-        public virtual void Update(T entity)
+        public T Insert(T entity)
         {
-            DbSet.Update(entity);
+            return _context.Set<T>().Add(entity).Entity;
         }
 
-        public virtual void Delete(T entity)
+        public T Delete(T entity)
         {
-            DbSet.Remove(entity);
+            return _context.Set<T>().Remove(entity).Entity;
         }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<T> GetAll(string[] includes = null)
+        {
+            throw new NotImplementedException();
+        }
+
+        public T Update(T entity)
+        {
+            return _context.Set<T>().Update(entity).Entity;
+        }
+
+        #endregion Implements
     }
 }

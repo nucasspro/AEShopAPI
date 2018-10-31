@@ -4,7 +4,7 @@ using Shop.Domain.EntitiesConfiguration;
 
 namespace Shop.Domain
 {
-    public class AeDbContext : DbContext /*, IUnitOfWork*/
+    public class AeDbContext : DbContext
     {
         public DbContext Context;
 
@@ -34,7 +34,7 @@ namespace Shop.Domain
             modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
 
-            modelBuilder.Seed();
+            //modelBuilder.Seed();
         }
     }
 }
