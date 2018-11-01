@@ -4,16 +4,25 @@ using Shop.Domain.Entities;
 
 namespace Shop.Domain.EntitiesConfiguration
 {
-    public class CategoryConfiguration : IEntityTypeConfiguration<Category>
+    public class CategoryConfiguration : BaseConfiguration<Category>
     {
-        public void Configure(EntityTypeBuilder<Category> builder)
+        public override void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName("id").HasColumnType("int");
+            base.Configure(builder);
             builder.Property(x => x.Name).IsRequired(true).HasColumnName("Name").HasColumnType("nvarchar(50)");
+            builder.Property(x => x.Description).IsRequired(false).HasColumnName("Description").HasColumnType("nvarchar(200)");
+            builder.Property(x => x.Image).IsRequired(false).HasColumnName("Image").HasColumnType("varchar(100)");
+
             builder.Property(x => x.ParentId).IsRequired(false).HasColumnName("ParentId").HasColumnType("int");
-            builder.Property(x => x.InsertedAt).IsRequired(true).HasColumnName("InsertedAt").HasColumnType("int");
-            builder.Property(x => x.UpdatedAt).IsRequired(true).HasColumnName("UpdatedAt").HasColumnType("int");
+            builder.HasOne(x => x.Parent).WithMany().HasForeignKey(z => z.ParentId);
+
+            builder.Property(x => x.DiscountId).IsRequired(false).HasColumnName("DiscountId").HasColumnType("int");
+            builder.HasOne(x => x.Discount).WithMany(y => y.Categories).HasForeignKey(z => z.DiscountId);
+
+            //builder.Property(x => x.CreatedBy).IsRequired(true).HasColumnName("CreatedBy").HasColumnType("int");
+            //builder.Property(x => x.UpdatedBy).IsRequired(true).HasColumnName("UpdatedBy").HasColumnType("int");
+            //builder.HasOne(x => x.Admin).WithMany(y => y.Categories).HasForeignKey(z => z.CreatedBy);
+            //builder.HasOne(x => x.Admin).WithMany(y => y.Categories).HasForeignKey(z => z.UpdatedBy);
         }
     }
 }
