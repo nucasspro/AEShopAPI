@@ -1,5 +1,6 @@
 ﻿using Shop.Domain.Entities;
 using Shop.Domain.SeedWork;
+using System.Collections.Generic;
 
 namespace Shop.Service.Implements
 {
@@ -21,6 +22,11 @@ namespace Shop.Service.Implements
         #endregion Constructor
 
         #region Implements
+
+        public IEnumerable<Product> GetAll()
+        {
+            return _unitOfWork._productRepository.GetAll();
+        }
 
         public Product GetById(int id)
         {

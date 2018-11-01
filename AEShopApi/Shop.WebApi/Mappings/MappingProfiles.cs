@@ -15,8 +15,9 @@ namespace Shop.WebApi.Mappings
         /// </summary>
         public MappingProfiles()
         {
-            CreateMap<Product, ProductViewModel>();
+            CreateMap<Product, ProductViewModel>().ReverseMap();
             CreateMap<ProductCategory, ProductCategoryViewModel>();
+
             CreateMap<Category, CategoryViewModel>()
                 .ForMember(destination => destination.ParentName,
                 opt => opt.MapFrom(source => Enum.GetName(typeof(CategoryType), source.ParentId)));

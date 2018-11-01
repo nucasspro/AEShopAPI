@@ -15,7 +15,5 @@ namespace Shop.Domain.SeedWork
         T Delete(T entity);
 
         void Delete(int id);
-
-
     }
 }

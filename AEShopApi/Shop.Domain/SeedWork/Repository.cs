@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace Shop.Domain.SeedWork
 {
@@ -22,6 +21,11 @@ namespace Shop.Domain.SeedWork
 
         #region Implements
 
+        public IEnumerable<T> GetAll(string[] includes = null)
+        {
+            return _context.Set<T>();
+        }
+
         public T GetById(int id)
         {
             return _context.Set<T>().Find(id);
@@ -39,12 +43,8 @@ namespace Shop.Domain.SeedWork
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<T> GetAll(string[] includes = null)
-        {
-            throw new NotImplementedException();
+            var result = GetById(id);
+            _context.Set<T>().Remove(result);
         }
 
         public T Update(T entity)
