@@ -6,10 +6,10 @@ namespace Shop.WebApi.ViewModels.ValidateModels
     {
         public ProductValidator()
         {
-            RuleFor(product => product.Name).NotNull().NotEmpty().MaximumLength(200).WithMessage("Please add product name!");
-            RuleFor(product => product.Description).NotEmpty();
-            RuleFor(product => product.RegularPrice).NotNull().NotEmpty();
-            RuleFor(product => product.DiscountPrice).NotEqual(0);
+            RuleFor(x => x.Name).NotNull().NotEmpty().MaximumLength(200).WithMessage("Please add product name!");
+            RuleFor(x => x.Description).NotEmpty();
+            RuleFor(x => x.RegularPrice).NotNull().NotEmpty();
+            //RuleFor(product => product.DiscountPrice).NotEqual(0);
         }
     }
 }

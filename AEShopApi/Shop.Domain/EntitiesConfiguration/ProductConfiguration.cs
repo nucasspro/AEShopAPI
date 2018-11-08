@@ -12,6 +12,9 @@ namespace Shop.Domain.EntitiesConfiguration
             builder.Property(x => x.Sku).IsRequired(true).HasColumnName("Sku").HasColumnType("varchar(20)");
             builder.Property(x => x.Name).IsRequired(true).HasColumnName("Name").HasColumnType("nvarchar(100)");
             builder.Property(x => x.Quantity).IsRequired(true).HasColumnName("Quantity").HasColumnType("int");
+            //builder.Property(x => x.Status).IsRequired(true).HasColumnName("Status").HasColumnType("bit");
+            builder.HasOne(x => x.ProductStatusType).WithMany(y => y.Products).HasForeignKey(z => z.ProductStatusId);
+
             builder.Property(x => x.Description).IsRequired(false).HasColumnName("Description").HasColumnType("nvarchar(250)");
             builder.Property(x => x.Detail).IsRequired(false).HasColumnName("Detail").HasColumnType("text");
             builder.Property(x => x.Weight).IsRequired(false).HasColumnName("Weight").HasColumnType("float");
@@ -29,7 +32,7 @@ namespace Shop.Domain.EntitiesConfiguration
             builder.Property(x => x.Image3).IsRequired(false).HasColumnName("Image3").HasColumnType("varchar(100)");
             builder.Property(x => x.Image4).IsRequired(false).HasColumnName("Image4").HasColumnType("varchar(100)");
 
-            builder.Property(x => x.DiscountId).IsRequired(true).HasColumnName("DiscountId").HasColumnType("int");
+            builder.Property(x => x.DiscountId).IsRequired(false).HasColumnName("DiscountId").HasColumnType("int");
             builder.HasOne(x => x.Discount).WithMany(y => y.Products).HasForeignKey(z => z.DiscountId);
 
             //builder.Property(x => x.CreatedBy).IsRequired(true).HasColumnName("CreatedBy").HasColumnType("int");

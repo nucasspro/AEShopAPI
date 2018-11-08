@@ -32,10 +32,10 @@ namespace Shop.WebApi
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            //services.AddScoped<IDbFactory, DbFactory>();  
+            //services.AddScoped<IDbFactory, DbFactory>();
 
             services.AddScoped<IProductRepository, ProductRepository>();
-            //services.AddScoped<ICategoryRepository, CategoryRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             services.AddScoped<IProductService, ProductService>();
             //services.AddScoped<ICategoryService, CategoryService>();
@@ -57,6 +57,7 @@ namespace Shop.WebApi
 
             app.UseHttpsRedirection();
             app.UseMvc();
+
         }
     }
 }

@@ -26,6 +26,9 @@ namespace Shop.Domain
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Shipping> Shippings { get; set; }
         public virtual DbSet<ShippingProvider> ShippingProviders { get; set; }
+
+        public virtual DbSet<ProductStatusType> ProductStatusTypes { get; set; }
+
         //public virtual DbSet<ProductCategory> ProductCategories { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -33,7 +36,7 @@ namespace Shop.Domain
             if (optionsBuilder.IsConfigured)
                 return;
             //optionsBuilder.UseSqlServer(Context.Database.GetDbConnection());
-            optionsBuilder.UseSqlServer(@"Server = DESKTOP-9VB67KJ; Database = ShopAE5; Trusted_Connection = True; ConnectRetryCount = 0");
+            optionsBuilder.UseSqlServer(@"Server = DESKTOP-9VB67KJ; Database = ShopAE7; Trusted_Connection = True; ConnectRetryCount = 0");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -49,6 +52,7 @@ namespace Shop.Domain
             //modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new ShippingConfiguration());
             modelBuilder.ApplyConfiguration(new ShippingProviderConfiguration());
+            modelBuilder.ApplyConfiguration(new ProductStatusTypeConfiguration());
 
             //modelBuilder.Seed();
         }

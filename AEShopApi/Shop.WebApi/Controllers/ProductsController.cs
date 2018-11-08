@@ -3,14 +3,17 @@ using Microsoft.AspNetCore.Mvc;
 using Shop.Domain;
 using Shop.Domain.Commons;
 using Shop.Domain.Entities;
+using Shop.Domain.Enumerations;
 using Shop.Service.Implements;
+using Shop.WebApi.FormModels;
 using Shop.WebApi.ViewModels;
+using Shop.WebApi.ViewModels.ModelExtensions;
 using System;
 using System.Collections.Generic;
 
 namespace Shop.WebApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/products")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
@@ -41,7 +44,8 @@ namespace Shop.WebApi.Controllers
         public IActionResult GetProducts()
         {
             var products = _productService.GetAll();
-            return products == null ? NotFound() : (IActionResult)Ok(_mapper.Map<IEnumerable<ProductViewModel>>(products));
+            var newProduct = _mapper.Map<IEnumerable<ProductViewModel>>(products);
+            return products == null ? NotFound() : (IActionResult)Ok(newProduct);
         }
 
         #endregion GET: api/Products
@@ -71,7 +75,7 @@ namespace Shop.WebApi.Controllers
         #region PUT: api/Products/5
 
         [HttpPut("{id}")]
-        public IActionResult PutProduct([FromRoute] int id, [FromBody] ProductViewModel productViewModel)
+        public IActionResult PutProduct([FromRoute] int id, [FromBody] EditProductViewModel productViewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -79,6 +83,7 @@ namespace Shop.WebApi.Controllers
             }
 
             var product = _productService.GetById(id);
+
             if (product == null)
             {
                 return NotFound();
@@ -87,7 +92,6 @@ namespace Shop.WebApi.Controllers
             try
             {
                 var updateProduct = _mapper.Map(productViewModel, product);
-                updateProduct.UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
                 _productService.Update(updateProduct);
                 return Ok("Update Successfully!");
             }
@@ -102,7 +106,7 @@ namespace Shop.WebApi.Controllers
         #region POST: api/Products
 
         [HttpPost]
-        public IActionResult PostProduct([FromBody] ProductViewModel productViewModel)
+        public IActionResult PostProduct([FromBody] EditProductViewModel productViewModel)
         {
             if (!ModelState.IsValid)
             {
@@ -112,10 +116,7 @@ namespace Shop.WebApi.Controllers
             try
             {
                 var product = _mapper.Map<Product>(productViewModel);
-                product.Sku = "SKU";
                 product.InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
-                product.UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
-
                 _productService.Insert(product);
                 return CreatedAtAction("GetProduct", new { id = product.Id }, product);
             }

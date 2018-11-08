@@ -5,6 +5,10 @@ namespace Shop.Domain.Entities
 {
     public class Category : Entity, IAggregateRoot
     {
+        public Category()
+        {
+            Products = new HashSet<Product>();
+        }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }

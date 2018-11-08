@@ -17,7 +17,7 @@ namespace Shop.Domain.Commons
             return Convert.ToInt32(dateTimeOffset.ToUnixTimeSeconds());
         }
 
-        private static DateTime UnixTimestampToDateTime(double unixTime)
+        public static DateTime UnixTimestampToDateTime(double unixTime)
         {
             DateTime dateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0);
             dateTime = dateTime.AddSeconds(unixTime).ToLocalTime();

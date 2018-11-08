@@ -19,6 +19,72 @@ namespace Shop.Domain.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("Shop.Domain.Entities.Admin", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("AdminImage")
+                        .HasColumnName("AdminImage")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnName("DateOfBirth")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnName("Email")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnName("FullName")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("Gender")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("Gender")
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<int>("InsertedAt")
+                        .HasColumnName("InsertedAt")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("IsActice")
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnName("Password")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnName("Phone")
+                        .HasColumnType("varchar(15)");
+
+                    b.Property<int>("UpdatedAt")
+                        .HasColumnName("UpdatedAt")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnName("Username")
+                        .HasColumnType("varchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Admins");
+                });
+
             modelBuilder.Entity("Shop.Domain.Entities.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -26,6 +92,20 @@ namespace Shop.Domain.Migrations
                         .HasColumnName("id")
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AdminId");
+
+                    b.Property<string>("Description")
+                        .HasColumnName("Description")
+                        .HasColumnType("nvarchar(200)");
+
+                    b.Property<int?>("DiscountId")
+                        .HasColumnName("DiscountId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Image")
+                        .HasColumnName("Image")
+                        .HasColumnType("varchar(100)");
 
                     b.Property<int>("InsertedAt")
                         .HasColumnName("InsertedAt")
@@ -46,32 +126,282 @@ namespace Shop.Domain.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.HasIndex("AdminId");
 
-                    b.HasData(
-                        new { Id = 1, InsertedAt = 1540884043, Name = "Category001", ParentId = 1, UpdatedAt = 1540884043 },
-                        new { Id = 2, InsertedAt = 1540884043, Name = "Category002", ParentId = 1, UpdatedAt = 1540884043 },
-                        new { Id = 3, InsertedAt = 1540884043, Name = "Category003", ParentId = 2, UpdatedAt = 1540884043 },
-                        new { Id = 4, InsertedAt = 1540884043, Name = "Category004", ParentId = 2, UpdatedAt = 1540884043 },
-                        new { Id = 5, InsertedAt = 1540884043, Name = "Category005", ParentId = 1, UpdatedAt = 1540884043 }
-                    );
+                    b.HasIndex("DiscountId");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Shop.Domain.Entities.Product", b =>
+            modelBuilder.Entity("Shop.Domain.Entities.Customer", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnName("Address")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<DateTime?>("DateOfBirth")
+                        .HasColumnName("DateOfBirth")
+                        .HasColumnType("date");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnName("Name")
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("FullName")
+                        .IsRequired()
+                        .HasColumnName("FullName")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<bool>("Gender")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("Gender")
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<int>("InsertedAt")
+                        .HasColumnName("InsertedAt")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("IsActice")
+                        .HasColumnType("bit")
+                        .HasDefaultValueSql("0");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnName("Password")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnName("Phone")
+                        .HasColumnType("varchar(15)");
+
+                    b.Property<int>("UpdatedAt")
+                        .HasColumnName("UpdatedAt")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserImage")
+                        .HasColumnName("UserImage")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasColumnName("Username")
+                        .HasColumnType("varchar(20)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Customers");
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.Discount", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AdminId");
+
+                    b.Property<string>("CouponCode")
+                        .IsRequired()
+                        .HasColumnName("CouponCode")
+                        .HasColumnType("varchar(15)");
+
+                    b.Property<double>("DiscountValue")
+                        .HasColumnName("DiscountValue")
+                        .HasColumnType("float");
+
+                    b.Property<string>("DisplayName")
+                        .IsRequired()
+                        .HasColumnName("DisplayName")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("ExpriredTime")
+                        .HasColumnName("ExpriredTime")
+                        .HasColumnType("datetime");
+
+                    b.Property<int>("InsertedAt")
+                        .HasColumnName("InsertedAt")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnName("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsRedeem")
+                        .HasColumnName("IsRedeem")
+                        .HasColumnType("bit");
+
+                    b.Property<double>("MaximumDiscount")
+                        .HasColumnName("MaximumDiscount")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnName("Name")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<DateTime>("StartedTime")
+                        .HasColumnName("StartedTime")
+                        .HasColumnType("datetime");
+
+                    b.Property<int>("UpdatedAt")
+                        .HasColumnName("UpdatedAt")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdminId");
+
+                    b.ToTable("Discounts");
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("BillingAddress")
+                        .IsRequired()
+                        .HasColumnName("BillingAddress")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("CustomerId")
+                        .HasColumnName("CustomerId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("GrandTotal")
+                        .HasColumnName("GrandTotal")
+                        .HasColumnType("float");
+
+                    b.Property<int>("InsertedAt")
+                        .HasColumnName("InsertedAt")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsVerify")
+                        .HasColumnName("IsVerify")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("OrderCode")
+                        .IsRequired()
+                        .HasColumnName("OrderCode")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<double?>("PackageHeight")
+                        .HasColumnName("PackageHeight")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("PackageLength")
+                        .HasColumnName("PackageLength")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("PackageWidth")
+                        .HasColumnName("PackageWidth")
+                        .HasColumnType("float");
+
+                    b.Property<int>("PaymentMethodId")
+                        .HasColumnName("PaymentMethodId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ShippingAddress")
+                        .IsRequired()
+                        .HasColumnName("ShippingAddress")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("ShippingId")
+                        .HasColumnName("ShippingId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnName("Status")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<double?>("SubTotal")
+                        .HasColumnName("SubTotal")
+                        .HasColumnType("float");
+
+                    b.Property<int>("UpdatedAt")
+                        .HasColumnName("UpdatedAt")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("PaymentMethodId");
+
+                    b.HasIndex("ShippingId")
+                        .IsUnique();
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.OrderDetail", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("InsertedAt")
+                        .HasColumnName("InsertedAt")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderId")
+                        .HasColumnName("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnName("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnName("Quantity")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UpdatedAt")
+                        .HasColumnName("UpdatedAt")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("OrderDetails");
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.Payment", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
+                        .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Description")
-                        .IsRequired()
                         .HasColumnName("Description")
-                        .HasColumnType("nvarchar(200)");
-
-                    b.Property<int?>("DiscountPrice")
-                        .IsRequired()
-                        .HasColumnName("DiscountPrice")
-                        .HasColumnType("int");
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<int>("InsertedAt")
                         .HasColumnName("InsertedAt")
@@ -82,18 +412,135 @@ namespace Shop.Domain.Migrations
                         .HasColumnName("Name")
                         .HasColumnType("nvarchar(50)");
 
+                    b.Property<int>("UpdatedAt")
+                        .HasColumnName("UpdatedAt")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Payments");
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.Product", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int?>("AdminId");
+
+                    b.Property<int>("CategoryId")
+                        .HasColumnName("CategoryId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Description")
+                        .HasColumnName("Description")
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<string>("Detail")
+                        .HasColumnName("Detail")
+                        .HasColumnType("text");
+
+                    b.Property<int?>("DiscountId")
+                        .HasColumnName("DiscountId")
+                        .HasColumnType("int");
+
+                    b.Property<double?>("Height")
+                        .HasColumnName("Height")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Image1")
+                        .IsRequired()
+                        .HasColumnName("Image1")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Image2")
+                        .HasColumnName("Image2")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Image3")
+                        .HasColumnName("Image3")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<string>("Image4")
+                        .HasColumnName("Image4")
+                        .HasColumnType("varchar(100)");
+
+                    b.Property<int>("InsertedAt")
+                        .HasColumnName("InsertedAt")
+                        .HasColumnType("int");
+
+                    b.Property<double?>("Length")
+                        .HasColumnName("Length")
+                        .HasColumnType("float");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnName("Name")
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int>("ProductStatusId");
+
+                    b.Property<double?>("PromotionPrice")
+                        .HasColumnName("PromotionPrice")
+                        .HasColumnType("float");
+
                     b.Property<int>("Quantity")
                         .HasColumnName("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("RegularPrice")
+                    b.Property<double>("RegularPrice")
                         .HasColumnName("RegularPrice")
-                        .HasColumnType("int");
+                        .HasColumnType("float");
 
                     b.Property<string>("Sku")
                         .IsRequired()
                         .HasColumnName("Sku")
-                        .HasColumnType("varchar(16)");
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<int>("UpdatedAt")
+                        .HasColumnName("UpdatedAt")
+                        .HasColumnType("int");
+
+                    b.Property<double?>("Weight")
+                        .HasColumnName("Weight")
+                        .HasColumnType("float");
+
+                    b.Property<double?>("Width")
+                        .HasColumnName("Width")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdminId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("DiscountId");
+
+                    b.HasIndex("ProductStatusId");
+
+                    b.ToTable("Products");
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.ProductStatusType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("InsertedAt")
+                        .HasColumnName("InsertedAt")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnName("Name")
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("UpdatedAt")
                         .HasColumnName("UpdatedAt")
@@ -101,58 +548,160 @@ namespace Shop.Domain.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products");
+                    b.ToTable("ProductStatusTypes");
 
                     b.HasData(
-                        new { Id = 1, Description = "DescriptionDescriptionDescriptionDescription", DiscountPrice = 100000, InsertedAt = 1540884043, Name = "Product001", Quantity = 10, RegularPrice = 100000, Sku = "PD001", UpdatedAt = 1540884043 },
-                        new { Id = 2, Description = "DescriptionDescriptionDescriptionDescription", DiscountPrice = 10000, InsertedAt = 1540884043, Name = "Product002", Quantity = 10, RegularPrice = 10000, Sku = "PD002", UpdatedAt = 1540884043 },
-                        new { Id = 3, Description = "DescriptionDescriptionDescriptionDescription", DiscountPrice = 1000, InsertedAt = 1540884043, Name = "Product003", Quantity = 10, RegularPrice = 1000, Sku = "PD003", UpdatedAt = 1540884043 },
-                        new { Id = 4, Description = "DescriptionDescriptionDescriptionDescription", DiscountPrice = 100, InsertedAt = 1540884043, Name = "Product004", Quantity = 10, RegularPrice = 100, Sku = "PD004", UpdatedAt = 1540884043 }
+                        new { Id = 1, InsertedAt = 1541673472, Name = "Out of stock", UpdatedAt = 1541673472 },
+                        new { Id = 2, InsertedAt = 1541673472, Name = "Stock", UpdatedAt = 1541673472 }
                     );
                 });
 
-            modelBuilder.Entity("Shop.Domain.Entities.ProductCategory", b =>
+            modelBuilder.Entity("Shop.Domain.Entities.Shipping", b =>
                 {
-                    b.Property<int>("ProductId")
-                        .HasColumnName("ProductId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("CategoryId")
-                        .HasColumnName("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("InsertedAt")
                         .HasColumnName("InsertedAt")
                         .HasColumnType("int");
 
+                    b.Property<int>("ProviderId")
+                        .HasColumnName("ProviderId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ShippingCode")
+                        .IsRequired()
+                        .HasColumnName("ShippingCode")
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<double>("ShippingPrice")
+                        .HasColumnName("ShippingPrice")
+                        .HasColumnType("float");
+
+                    b.Property<string>("ShippingStatus")
+                        .IsRequired()
+                        .HasColumnName("ShippingStatus")
+                        .HasColumnType("nvarchar(50)");
+
                     b.Property<int>("UpdatedAt")
                         .HasColumnName("UpdatedAt")
                         .HasColumnType("int");
 
-                    b.HasKey("ProductId", "CategoryId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("ProviderId");
 
-                    b.ToTable("ProductCategories");
-
-                    b.HasData(
-                        new { ProductId = 1, CategoryId = 1, InsertedAt = 1540884043, UpdatedAt = 1540884043 },
-                        new { ProductId = 2, CategoryId = 1, InsertedAt = 1540884043, UpdatedAt = 1540884043 },
-                        new { ProductId = 3, CategoryId = 2, InsertedAt = 1540884043, UpdatedAt = 1540884043 },
-                        new { ProductId = 4, CategoryId = 4, InsertedAt = 1540884043, UpdatedAt = 1540884043 }
-                    );
+                    b.ToTable("Shippings");
                 });
 
-            modelBuilder.Entity("Shop.Domain.Entities.ProductCategory", b =>
+            modelBuilder.Entity("Shop.Domain.Entities.ShippingProvider", b =>
                 {
-                    b.HasOne("Shop.Domain.Entities.Category", "Category")
-                        .WithMany("ProductCategories")
-                        .HasForeignKey("CategoryId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("InsertedAt")
+                        .HasColumnName("InsertedAt")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnName("Name")
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("UpdatedAt")
+                        .HasColumnName("UpdatedAt")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ShippingProviders");
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.Category", b =>
+                {
+                    b.HasOne("Shop.Domain.Entities.Admin", "Admin")
+                        .WithMany("Categories")
+                        .HasForeignKey("AdminId");
+
+                    b.HasOne("Shop.Domain.Entities.Discount", "Discount")
+                        .WithMany("Categories")
+                        .HasForeignKey("DiscountId");
+
+                    b.HasOne("Shop.Domain.Entities.Category", "Parent")
+                        .WithMany()
+                        .HasForeignKey("ParentId");
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.Discount", b =>
+                {
+                    b.HasOne("Shop.Domain.Entities.Admin", "Admin")
+                        .WithMany("Discounts")
+                        .HasForeignKey("AdminId");
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.Order", b =>
+                {
+                    b.HasOne("Shop.Domain.Entities.Customer", "Customer")
+                        .WithMany("Orders")
+                        .HasForeignKey("CustomerId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Shop.Domain.Entities.Payment", "Payment")
+                        .WithMany("Orders")
+                        .HasForeignKey("PaymentMethodId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Shop.Domain.Entities.Shipping", "Shipping")
+                        .WithOne("Order")
+                        .HasForeignKey("Shop.Domain.Entities.Order", "ShippingId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.OrderDetail", b =>
+                {
+                    b.HasOne("Shop.Domain.Entities.Order", "Order")
+                        .WithMany("OrderDetails")
+                        .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("Shop.Domain.Entities.Product", "Product")
-                        .WithMany("ProductCategories")
+                        .WithMany("OrderDetails")
                         .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.Product", b =>
+                {
+                    b.HasOne("Shop.Domain.Entities.Admin", "Admin")
+                        .WithMany("Products")
+                        .HasForeignKey("AdminId");
+
+                    b.HasOne("Shop.Domain.Entities.Category", "Category")
+                        .WithMany("Products")
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("Shop.Domain.Entities.Discount", "Discount")
+                        .WithMany("Products")
+                        .HasForeignKey("DiscountId");
+
+                    b.HasOne("Shop.Domain.Entities.ProductStatusType", "ProductStatusType")
+                        .WithMany("Products")
+                        .HasForeignKey("ProductStatusId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.Shipping", b =>
+                {
+                    b.HasOne("Shop.Domain.Entities.ShippingProvider", "Provider")
+                        .WithMany("Shippings")
+                        .HasForeignKey("ProviderId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

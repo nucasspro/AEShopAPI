@@ -13,7 +13,8 @@ namespace Shop.Domain.Entities
         public string Name { get; set; }
         public string Sku { get; set; }
         public int Quantity { get; set; }
-        public float Status { get; set; }
+        public int ProductStatusId { get; set; }
+        public ProductStatusType ProductStatusType { get; set; }
         public string Description { get; set; }
         public string Detail { get; set; }
         public float? Weight { get; set; }
@@ -28,7 +29,7 @@ namespace Shop.Domain.Entities
         public string Image2 { get; set; }
         public string Image3 { get; set; }
         public string Image4 { get; set; }
-        public int DiscountId { get; set; }
+        public int? DiscountId { get; set; }
         public Discount Discount { get; set; }
         //public int CreatedBy { get; set; }
         //public int UpdatedBy { get; set; }

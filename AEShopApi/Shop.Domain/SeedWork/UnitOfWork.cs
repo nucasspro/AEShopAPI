@@ -1,5 +1,5 @@
-﻿using Shop.Domain.Repositories.Implements;
-using Shop.Domain.Repositories.Interfaces;
+﻿using Shop.Domain.Repositories.Interfaces;
+using System;
 
 namespace Shop.Domain.SeedWork
 {
@@ -9,15 +9,20 @@ namespace Shop.Domain.SeedWork
 
         private readonly AeDbContext _context;
         public IProductRepository _productRepository { get; private set; }
+        public ICategoryRepository _categoryRepository { get; private set; }
 
         #endregion Variables
 
         #region Constructor
 
-        public UnitOfWork(AeDbContext context)
+        public UnitOfWork(
+            AeDbContext context,
+            IProductRepository productRepository,
+            ICategoryRepository categoryRepository)
         {
             _context = context;
-            _productRepository = new ProductRepository(_context);
+            _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
 
         #endregion Constructor
