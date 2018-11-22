@@ -9,13 +9,13 @@ namespace Shop.Domain.EntitiesConfiguration
         public override void Configure(EntityTypeBuilder<OrderDetail> builder)
         {
             base.Configure(builder);
-            builder.Property(x => x.OrderId).IsRequired(true).HasColumnName("OrderId").HasColumnType("int");
+            builder.Property(x => x.OrderId).IsRequired(false).HasColumnName("OrderId").HasColumnType("int");
             builder.HasOne(x => x.Order).WithMany(y => y.OrderDetails).HasForeignKey(z => z.OrderId);
 
-            builder.Property(x => x.ProductId).IsRequired(true).HasColumnName("ProductId").HasColumnType("int");
+            builder.Property(x => x.ProductId).IsRequired(false).HasColumnName("ProductId").HasColumnType("int");
             builder.HasOne(x => x.Product).WithMany(y => y.OrderDetails).HasForeignKey(z => z.ProductId);
 
-            builder.Property(x => x.Quantity).IsRequired(true).HasColumnName("Quantity").HasColumnType("int");
+            builder.Property(x => x.Quantity).IsRequired(false).HasColumnName("Quantity").HasColumnType("int");
         }
     }
 }
