@@ -9,7 +9,7 @@ namespace Shop.Domain.EntitiesConfiguration
         public virtual void Configure(EntityTypeBuilder<T> builder)
         {
             builder.HasKey(x => x.Id);
-            builder.Property(x => x.Id).HasColumnName("id").HasColumnType("int");
+            builder.Property(x => x.Id).HasColumnName("Id").HasColumnType("int");
             builder.Property(x => x.InsertedAt).IsRequired(true).HasColumnName("InsertedAt").HasColumnType("int");
             builder.Property(x => x.UpdatedAt).IsRequired(true).HasColumnName("UpdatedAt").HasColumnType("int");
         }
