@@ -9,6 +9,12 @@ namespace Shop.Domain
     {
         public static void Seed(this ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Payment>().HasData(
+                new Payment { Name = "Giao hàng tiết kiếm", }
+                //new Payment { },
+            );
+
+
             modelBuilder.Entity<Category>().HasData(
                 new Category { Id = 1, Name = "Category001", ParentId = 1, InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) },
                 new Category { Id = 2, Name = "Category002", ParentId = 1, InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) },

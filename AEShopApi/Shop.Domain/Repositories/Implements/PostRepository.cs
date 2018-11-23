@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Shop.Domain.Repositories.Implements
 {
-    public class PostRepository : Repository<About>, IPostRepository
+    public class PostRepository : Repository<Post>, IPostRepository
     {
         public PostRepository(AeDbContext context) : base(context)
         {

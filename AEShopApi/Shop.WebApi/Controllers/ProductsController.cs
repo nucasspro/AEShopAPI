@@ -43,6 +43,7 @@ namespace Shop.WebApi.Controllers
         [HttpGet]
         public IActionResult GetProducts()
         {
+            //var products = _productService.GetAll();
             var products = _productService.GetAll();
             var newProduct = _mapper.Map<IEnumerable<ProductViewModel>>(products);
             return products == null ? NotFound() : (IActionResult)Ok(newProduct);

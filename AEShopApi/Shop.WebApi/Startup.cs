@@ -28,7 +28,7 @@ namespace Shop.WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<AeDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            Console.WriteLine(Configuration.GetConnectionString("DefaultConnection"));
+            //Console.WriteLine(Configuration.GetConnectionString("DefaultConnection"));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 

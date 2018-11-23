@@ -85,9 +85,10 @@ namespace Shop.WebApi.Mappings
 
             CreateMap<ProductViewModel, Product>();
             CreateMap<Product, ProductViewModel>()
-                .ForMember(viewmodel => viewmodel.ProductStatusName,
+                //.ForMember(viewmodel => viewmodel.ProductStatusName,
                 //opt => opt.MapFrom(model => Enumeration.FromValue<ProductStatusTypeEnum>(model.ProductStatusId).ToString()))
-                opt => opt.MapFrom(model => ProductStatusTypeEnum.From(model.ProductStatusId).ToString()))
+                //opt => opt.MapFrom(model => ProductStatusTypeEnum.From(model.ProductStatusId).ToString()))
+                //opt => opt.MapFrom(model => model.ProductStatusId))
                 .ForMember(viewmodel => viewmodel.InsertedAt,
                 opt => opt.MapFrom(source => ConvertDatetime.UnixTimestampToDateTime(source.InsertedAt)))
                 .ForMember(viewmodel => viewmodel.UpdatedAt,

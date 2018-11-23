@@ -7,25 +7,24 @@ namespace Shop.Service.Implements
 {
     public class Service<T> : IService<T> where T : Entity
     {
-
         #region Variables
 
         private readonly IUnitOfWork _unitOfWork;
 
         #endregion Variables
 
+        #region Constructor
 
+        public Service(IUnitOfWork unitOfWork)
+        {
+            _unitOfWork = unitOfWork;
+        }
 
-        /// <summary>
-        /// NEED FIX THIS ERROR
-        /// Add generation function to get entity repository to run base CRUD
-        /// </summary>
-        /// <returns></returns>
-
+        #endregion Constructor
 
         public IEnumerable<T> GetAll()
         {
-            return null;
+            return _unitOfWork.GetRepository<T>().GetAll(); ;
         }
 
         public T GetById(int id)
