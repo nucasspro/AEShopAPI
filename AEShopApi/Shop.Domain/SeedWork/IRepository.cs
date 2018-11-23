@@ -1,19 +1,20 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Shop.Domain.SeedWork
 {
     public interface IRepository<T> where T : Entity
     {
-        IEnumerable<T> GetAll(string[] includes = null);
+        Task<IEnumerable<T>> GetAllAsync(string[] includes = null);
 
-        T GetById(int id);
+        Task<T> GetByIdAsync(int id);
 
-        T Insert(T entity);
+        Task InsertAsync(T entity);
 
-        T Update(T entity);
+        void Update(T entity);
 
-        T Delete(T entity);
+        Task DeleteAsync(T entity);
 
-        void Delete(int id);
+        Task DeleteAsync(int id);
     }
 }

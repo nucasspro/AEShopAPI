@@ -1,19 +1,22 @@
 ﻿using Shop.Domain.SeedWork;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Shop.Service.Interfaces
 {
     public interface IService<T> where T : Entity
     {
-        IEnumerable<T> GetAll();
+        Task<IEnumerable<T>> GetAllAsync();
 
-        T GetById(int id);
+        Task<T> GetByIdAsync(int id);
 
-        void Insert(T product);
+        Task InsertAsync(T product);
 
-        void Update(T product);
+        Task UpdateAsync(T product);
 
-        void Delete(T product);
+        Task DeleteAsync(T product);
+
+        Task DeleteAsync(int id);
 
         bool CheckExistsById(int id);
     }

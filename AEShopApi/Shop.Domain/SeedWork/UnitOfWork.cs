@@ -1,6 +1,5 @@
-﻿using Shop.Domain.Repositories.Interfaces;
-using System;
-using System.Collections;
+﻿using System.Collections;
+using System.Threading.Tasks;
 
 namespace Shop.Domain.SeedWork
 {
@@ -9,20 +8,20 @@ namespace Shop.Domain.SeedWork
         #region Variables
 
         private readonly AeDbContext _context;
-        //public IProductRepository _productRepository { get; private set; }
-        //public ICategoryRepository _categoryRepository { get; private set; }
         private Hashtable repositories = new Hashtable();
 
         #endregion Variables
 
         #region Constructor
 
-
-
         public UnitOfWork(AeDbContext context)
         {
             _context = context;
         }
+
+        #endregion Constructor
+
+        #region Methods
 
         public IRepository<T> GetRepository<T>() where T : Entity
         {
@@ -33,24 +32,18 @@ namespace Shop.Domain.SeedWork
             return (IRepository<T>)repositories[typeof(T)];
         }
 
-
-        //public UnitOfWork(
-        //    AeDbContext context,
-        //    IProductRepository productRepository,
-        //    ICategoryRepository categoryRepository)
-        //{
-        //    _context = context;
-        //    _productRepository = productRepository;
-        //    _categoryRepository = categoryRepository;
-        //}
-
-        #endregion Constructor
+        #endregion Methods
 
         #region Implements
 
         public void SaveChanges()
         {
             _context.SaveChanges();
+        }
+
+        public async Task SaveChangesAsync()
+        {
+            await _context.SaveChangesAsync();
         }
 
         public void Dispose()

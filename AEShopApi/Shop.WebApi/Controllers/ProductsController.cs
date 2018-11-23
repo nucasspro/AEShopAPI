@@ -1,15 +1,10 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Shop.Domain;
 using Shop.Domain.Commons;
 using Shop.Domain.Entities;
-using Shop.Domain.Enumerations;
 using Shop.Service.Implements;
-using Shop.WebApi.FormModels;
-using Shop.WebApi.ViewModels;
-using Shop.WebApi.ViewModels.ModelExtensions;
 using System;
-using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Shop.WebApi.Controllers
 {
@@ -21,17 +16,15 @@ namespace Shop.WebApi.Controllers
 
         private readonly AeDbContext _context;
         private readonly IProductService _productService;
-        private readonly IMapper _mapper;
 
         #endregion Variables
 
         #region Constructor
 
-        public ProductsController(AeDbContext context, IProductService productService, IMapper mapper)
+        public ProductsController(AeDbContext context, IProductService productService)
         {
             _context = context;
             _productService = productService;
-            _mapper = mapper;
         }
 
         #endregion Constructor
@@ -41,12 +34,10 @@ namespace Shop.WebApi.Controllers
         #region GET: api/Products
 
         [HttpGet]
-        public IActionResult GetProducts()
+        public async Task<IActionResult> GetProducts()
         {
-            //var products = _productService.GetAll();
-            var products = _productService.GetAll();
-            var newProduct = _mapper.Map<IEnumerable<ProductViewModel>>(products);
-            return products == null ? NotFound() : (IActionResult)Ok(newProduct);
+            var products = await _productService.GetAllAsync();
+            return products == null ? NotFound() : (IActionResult)Ok(products);
         }
 
         #endregion GET: api/Products
@@ -54,14 +45,14 @@ namespace Shop.WebApi.Controllers
         #region GET: api/Products/5
 
         [HttpGet("{id}")]
-        public IActionResult GetProduct([FromRoute] int id)
+        public async Task<IActionResult> GetProduct(int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var product = _mapper.Map<ProductViewModel>(_productService.GetById(id));
+            var product = await _productService.GetByIdAsync(id);
 
             if (product == null)
             {
@@ -76,14 +67,18 @@ namespace Shop.WebApi.Controllers
         #region PUT: api/Products/5
 
         [HttpPut("{id}")]
-        public IActionResult PutProduct([FromRoute] int id, [FromBody] EditProductViewModel productViewModel)
+        public async Task<IActionResult> PutProduct([FromRoute] int id, [FromBody] Product updateProduct)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
+            if (id != updateProduct.Id)
+            {
+                return BadRequest();
+            }
 
-            var product = _productService.GetById(id);
+            var product = await _productService.GetByIdAsync(id);
 
             if (product == null)
             {
@@ -92,9 +87,8 @@ namespace Shop.WebApi.Controllers
 
             try
             {
-                var updateProduct = _mapper.Map(productViewModel, product);
-                _productService.Update(updateProduct);
-                return Ok("Update Successfully!");
+                await _productService.UpdateAsync(updateProduct);
+                return Ok();
             }
             catch (Exception e)
             {
@@ -107,7 +101,7 @@ namespace Shop.WebApi.Controllers
         #region POST: api/Products
 
         [HttpPost]
-        public IActionResult PostProduct([FromBody] EditProductViewModel productViewModel)
+        public async Task<IActionResult> PostProduct([FromBody] Product product)
         {
             if (!ModelState.IsValid)
             {
@@ -116,9 +110,9 @@ namespace Shop.WebApi.Controllers
 
             try
             {
-                var product = _mapper.Map<Product>(productViewModel);
                 product.InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
-                _productService.Insert(product);
+                product.UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
+                await _productService.InsertAsync(product);
                 return CreatedAtAction("GetProduct", new { id = product.Id }, product);
             }
             catch (Exception e)
@@ -132,20 +126,20 @@ namespace Shop.WebApi.Controllers
         #region DELETE: api/Products/5
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteProduct([FromRoute] int id)
+        public async Task<IActionResult> DeleteProduct([FromRoute] int id)
         {
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
 
-            var product = _productService.GetById(id);
+            var product = await _productService.GetByIdAsync(id);
             if (product == null)
             {
                 return NotFound();
             }
 
-            _productService.Delete(product);
+            await _productService.DeleteAsync(product);
 
             return Ok(product);
         }

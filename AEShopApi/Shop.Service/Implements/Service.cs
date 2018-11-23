@@ -2,6 +2,7 @@
 using Shop.Service.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Shop.Service.Implements
 {
@@ -22,34 +23,47 @@ namespace Shop.Service.Implements
 
         #endregion Constructor
 
-        public IEnumerable<T> GetAll()
+        #region Methods
+
+        public async Task<IEnumerable<T>> GetAllAsync()
         {
-            return _unitOfWork.GetRepository<T>().GetAll(); ;
+            return await _unitOfWork.GetRepository<T>().GetAllAsync();
         }
 
-        public T GetById(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.GetRepository<T>().GetByIdAsync(id);
         }
 
-        public void Insert(T product)
+        public async Task InsertAsync(T product)
         {
-            throw new NotImplementedException();
+            await _unitOfWork.GetRepository<T>().InsertAsync(product);
+            await _unitOfWork.SaveChangesAsync();
         }
 
-        public void Update(T product)
+        public async Task UpdateAsync(T product)
         {
-            throw new NotImplementedException();
+            _unitOfWork.GetRepository<T>().Update(product);
+            await _unitOfWork.SaveChangesAsync();
         }
 
-        public void Delete(T product)
+        public async Task DeleteAsync(T product)
         {
-            throw new NotImplementedException();
+            await _unitOfWork.GetRepository<T>().DeleteAsync(product);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            await _unitOfWork.GetRepository<T>().DeleteAsync(id);
+            await _unitOfWork.SaveChangesAsync();
         }
 
         public bool CheckExistsById(int id)
         {
             throw new NotImplementedException();
         }
+
+        #endregion Methods
     }
 }

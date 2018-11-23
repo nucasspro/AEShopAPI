@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Shop.Domain.SeedWork
 {
@@ -12,45 +14,46 @@ namespace Shop.Domain.SeedWork
 
         #region Constructor
 
-        public Repository(AeDbContext context)
-        {
-            _context = context;
-        }
+        public Repository(AeDbContext context) => _context = context;
 
         #endregion Constructor
 
         #region Implements
 
-        public IEnumerable<T> GetAll(string[] includes = null)
+        public async Task<IEnumerable<T>> GetAllAsync(string[] includes = null)
         {
-            return _context.Set<T>();
+            return await _context.Set<T>().AsNoTracking().ToListAsync();
         }
 
-        public T GetById(int id)
+        public async Task<T> GetByIdAsync(int id)
         {
-            return _context.Set<T>().Find(id);
+            return await _context.Set<T>().AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public T Insert(T entity)
+        public async Task InsertAsync(T entity)
         {
-            return _context.Set<T>().Add(entity).Entity;
+            await _context.Set<T>().AddAsync(entity);
         }
 
-        public T Delete(T entity)
+        public void Update(T entity)
         {
-            return _context.Set<T>().Remove(entity).Entity;
+            _context.Set<T>().Update(entity);
         }
 
-        public void Delete(int id)
+
+        public async Task DeleteAsync(T entity)
         {
-            var result = GetById(id);
+            var result = await _context.Set<T>().FirstOrDefaultAsync(x => x.Id == entity.Id);
+            _context.Set<T>().Remove(entity);
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            var result = await _context.Set<T>().FirstOrDefaultAsync(x => x.Id == id);
             _context.Set<T>().Remove(result);
         }
 
-        public T Update(T entity)
-        {
-            return _context.Set<T>().Update(entity).Entity;
-        }
+        
 
         #endregion Implements
     }
