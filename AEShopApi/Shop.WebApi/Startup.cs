@@ -28,7 +28,7 @@ namespace Shop.WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<AeDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            Console.WriteLine(Configuration.GetConnectionString("DefaultConnection"));
+            //Console.WriteLine(Configuration.GetConnectionString("DefaultConnection"));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -41,6 +41,11 @@ namespace Shop.WebApi
             //services.AddScoped<ICategoryService, CategoryService>();
 
             services.AddAutoMapper();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowMyOrigin",
+                builder => builder.WithOrigins("https://localhost:44377"));
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,6 +61,7 @@ namespace Shop.WebApi
             }
 
             app.UseHttpsRedirection();
+            app.UseCors("AllowMyOrigin");
             app.UseMvc();
 
         }

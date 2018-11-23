@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Service", "Shop.Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.WebApi", "Shop.WebApi\Shop.WebApi.csproj", "{72C6176C-983B-426F-AA0D-A2BAC4B51D14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.WebApplication", "Shop.WebApplication\Shop.WebApplication.csproj", "{5C107267-0C49-4767-B79F-E394888769A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.WebRedux", "Shop.WebRedux\Shop.WebRedux.csproj", "{1AB2CB32-4CBD-46BA-B14F-D1F399A0F5C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{72C6176C-983B-426F-AA0D-A2BAC4B51D14}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72C6176C-983B-426F-AA0D-A2BAC4B51D14}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72C6176C-983B-426F-AA0D-A2BAC4B51D14}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5C107267-0C49-4767-B79F-E394888769A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5C107267-0C49-4767-B79F-E394888769A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5C107267-0C49-4767-B79F-E394888769A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5C107267-0C49-4767-B79F-E394888769A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB2CB32-4CBD-46BA-B14F-D1F399A0F5C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB2CB32-4CBD-46BA-B14F-D1F399A0F5C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB2CB32-4CBD-46BA-B14F-D1F399A0F5C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB2CB32-4CBD-46BA-B14F-D1F399A0F5C7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

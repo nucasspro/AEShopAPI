@@ -26,35 +26,39 @@ namespace Shop.Service.Implements
 
         public IEnumerable<Category> GetAll()
         {
-            return _unitOfWork._categoryRepository.GetAll();
+            //return _unitOfWork._categoryRepository.GetAll();
+            return null;
         }
 
         public Category GetById(int id)
         {
-            return _unitOfWork._categoryRepository.GetById(id);
+            //return _unitOfWork._categoryRepository.GetById(id);
+            return null;
+
         }
 
         public void Insert(Category category)
         {
-            _unitOfWork._categoryRepository.Insert(category);
+            //_unitOfWork._categoryRepository.Insert(category);
             _unitOfWork.SaveChanges();
         }
 
         public void Update(Category category)
         {
-            _unitOfWork._categoryRepository.Update(category);
+            //_unitOfWork._categoryRepository.Update(category);
             _unitOfWork.SaveChanges();
         }
 
         public void Delete(Category category)
         {
-            _unitOfWork._categoryRepository.Delete(category);
+            //_unitOfWork._categoryRepository.Delete(category);
             _unitOfWork.SaveChanges();
         }
 
         public bool CheckExistsById(int id)
         {
-            return _unitOfWork._categoryRepository.CheckExistsById(id);
+            //return _unitOfWork._categoryRepository.CheckExistsById(id);
+            return false;
         }
 
         #endregion Implements

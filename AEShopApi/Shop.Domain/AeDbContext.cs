@@ -16,6 +16,8 @@ namespace Shop.Domain
         {
         }
 
+        #region MyRegion Add DbSet<T>
+
         public DbSet<About> Abouts { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Contact> Contacts { get; set; }
@@ -38,6 +40,8 @@ namespace Shop.Domain
         public DbSet<Tag> Tags { get; set; }
         public DbSet<User> Users { get; set; }
 
+        #endregion MyRegion Add DbSet<T>
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (optionsBuilder.IsConfigured)
@@ -48,6 +52,8 @@ namespace Shop.Domain
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            #region Add Entity Configurations
+
             modelBuilder.ApplyConfiguration(new AboutConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
             modelBuilder.ApplyConfiguration(new ContactConfiguration());
@@ -69,6 +75,8 @@ namespace Shop.Domain
             modelBuilder.ApplyConfiguration(new ShippingProviderConfiguration());
             modelBuilder.ApplyConfiguration(new TagConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+
+            #endregion Add Entity Configurations
 
             //modelBuilder.Seed();
         }
