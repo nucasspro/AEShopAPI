@@ -112,8 +112,8 @@ namespace Shop.WebRedux.Mappings
             #endregion Mapping Shipping Model
 
             //CreateMap<Product, ProductViewModel>()
-            //    .ForMember(viewmodel => viewmodel.ProductStatusName,
-            //  opt => opt.MapFrom(model => Enumeration.FromValue<ProductStatusTypeEnum>(model.ProductStatusId).ToString()));
+            //.ForMember(viewmodel => viewmodel.ProductStatusName,
+            //opt => opt.MapFrom(model => Enumeration.FromValue<ProductStatusTypeEnum>(model.ProductStatusId).ToString()));
             //.ForMember(viewmodel => viewmodel.ProductStatusName, opt => opt.MapFrom("1"));
             //.ForMember(viewmodel => viewmodel.ProductStatusName,
             //opt => opt.MapFrom(model => Enumeration.FromValue<ProductStatusTypeEnum>(model.ProductStatusId).displayName));

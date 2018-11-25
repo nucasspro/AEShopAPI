@@ -3,18 +3,8 @@ using System.Collections.Generic;
 
 namespace Shop.Service.Interfaces
 {
-    public interface ICategoryService
+    public interface ICategoryService : IService<Category>
     {
-        IEnumerable<Category> GetAll();
-
-        Category GetById(int id);
-
-        void Insert(Category product);
-
-        void Update(Category product);
-
-        void Delete(Category product);
-
-        bool CheckExistsById(int id);
+       
     }
 }
