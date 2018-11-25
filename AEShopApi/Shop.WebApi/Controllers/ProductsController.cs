@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Shop.Domain;
 using Shop.Domain.Commons;
 using Shop.Domain.Entities;
 using Shop.Service.Implements;
@@ -14,16 +13,14 @@ namespace Shop.WebApi.Controllers
     {
         #region Variables
 
-        private readonly AeDbContext _context;
         private readonly IProductService _productService;
 
         #endregion Variables
 
         #region Constructor
 
-        public ProductsController(AeDbContext context, IProductService productService)
+        public ProductsController(IProductService productService)
         {
-            _context = context;
             _productService = productService;
         }
 

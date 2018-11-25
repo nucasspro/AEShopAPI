@@ -1,5 +1,4 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +9,7 @@ using Shop.Domain.Repositories.Implements;
 using Shop.Domain.Repositories.Interfaces;
 using Shop.Domain.SeedWork;
 using Shop.Service.Implements;
+using Shop.Service.Interfaces;
 using System;
 
 namespace Shop.WebApi
@@ -28,19 +28,17 @@ namespace Shop.WebApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddDbContext<AeDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-            //Console.WriteLine(Configuration.GetConnectionString("DefaultConnection"));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            //services.AddScoped<IDbFactory, DbFactory>();
-
+            services.AddScoped<IAboutRepository, AboutRepository>();
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
+            services.AddScoped<IAboutService, AboutService>();
+            services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IProductService, ProductService>();
-            //services.AddScoped<ICategoryService, CategoryService>();
 
-            services.AddAutoMapper();
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowMyOrigin",
