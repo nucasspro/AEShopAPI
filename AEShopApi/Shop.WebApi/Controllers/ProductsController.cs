@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Serilog;
 using Shop.Domain.Commons;
 using Shop.Domain.Entities;
 using Shop.Service.Implements;
@@ -14,14 +16,16 @@ namespace Shop.WebApi.Controllers
         #region Variables
 
         private readonly IProductService _productService;
+        private ILogger<ProductsController> _logger;
 
         #endregion Variables
 
         #region Constructor
 
-        public ProductsController(IProductService productService)
+        public ProductsController(IProductService productService, ILogger<ProductsController> logger)
         {
             _productService = productService;
+            _logger = logger;
         }
 
         #endregion Constructor
@@ -33,8 +37,15 @@ namespace Shop.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
+            _logger.LogInformation("In GetProducts(), method HttpGet ProductController");
             var products = await _productService.GetAllAsync();
-            return products == null ? NotFound() : (IActionResult)Ok(products);
+            if (products == null)
+            {
+                _logger.LogInformation("Product null");
+                return NotFound();
+            }
+            _logger.LogInformation("Return OK");
+            return Ok(products);
         }
 
         #endregion GET: api/Products

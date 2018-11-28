@@ -1,35 +1,22 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Serilog;
-using Serilog.Events;
+using AutoMapper;
 
 namespace Shop.WebRedux
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
-
-        public Startup(IHostingEnvironment environment)
+        public Startup(IConfiguration configuration)
         {
-            var builder = new ConfigurationBuilder()
-              .SetBasePath(environment.ContentRootPath)
-              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
-              .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", optional: true, reloadOnChange: false)
-              .AddEnvironmentVariables();
-
-            Configuration = builder.Build();
-
-            Log.Logger = new LoggerConfiguration()
-                .MinimumLevel
-                .Information()
-                .WriteTo.RollingFile(environment.ContentRootPath + "/Loggings/log-{Date}.txt", LogEventLevel.Verbose)
-                .CreateLogger();
+            Configuration = configuration;
         }
+
+        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -41,15 +28,13 @@ namespace Shop.WebRedux
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddAutoMapper();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            loggerFactory.AddDebug();
-            loggerFactory.AddConsole();
-            loggerFactory.AddSerilog();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -63,7 +48,7 @@ namespace Shop.WebRedux
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

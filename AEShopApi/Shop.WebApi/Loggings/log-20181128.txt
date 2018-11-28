@@ -1,0 +1,40 @@
+2018-11-28 17:18:25.497 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/  
+2018-11-28 17:18:25.497 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-11-28 17:18:25.861 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-11-28 17:18:25.877 +07:00 [Information] Request finished in 395.5285ms 200 
+2018-11-28 17:18:27.048 +07:00 [Information] Request finished in 1571.2145ms 404 
+2018-11-28 17:18:45.746 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products  
+2018-11-28 17:18:45.862 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Products\"}". Executing action "Shop.WebApi.Controllers.ProductsController.GetProducts (Shop.WebApi)"
+2018-11-28 17:18:47.175 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductsController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-11-28 17:18:47.210 +07:00 [Information] In GetProducts(), method HttpGet ProductController
+2018-11-28 17:18:47.996 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-28 17:18:49.093 +07:00 [Information] Executed DbCommand ("370"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Description], [p].[Detail], [p].[DiscountId], [p].[Height], [p].[Image1], [p].[Image2], [p].[Image3], [p].[Image4], [p].[IncludeVAT], [p].[InsertedAt], [p].[Length], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[CategoryId], [p].[ProductImage], [p].[ProductStatusId], [p].[PromotionPrice], [p].[Quantity], [p].[RegularPrice], [p].[Sku], [p].[Status], [p].[UpdatedAt], [p].[ViewCounts], [p].[Warranty], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]"
+2018-11-28 17:18:49.143 +07:00 [Information] Return OK
+2018-11-28 17:18:49.161 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductsController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1966.6283ms.
+2018-11-28 17:18:49.186 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-28 17:18:49.391 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductsController.GetProducts (Shop.WebApi)" in 3515.5911ms
+2018-11-28 17:18:49.418 +07:00 [Information] Request finished in 3683.3872ms 200 application/json; charset=utf-8
+2018-11-28 17:18:49.931 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/favicon.ico  
+2018-11-28 17:18:50.057 +07:00 [Information] Request finished in 85.5535ms 404 
+2018-11-28 17:34:01.405 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-11-28 17:34:01.405 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/  
+2018-11-28 17:34:01.650 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-11-28 17:34:01.680 +07:00 [Information] Request finished in 299.9842ms 200 
+2018-11-28 17:34:02.172 +07:00 [Information] Request finished in 690.0032ms 404 
+2018-11-28 17:34:22.333 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products  
+2018-11-28 17:34:22.518 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Products\"}". Executing action "Shop.WebApi.Controllers.ProductsController.GetProducts (Shop.WebApi)"
+2018-11-28 17:34:23.262 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductsController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-11-28 17:34:23.283 +07:00 [Information] In GetProducts(), method HttpGet ProductController
+2018-11-28 17:34:24.487 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-28 17:34:25.387 +07:00 [Information] Executed DbCommand ("125"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Description], [p].[Detail], [p].[DiscountId], [p].[Height], [p].[Image1], [p].[Image2], [p].[Image3], [p].[Image4], [p].[IncludeVAT], [p].[InsertedAt], [p].[Length], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[CategoryId], [p].[ProductImage], [p].[ProductStatusId], [p].[PromotionPrice], [p].[Quantity], [p].[RegularPrice], [p].[Sku], [p].[Status], [p].[UpdatedAt], [p].[ViewCounts], [p].[Warranty], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]"
+2018-11-28 17:34:25.433 +07:00 [Information] Return OK
+2018-11-28 17:34:25.463 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductsController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2169.8048ms.
+2018-11-28 17:34:25.509 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-28 17:34:26.332 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductsController.GetProducts (Shop.WebApi)" in 3669.0791ms
+2018-11-28 17:34:26.741 +07:00 [Information] Request finished in 4074.4669ms 200 application/json; charset=utf-8
+2018-11-28 17:34:26.786 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/favicon.ico  
+2018-11-28 17:34:26.828 +07:00 [Information] Request finished in 8.9331ms 404 

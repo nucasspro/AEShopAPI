@@ -1,14 +1,20 @@
-﻿import React from 'react';
-import { Route } from 'react-router';
-import Layout from './components/Layout';
-import Home from './components/Home';
-import Counter from './components/Counter';
-import FetchData from './components/FetchData';
+﻿import React, { Component } from 'react';
+import Posts from './components/Posts';
+import Postfrom from './components/postForm';
+import store from './store';
+import { Provider } from 'react-redux';
 
-export default () => (
-  <Layout>
-    <Route exact path='/' component={Home} />
-    <Route path='/counter' component={Counter} />
-    <Route path='/fetchdata/:startDateIndex?' component={FetchData} />
-  </Layout>
-);
+class App extends Component {
+    render() {
+        return (
+            <Provider store={store}>
+                <div className="App">
+                    <Posts />
+                    <hr />
+                </div>
+            </Provider>
+        );
+    }
+}
+
+export default App;
