@@ -1,18 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Shop.Domain.Commons;
 using Shop.Domain.Entities;
 using Shop.Service.Interfaces;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Shop.WebApi.Controllers
 {
-    [Route("api/abouts")]
+    [Route("api/About")]
     [ApiController]
-    public class AboutsController : ControllerBase
+    public class AboutController : ControllerBase
     {
         #region Variables
 
@@ -22,7 +19,7 @@ namespace Shop.WebApi.Controllers
 
         #region Constructor
 
-        public AboutsController(IAboutService aboutService)
+        public AboutController(IAboutService aboutService)
         {
             _aboutService = aboutService;
         }
@@ -31,7 +28,7 @@ namespace Shop.WebApi.Controllers
 
         #region Rest API
 
-        #region GET: api/Abouts
+        #region GET: api/About/
 
         [HttpGet]
         public async Task<IActionResult> GetAbouts()
@@ -40,9 +37,9 @@ namespace Shop.WebApi.Controllers
             return abouts == null ? NotFound() : (IActionResult)Ok(abouts);
         }
 
-        #endregion GET: api/Abouts
+        #endregion GET: api/About/
 
-        #region GET: api/Abouts/5
+        #region GET: api/About//5
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAbout([FromRoute] int id)
@@ -62,9 +59,9 @@ namespace Shop.WebApi.Controllers
             return Ok(about);
         }
 
-        #endregion GET: api/Abouts/5
+        #endregion GET: api/About//5
 
-        #region PUT: api/Abouts/5
+        #region PUT: api/About//5
 
         [HttpPut("{id}")]
         public async Task<IActionResult> PutAbout([FromRoute] int id, [FromBody] About updateAbout)
@@ -78,7 +75,6 @@ namespace Shop.WebApi.Controllers
             {
                 return BadRequest();
             }
-
 
             var about = await _aboutService.GetByIdAsync(id);
 
@@ -98,9 +94,9 @@ namespace Shop.WebApi.Controllers
             }
         }
 
-        #endregion PUT: api/Abouts/5
+        #endregion PUT: api/About//5
 
-        #region POST: api/Abouts
+        #region POST: api/About/
 
         [HttpPost]
         public async Task<IActionResult> PostAbout([FromBody] About about)
@@ -123,9 +119,9 @@ namespace Shop.WebApi.Controllers
             }
         }
 
-        #endregion POST: api/Abouts
+        #endregion POST: api/About/
 
-        #region DELETE: api/Abouts/5
+        #region DELETE: api/About//5
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteAbout([FromRoute] int id)
@@ -146,7 +142,7 @@ namespace Shop.WebApi.Controllers
             return Ok(about);
         }
 
-        #endregion DELETE: api/Abouts/5
+        #endregion DELETE: api/About//5
 
         #endregion Rest API
     }
