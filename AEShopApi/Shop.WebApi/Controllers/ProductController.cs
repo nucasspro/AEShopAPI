@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using Shop.Domain.Commons;
 using Shop.Domain.Entities;
@@ -8,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace Shop.WebApi.Controllers
 {
-    [Route("api/Product")]
+    [Route("api/Products")]
     [ApiController]
+    [Authorize]
     public class ProductController : ControllerBase
     {
         #region Variables
@@ -29,7 +31,7 @@ namespace Shop.WebApi.Controllers
 
         #region Rest API
 
-        #region GET: api/Product
+        #region GET: api/Products
 
         [HttpGet]
         public async Task<IActionResult> GetProducts()
@@ -45,9 +47,9 @@ namespace Shop.WebApi.Controllers
             return Ok(products);
         }
 
-        #endregion GET: api/Product
+        #endregion GET: api/Products
 
-        #region GET: api/Product/5
+        #region GET: api/Products/5
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(int id)
@@ -70,9 +72,9 @@ namespace Shop.WebApi.Controllers
             return Ok(product);
         }
 
-        #endregion GET: api/Product/5
+        #endregion GET: api/Products/5
 
-        #region PUT: api/Product/5
+        #region PUT: api/Products/5
 
         [HttpPut("{id}")]
         public async Task<IActionResult> PutProduct([FromRoute] int id, [FromBody] Product updateProduct)
@@ -109,9 +111,9 @@ namespace Shop.WebApi.Controllers
             }
         }
 
-        #endregion PUT: api/Product/5
+        #endregion PUT: api/Products/5
 
-        #region POST: api/Product
+        #region POST: api/Products
 
         [HttpPost]
         public async Task<IActionResult> PostProduct([FromBody] Product product)
@@ -137,9 +139,9 @@ namespace Shop.WebApi.Controllers
             }
         }
 
-        #endregion POST: api/Product
+        #endregion POST: api/Products
 
-        #region DELETE: api/Product/5
+        #region DELETE: api/Products/5
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteProduct([FromRoute] int id)
@@ -162,7 +164,7 @@ namespace Shop.WebApi.Controllers
             return Ok(product);
         }
 
-        #endregion DELETE: api/Product/5
+        #endregion DELETE: api/Products/5
 
         #endregion Rest API
     }

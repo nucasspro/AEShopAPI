@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Shop.WebRedux.ViewModels
+namespace Shop.ViewModel.ViewModels
 {
     public class CategoryViewModel : BaseViewModel
     {

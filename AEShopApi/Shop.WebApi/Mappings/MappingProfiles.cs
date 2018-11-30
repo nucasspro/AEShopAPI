@@ -1,12 +1,8 @@
 ﻿using AutoMapper;
-using Shop.Domain.Commons;
 using Shop.Domain.Entities;
-using Shop.Domain.Enumerations;
-using Shop.ViewModel.ViewModels;
-using Shop.WebApi.FormModels;
-using System;
+using Shop.WebApi.Models;
 
-namespace Shop.WebRedux.Mappings
+namespace Shop.WebApi.Mappings
 {
     public class MappingProfiles : Profile
     {
@@ -17,9 +13,11 @@ namespace Shop.WebRedux.Mappings
         /// </summary>
         public MappingProfiles()
         {
-            #region Mapping Admin Model
+            #region Mapping User Model
 
-            //CreateMap<AdminViewModel, Admin>();
+            CreateMap<UserViewModel, User>();
+            CreateMap<User, UserViewModel>();
+
             //CreateMap<Admin, AdminViewModel>()
             //    .ForMember(destination => destination.IsActive,
             //    opt => opt.MapFrom(source => Enum.GetName(typeof(ActivateType), source.IsActive)))
@@ -28,7 +26,7 @@ namespace Shop.WebRedux.Mappings
             //    .ForMember(destination => destination.InsertedAt,
             //    opt => opt.MapFrom(source => ConvertDatetime.UnixTimestampToDateTime(source.InsertedAt)));
 
-            #endregion Mapping Admin Model
+            #endregion Mapping User Model
 
             //CreateMap<ProductCategory, ProductCategoryViewModel>();
             ////CreateMap<Category, CategoryViewModel>()
@@ -55,15 +53,15 @@ namespace Shop.WebRedux.Mappings
             //     .ForMember(destination => destination.IsRedeem,
             //    opt => opt.MapFrom(source => Enum.GetName(typeof(RedeemType), source.IsRedeem)));
 
-            CreateMap<DiscountViewModel, Discount>();
-            CreateMap<Discount, DiscountViewModel>();
+            //CreateMap<DiscountViewModel, Discount>();
+            //CreateMap<Discount, DiscountViewModel>();
 
             #endregion Mapping Discount Model
 
             #region Mapping OrderDetail Model
 
-            CreateMap<OrderDetail, OrderDetailViewModel>();
-            CreateMap<OrderDetailViewModel, OrderDetail>();
+            //CreateMap<OrderDetail, OrderDetailViewModel>();
+            //CreateMap<OrderDetailViewModel, OrderDetail>();
 
             #endregion Mapping OrderDetail Model
 
@@ -83,17 +81,17 @@ namespace Shop.WebRedux.Mappings
 
             #region Mapping Product Model
 
-            CreateMap<ProductViewModel, Product>()
-                .ForMember(model => model.ProductStatusId,
-                opt=> opt.MapFrom(viewmodel => ProductStatusTypeEnum.FromName(viewmodel.ProductStatusName).Id));
-            CreateMap<Product, ProductViewModel>()
-                //.ForMember(viewmodel => viewmodel.ProductStatusName,
-                //opt => opt.MapFrom(model => Enumeration.FromValue<ProductStatusTypeEnum>(model.ProductStatusId).ToString()))
-                //opt => opt.MapFrom(model => ProductStatusTypeEnum.From(model.ProductStatusId).Name))
-                .ForMember(viewmodel => viewmodel.InsertedAt,
-                opt => opt.MapFrom(source => ConvertDatetime.UnixTimestampToDateTime(source.InsertedAt)))
-                .ForMember(viewmodel => viewmodel.UpdatedAt,
-                opt => opt.MapFrom(model => ConvertDatetime.UnixTimestampToDateTime(model.UpdatedAt)));
+            //CreateMap<ProductViewModel, Product>()
+            //    .ForMember(model => model.ProductStatusId,
+            //    opt=> opt.MapFrom(viewmodel => ProductStatusTypeEnum.FromName(viewmodel.ProductStatusName).Id));
+            //CreateMap<Product, ProductViewModel>()
+            //    //.ForMember(viewmodel => viewmodel.ProductStatusName,
+            //    //opt => opt.MapFrom(model => Enumeration.FromValue<ProductStatusTypeEnum>(model.ProductStatusId).ToString()))
+            //    //opt => opt.MapFrom(model => ProductStatusTypeEnum.From(model.ProductStatusId).Name))
+            //    .ForMember(viewmodel => viewmodel.InsertedAt,
+            //    opt => opt.MapFrom(source => ConvertDatetime.UnixTimestampToDateTime(source.InsertedAt)))
+            //    .ForMember(viewmodel => viewmodel.UpdatedAt,
+            //    opt => opt.MapFrom(model => ConvertDatetime.UnixTimestampToDateTime(model.UpdatedAt)));
 
             #endregion Mapping Product Model
 
@@ -120,23 +118,23 @@ namespace Shop.WebRedux.Mappings
 
             #region Mapping EditProductViewModel
 
-            CreateMap<EditProductViewModel, Product>()
-                .ForMember(model => model.UpdatedAt,
-                opt => opt.MapFrom(viewmodel => ConvertDatetime.ConvertToTimeSpan(DateTime.Now)));
+            //CreateMap<EditProductViewModel, Product>()
+            //.ForMember(model => model.UpdatedAt,
+            //opt => opt.MapFrom(viewmodel => ConvertDatetime.ConvertToTimeSpan(DateTime.Now)));
 
             #endregion Mapping EditProductViewModel
 
             #region Mapping ProductStatusType
 
-            CreateMap<ProductStatusType, ProductStatusTypeViewModel>();
-            CreateMap<ProductStatusTypeViewModel, ProductStatusType>();
+            //CreateMap<ProductStatusType, ProductStatusTypeViewModel>();
+            //CreateMap<ProductStatusTypeViewModel, ProductStatusType>();
 
             #endregion Mapping ProductStatusType
 
             #region Mapping Category
 
-            CreateMap<Category, CategoryViewModel>();
-            CreateMap<CategoryViewModel, Category>();
+            //CreateMap<Category, CategoryViewModel>();
+            //CreateMap<CategoryViewModel, Category>();
 
             #endregion Mapping Category
         }

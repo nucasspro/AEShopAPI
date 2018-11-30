@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Shop.WebApi.Controllers
 {
-    [Route("api/Contact")]
+    [Route("api/Contacts")]
     [ApiController]
-    public class ContactController : ControllerBase
+    public class ContactsController : ControllerBase
     {
         #region Variables
 
@@ -20,7 +20,7 @@ namespace Shop.WebApi.Controllers
 
         #region Constructor
 
-        public ContactController(IContactService contactService)
+        public ContactsController(IContactService contactService)
         {
             _contactService = contactService;
         }
@@ -29,7 +29,7 @@ namespace Shop.WebApi.Controllers
 
         #region Rest API
 
-        #region GET: api/Contact
+        #region GET: api/Contacts
 
         [HttpGet]
         public async Task<IActionResult> GetContacts()
@@ -45,9 +45,9 @@ namespace Shop.WebApi.Controllers
             return Ok(contacts);
         }
 
-        #endregion GET: api/Contact
+        #endregion GET: api/Contacts
 
-        #region GET: api/Contact/1
+        #region GET: api/Contacts/1
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetContact(int id)
@@ -70,9 +70,9 @@ namespace Shop.WebApi.Controllers
             return Ok(product);
         }
 
-        #endregion GET: api/Contact/1
+        #endregion GET: api/Contacts/1
 
-        #region PUT: api/Contact/1
+        #region PUT: api/Contacts/1
 
         [HttpPut("{id}")]
         public async Task<IActionResult> PutContact([FromRoute] int id, [FromBody] Contact updateContact)
@@ -109,9 +109,9 @@ namespace Shop.WebApi.Controllers
             }
         }
 
-        #endregion PUT: api/Contact/1
+        #endregion PUT: api/Contacts/1
 
-        #region POST: api/Contact
+        #region POST: api/Contacts
 
         [HttpPost]
         public async Task<IActionResult> PostContact([FromBody] Contact contact)
@@ -137,9 +137,9 @@ namespace Shop.WebApi.Controllers
             }
         }
 
-        #endregion POST: api/Contact
+        #endregion POST: api/Contacts
 
-        #region DELETE: api/Contact/1
+        #region DELETE: api/Contacts/1
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteContact([FromRoute] int id)
@@ -162,7 +162,7 @@ namespace Shop.WebApi.Controllers
             return Ok(contact);
         }
 
-        #endregion DELETE: api/Contact/1
+        #endregion DELETE: api/Contacts/1
 
         #endregion Rest API
     }

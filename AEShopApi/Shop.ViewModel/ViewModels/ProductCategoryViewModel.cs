@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Shop.WebRedux.ViewModels
+namespace Shop.ViewModel.ViewModels
 {
     public class ProductCategoryViewModel
     {

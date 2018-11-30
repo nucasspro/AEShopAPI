@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Shop.WebRedux.ViewModels
+namespace Shop.ViewModel.ViewModels
 {
     public class PaymentViewModel : BaseViewModel
     {

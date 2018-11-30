@@ -1,10 +1,13 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 using Shop.Domain;
@@ -13,6 +16,7 @@ using Shop.Domain.Repositories.Interfaces;
 using Shop.Domain.SeedWork;
 using Shop.Service.Implements;
 using Shop.Service.Interfaces;
+using System.Text;
 
 namespace Shop.WebApi
 {
@@ -67,7 +71,7 @@ namespace Shop.WebApi
             //services.AddScoped<IShippingProviderRepository, ShippingProviderRepository>();
             //services.AddScoped<IShippingRepository, ShippingRepository>();
             //services.AddScoped<ITagRepository, TagRepository>();
-            //services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             #endregion Dependency Injection for Repositories
 
@@ -93,15 +97,43 @@ namespace Shop.WebApi
             //services.AddScoped<IShippingProviderService, ShippingProviderService>();
             //services.AddScoped<IShippingService, ShippingService>();
             //services.AddScoped<ITagService, TagService>();
-            //services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IUserService, UserService>();
 
             #endregion Dependency Injection for Services
+
+            #region Authentication by JWT
+
+            services
+                .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    TokenValidationParameters parameters = new TokenValidationParameters()
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = Configuration["Jwt:Issuer"],
+                        ValidAudience = Configuration["Jwt:Issuer"],
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+                    };
+
+                    options.TokenValidationParameters = parameters;
+                });
+
+            #endregion Authentication by JWT
+
+            services.AddAutoMapper();
+
+            #region Cors
 
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowMyOrigin",
                 builder => builder.WithOrigins("https://localhost:44377"));
             });
+
+            #endregion Cors
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
@@ -121,6 +153,7 @@ namespace Shop.WebApi
 
             app.UseHttpsRedirection();
             app.UseCors("AllowMyOrigin");
+            app.UseAuthentication();
             app.UseMvc();
         }
     }

@@ -10,7 +10,7 @@ namespace Shop.Service.Implements
     {
         #region Variables
 
-        private readonly IUnitOfWork _unitOfWork;
+        public readonly IUnitOfWork _unitOfWork;
 
         #endregion Variables
 

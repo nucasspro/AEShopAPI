@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Shop.WebApi.Controllers
 {
-    [Route("api/Category")]
+    [Route("api/Categories")]
     [ApiController]
-    public class CategoryController : ControllerBase
+    public class CategoriesController : ControllerBase
     {
         #region Variables
 
@@ -19,7 +19,7 @@ namespace Shop.WebApi.Controllers
 
         #region Constructor
 
-        public CategoryController(ICategoryService categoryService)
+        public CategoriesController(ICategoryService categoryService)
         {
             _categoryService = categoryService;
         }
@@ -28,7 +28,7 @@ namespace Shop.WebApi.Controllers
 
         #region Rest API
 
-        #region GET: api/Category
+        #region GET: api/Categories
 
         [HttpGet]
         public async Task<IActionResult> GetCategories()
@@ -37,9 +37,9 @@ namespace Shop.WebApi.Controllers
             return categories == null ? NotFound() : (IActionResult)Ok(categories);
         }
 
-        #endregion GET: api/Category
+        #endregion GET: api/Categories
 
-        #region GET: api/Category/5
+        #region GET: api/Categories/5
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategory(int id)
@@ -59,9 +59,9 @@ namespace Shop.WebApi.Controllers
             return Ok(category);
         }
 
-        #endregion GET: api/Category/5
+        #endregion GET: api/Categories/5
 
-        #region PUT: api/Category/5
+        #region PUT: api/Categories/5
 
         [HttpPut("{id}")]
         public async Task<IActionResult> PutCategory([FromRoute] int id, [FromBody] Category updateCategory)
@@ -93,9 +93,9 @@ namespace Shop.WebApi.Controllers
             }
         }
 
-        #endregion PUT: api/Category/5
+        #endregion PUT: api/Categories/5
 
-        #region POST: api/Category
+        #region POST: api/Categories
 
         [HttpPost]
         public async Task<IActionResult> PostCategory([FromBody] Category category)
@@ -118,9 +118,9 @@ namespace Shop.WebApi.Controllers
             }
         }
 
-        #endregion POST: api/Category
+        #endregion POST: api/Categories
 
-        #region DELETE: api/Category/5
+        #region DELETE: api/Categories/5
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory([FromRoute] int id)
@@ -141,7 +141,7 @@ namespace Shop.WebApi.Controllers
             return Ok(category);
         }
 
-        #endregion DELETE: api/Category/5
+        #endregion DELETE: api/Categories/5
 
         #endregion Rest API
     }

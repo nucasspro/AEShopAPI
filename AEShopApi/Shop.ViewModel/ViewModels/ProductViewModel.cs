@@ -1,7 +1,6 @@
-﻿using Shop.Domain.Entities;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Shop.WebRedux.ViewModels
+namespace Shop.ViewModel.ViewModels
 {
     public class ProductViewModel : BaseViewModel
     {

@@ -9,8 +9,9 @@ namespace Shop.Domain.EntitiesConfiguration
         public override void Configure(EntityTypeBuilder<User> builder)
         {
             base.Configure(builder);
-            builder.Property(x => x.Name).IsRequired(false).HasColumnName("Username").HasColumnType("varchar(20)");
-            builder.Property(x => x.Password).IsRequired(false).HasColumnName("Password").HasColumnType("varchar(100)");
+            builder.Property(x => x.UserName).IsRequired(false).HasColumnName("UserName").HasColumnType("varchar(20)");
+            builder.Property(x => x.PasswordHash).IsRequired(false).HasColumnName("PasswordHash").HasColumnType("binary(64)");
+            builder.Property(x => x.PasswordSalt).IsRequired(false).HasColumnName("PasswordSalt").HasColumnType("binary(128)");
             builder.Property(x => x.FirstName).IsRequired(false).HasColumnName("FirstName").HasColumnType("nvarchar(50)");
             builder.Property(x => x.LastName).IsRequired(false).HasColumnName("LastName").HasColumnType("nvarchar(50)");
             builder.Property(x => x.Address).IsRequired(false).HasColumnName("Address").HasColumnType("nvarchar(100)");

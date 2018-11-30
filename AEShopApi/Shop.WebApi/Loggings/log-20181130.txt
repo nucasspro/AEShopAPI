@@ -1,0 +1,254 @@
+2018-11-30 10:57:17.613 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/  
+2018-11-30 10:57:18.022 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-11-30 10:57:20.708 +07:00 [Information] Request finished in 3103.7444ms 404 
+2018-11-30 10:58:33.394 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-11-30 10:58:33.534 +07:00 [Information] Request finished in 167.5776ms 200 
+2018-11-30 11:00:29.968 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/login application/json 102
+2018-11-30 11:00:29.991 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-11-30 11:00:31.148 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"unique_name":"1","nbf":1543487027,"exp":1544091827,"iat":1543487027}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 11:00:31.163 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"unique_name\":\"1\",\"nbf\":1543487027,\"exp\":1544091827,\"iat\":1543487027}'."
+2018-11-30 11:00:31.489 +07:00 [Information] Request finished in 1560.2494ms 404 
+2018-11-30 11:00:31.538 +07:00 [Information] Connection id ""0HLIMF0CC5GMM"", Request id ""0HLIMF0CC5GMM:00000001"": the application completed without reading the entire request body.
+2018-11-30 11:00:45.201 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/login application/json 102
+2018-11-30 11:00:45.229 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"unique_name":"1","nbf":1543487027,"exp":1544091827,"iat":1543487027}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 11:00:45.258 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"unique_name\":\"1\",\"nbf\":1543487027,\"exp\":1544091827,\"iat\":1543487027}'."
+2018-11-30 11:00:45.420 +07:00 [Information] Route matched with "{action = \"AddNew\", controller = \"Login\"}". Executing action "Shop.WebApi.Controllers.LoginController.AddNew (Shop.WebApi)"
+2018-11-30 11:00:46.593 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.LoginController.AddNew (Shop.WebApi)" with arguments (["Shop.Domain.Entities.User"]) - Validation state: Valid
+2018-11-30 11:01:29.042 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 11:01:31.046 +07:00 [Information] Executed DbCommand ("183"ms) [Parameters=["@p0='?' (Size = 100), @p1='?' (Size = 50) (DbType = AnsiString), @p2='?' (Size = 50), @p3='?' (DbType = Int32), @p4='?' (Size = 50), @p5='?' (Size = 20) (DbType = AnsiString), @p6='?' (Size = 100) (DbType = AnsiString), @p7='?' (Size = 15) (DbType = AnsiString), @p8='?', @p9='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Users] ([Address], [Name], [FirstName], [InsertedAt], [LastName], [Username], [Password], [Phone], [Status], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2018-11-30 11:01:33.536 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.LoginController.AddNew (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 46896.776ms.
+2018-11-30 11:01:33.554 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-30 11:01:33.567 +07:00 [Information] Executed action "Shop.WebApi.Controllers.LoginController.AddNew (Shop.WebApi)" in 48133.1961ms
+2018-11-30 11:01:33.587 +07:00 [Information] Request finished in 48399.2912ms 200 
+2018-11-30 11:01:59.264 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/login application/json 103
+2018-11-30 11:01:59.296 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"unique_name":"1","nbf":1543487027,"exp":1544091827,"iat":1543487027}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 11:01:59.308 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"unique_name\":\"1\",\"nbf\":1543487027,\"exp\":1544091827,\"iat\":1543487027}'."
+2018-11-30 11:01:59.324 +07:00 [Information] Route matched with "{action = \"AddNew\", controller = \"Login\"}". Executing action "Shop.WebApi.Controllers.LoginController.AddNew (Shop.WebApi)"
+2018-11-30 11:01:59.377 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.LoginController.AddNew (Shop.WebApi)" with arguments (["Shop.Domain.Entities.User"]) - Validation state: Valid
+2018-11-30 11:02:11.988 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 11:02:12.906 +07:00 [Information] Executed DbCommand ("49"ms) [Parameters=["@p0='?' (Size = 100), @p1='?' (Size = 50) (DbType = AnsiString), @p2='?' (Size = 50), @p3='?' (DbType = Int32), @p4='?' (Size = 50), @p5='?' (Size = 20) (DbType = AnsiString), @p6='?' (Size = 100) (DbType = AnsiString), @p7='?' (Size = 15) (DbType = AnsiString), @p8='?', @p9='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Users] ([Address], [Name], [FirstName], [InsertedAt], [LastName], [Username], [Password], [Phone], [Status], [UpdatedAt])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2018-11-30 11:02:17.860 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.LoginController.AddNew (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 18470.5519ms.
+2018-11-30 11:02:17.868 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-30 11:02:17.880 +07:00 [Information] Executed action "Shop.WebApi.Controllers.LoginController.AddNew (Shop.WebApi)" in 18544.8671ms
+2018-11-30 11:02:20.213 +07:00 [Information] Request finished in 20965.1407ms 200 
+2018-11-30 11:02:28.885 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/login application/json 103
+2018-11-30 11:02:28.903 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"unique_name":"1","nbf":1543487027,"exp":1544091827,"iat":1543487027}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 11:02:28.919 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"unique_name\":\"1\",\"nbf\":1543487027,\"exp\":1544091827,\"iat\":1543487027}'."
+2018-11-30 11:02:28.936 +07:00 [Information] Request finished in 50.4142ms 404 
+2018-11-30 11:02:28.965 +07:00 [Information] Connection id ""0HLIMF0CC5GMM"", Request id ""0HLIMF0CC5GMM:00000004"": the application completed without reading the entire request body.
+2018-11-30 13:35:33.494 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-11-30 13:35:33.971 +07:00 [Information] Request finished in 513.2108ms 200 
+2018-11-30 14:04:43.192 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-11-30 14:04:43.363 +07:00 [Information] Request finished in 173.4865ms 200 
+2018-11-30 14:05:03.706 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/users application/json 113
+2018-11-30 14:05:03.736 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-11-30 14:05:05.243 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"unique_name":"1","nbf":1543553983,"exp":1544158783,"iat":1543553983}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 14:05:05.254 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"unique_name\":\"1\",\"nbf\":1543553983,\"exp\":1544158783,\"iat\":1543553983}'."
+2018-11-30 14:05:05.511 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-11-30 14:05:05.555 +07:00 [Information] Authorization failed.
+2018-11-30 14:05:05.583 +07:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-30 14:05:05.605 +07:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-30 14:05:05.626 +07:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-30 14:05:05.640 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 114.6838ms
+2018-11-30 14:05:05.653 +07:00 [Information] Request finished in 1959.3296ms 401 
+2018-11-30 14:05:05.676 +07:00 [Information] Connection id ""0HLIMI8D7F3LL"", Request id ""0HLIMI8D7F3LL:00000002"": the application completed without reading the entire request body.
+2018-11-30 14:10:20.059 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-11-30 14:10:20.227 +07:00 [Information] Request finished in 177.0226ms 200 
+2018-11-30 14:11:34.146 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/users/register application/json 168
+2018-11-30 14:11:34.207 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-11-30 14:11:34.755 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"unique_name":"1","nbf":1543553983,"exp":1544158783,"iat":1543553983}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 14:11:34.776 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"unique_name\":\"1\",\"nbf\":1543553983,\"exp\":1544158783,\"iat\":1543553983}'."
+2018-11-30 14:11:35.411 +07:00 [Information] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)"
+2018-11-30 14:11:37.097 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)" with arguments (["Shop.WebApi.Models.UserViewModel"]) - Validation state: Valid
+2018-11-30 14:11:38.256 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 14:11:39.366 +07:00 [Information] Executed DbCommand ("177"ms) [Parameters=["@__username_0='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [x]
+        WHERE [x].[UserName] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-30 14:11:39.673 +07:00 [Information] Executed DbCommand ("62"ms) [Parameters=["@p0='?' (Size = 100), @p1='?' (Size = 50) (DbType = AnsiString), @p2='?' (Size = 50), @p3='?' (DbType = Int32), @p4='?' (Size = 50), @p5='?' (Size = 64) (DbType = Binary), @p6='?' (Size = 128) (DbType = Binary), @p7='?' (Size = 15) (DbType = AnsiString), @p8='?', @p9='?' (DbType = Int32), @p10='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Users] ([Address], [Name], [FirstName], [InsertedAt], [LastName], [PasswordHash], [PasswordSalt], [Phone], [Status], [UpdatedAt], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2018-11-30 14:11:39.814 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 2631.8846ms.
+2018-11-30 14:11:39.848 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-30 14:11:39.871 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)" in 4439.7591ms
+2018-11-30 14:11:40.052 +07:00 [Information] Request finished in 5797.2344ms 200 
+2018-11-30 14:11:58.088 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/users/ application/json 168
+2018-11-30 14:11:58.119 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"unique_name":"1","nbf":1543553983,"exp":1544158783,"iat":1543553983}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 14:11:58.155 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"unique_name\":\"1\",\"nbf\":1543553983,\"exp\":1544158783,\"iat\":1543553983}'."
+2018-11-30 14:11:58.211 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-11-30 14:11:58.238 +07:00 [Information] Authorization failed.
+2018-11-30 14:11:58.256 +07:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-30 14:11:58.273 +07:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-30 14:11:58.304 +07:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-30 14:11:58.318 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 93.3523ms
+2018-11-30 14:11:58.355 +07:00 [Information] Request finished in 249.7522ms 401 
+2018-11-30 14:11:58.394 +07:00 [Information] Connection id ""0HLIMIBHKB9K6"", Request id ""0HLIMIBHKB9K6:00000002"": the application completed without reading the entire request body.
+2018-11-30 14:12:31.167 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/users/login application/json 56
+2018-11-30 14:12:31.214 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"unique_name":"1","nbf":1543553983,"exp":1544158783,"iat":1543553983}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 14:12:31.233 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"unique_name\":\"1\",\"nbf\":1543553983,\"exp\":1544158783,\"iat\":1543553983}'."
+2018-11-30 14:12:31.264 +07:00 [Information] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUser (Shop.WebApi)"
+2018-11-30 14:12:31.276 +07:00 [Information] Authorization failed.
+2018-11-30 14:12:31.285 +07:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-30 14:12:31.299 +07:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-30 14:12:31.310 +07:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-30 14:12:31.318 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUser (Shop.WebApi)" in 46.2244ms
+2018-11-30 14:12:31.345 +07:00 [Information] Request finished in 170.4829ms 401 
+2018-11-30 14:12:31.411 +07:00 [Information] Connection id ""0HLIMIBHKB9K6"", Request id ""0HLIMIBHKB9K6:00000003"": the application completed without reading the entire request body.
+2018-11-30 14:12:54.123 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/users/login application/json 56
+2018-11-30 14:12:54.141 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenInvalidSignatureException: IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{"alg":"HS256","typ":"JWT"}.{"unique_name":"1","nbf":1543553983,"exp":1544158783,"iat":1543553983}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 14:12:54.161 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10503: Signature validation failed. Keys tried: 'Microsoft.IdentityModel.Tokens.SymmetricSecurityKey , KeyId: 
+'.
+Exceptions caught:
+ ''.
+token: '{\"alg\":\"HS256\",\"typ\":\"JWT\"}.{\"unique_name\":\"1\",\"nbf\":1543553983,\"exp\":1544158783,\"iat\":1543553983}'."
+2018-11-30 14:12:54.176 +07:00 [Information] Route matched with "{action = \"CreateToken\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)"
+2018-11-30 14:12:54.294 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)" with arguments (["Shop.WebApi.Models.LoginModel"]) - Validation state: Valid
+2018-11-30 14:14:06.236 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 14:14:09.655 +07:00 [Information] Executed DbCommand ("97"ms) [Parameters=["@__username_0='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[Address], [x].[Name], [x].[FirstName], [x].[InsertedAt], [x].[LastName], [x].[PasswordHash], [x].[PasswordSalt], [x].[Phone], [x].[Status], [x].[UpdatedAt], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__username_0"
+2018-11-30 14:15:17.230 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 142926.1451ms.
+2018-11-30 14:15:17.251 +07:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-30 14:15:17.430 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)" in 143240.8682ms
+2018-11-30 14:15:17.490 +07:00 [Information] Request finished in 143323.115ms 200 application/json; charset=utf-8
+2018-11-30 14:17:13.898 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/users/ application/json 56
+2018-11-30 14:17:13.909 +07:00 [Information] Successfully validated the token.
+2018-11-30 14:17:13.927 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-11-30 14:17:13.941 +07:00 [Information] Authorization was successful.
+2018-11-30 14:17:14.018 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" - Validation state: Valid
+2018-11-30 14:17:14.025 +07:00 [Information] Start HttpGet GetUsers() - UsersController
+2018-11-30 14:17:14.044 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 14:17:14.244 +07:00 [Information] Executed DbCommand ("112"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[Address], [u].[Name], [u].[FirstName], [u].[InsertedAt], [u].[LastName], [u].[PasswordHash], [u].[PasswordSalt], [u].[Phone], [u].[Status], [u].[UpdatedAt], [u].[UserName]
+FROM [Users] AS [u]"
+2018-11-30 14:17:14.322 +07:00 [Information] End HttpGet GetUsers() - UsersController
+2018-11-30 14:17:14.333 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 304.5614ms.
+2018-11-30 14:17:14.342 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.User, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-30 14:17:14.386 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 439.3232ms
+2018-11-30 14:17:14.425 +07:00 [Information] Request finished in 498.7757ms 200 application/json; charset=utf-8
+2018-11-30 14:17:14.452 +07:00 [Information] Connection id ""0HLIMIBHKB9K7"", Request id ""0HLIMIBHKB9K7:00000001"": the application completed without reading the entire request body.

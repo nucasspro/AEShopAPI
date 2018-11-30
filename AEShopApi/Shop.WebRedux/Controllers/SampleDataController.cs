@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RestSharp;
 using Shop.Domain.Entities;
-using Shop.WebRedux.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

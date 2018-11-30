@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Shop.WebApi.Controllers
 {
-    [Route("api/Post")]
+    [Route("api/Posts")]
     [ApiController]
-    public class PostController : ControllerBase
+    public class PostsController : ControllerBase
     {
         #region Variables
 
@@ -20,7 +20,7 @@ namespace Shop.WebApi.Controllers
 
         #region Constructor
 
-        public PostController(IPostService postService)
+        public PostsController(IPostService postService)
         {
             _postService = postService;
         }
@@ -29,7 +29,7 @@ namespace Shop.WebApi.Controllers
 
         #region Rest API
 
-        #region GET: api/Post
+        #region GET: api/Posts
 
         [HttpGet]
         public async Task<IActionResult> GetPosts()
@@ -45,9 +45,9 @@ namespace Shop.WebApi.Controllers
             return Ok(posts);
         }
 
-        #endregion GET: api/Post
+        #endregion GET: api/Posts
 
-        #region GET: api/Post/5
+        #region GET: api/Posts/5
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetPost(int id)
@@ -70,9 +70,9 @@ namespace Shop.WebApi.Controllers
             return Ok(post);
         }
 
-        #endregion GET: api/Post/5
+        #endregion GET: api/Posts/5
 
-        #region PUT: api/Post/5
+        #region PUT: api/Posts/5
 
         [HttpPut("{id}")]
         public async Task<IActionResult> PutPost([FromRoute] int id, [FromBody] Post updatePost)
@@ -109,9 +109,9 @@ namespace Shop.WebApi.Controllers
             }
         }
 
-        #endregion PUT: api/Post/5
+        #endregion PUT: api/Posts/5
 
-        #region POST: api/Post
+        #region POST: api/Posts
 
         [HttpPost]
         public async Task<IActionResult> PostPost([FromBody] Post post)
@@ -137,9 +137,9 @@ namespace Shop.WebApi.Controllers
             }
         }
 
-        #endregion POST: api/Post
+        #endregion POST: api/Posts
 
-        #region DELETE: api/Post/5
+        #region DELETE: api/Posts/5
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePost([FromRoute] int id)
@@ -162,7 +162,7 @@ namespace Shop.WebApi.Controllers
             return Ok(post);
         }
 
-        #endregion DELETE: api/Post/5
+        #endregion DELETE: api/Posts/5
 
         #endregion Rest API
     }

@@ -27,7 +27,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Shop.Common\Shop.Common.csproj" />
     <ProjectReference Include="..\Shop.Domain\Shop.Domain.csproj" />
+    <ProjectReference Include="..\Shop.ViewModel\Shop.ViewModel.csproj" />
     <ProjectReference Include="..\Shop.WebApi\Shop.WebApi.csproj" />
   </ItemGroup>
 

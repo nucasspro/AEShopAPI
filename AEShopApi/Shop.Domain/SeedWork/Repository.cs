@@ -40,7 +40,6 @@ namespace Shop.Domain.SeedWork
             _context.Set<T>().Update(entity);
         }
 
-
         public async Task DeleteAsync(T entity)
         {
             var result = await _context.Set<T>().FirstOrDefaultAsync(x => x.Id == entity.Id);
@@ -52,8 +51,6 @@ namespace Shop.Domain.SeedWork
             var result = await _context.Set<T>().FirstOrDefaultAsync(x => x.Id == id);
             _context.Set<T>().Remove(result);
         }
-
-        
 
         #endregion Implements
     }

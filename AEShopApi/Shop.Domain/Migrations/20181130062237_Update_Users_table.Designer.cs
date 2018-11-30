@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shop.Domain;
 
 namespace Shop.Domain.Migrations
 {
     [DbContext(typeof(AeDbContext))]
-    partial class AeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181130062237_Update_Users_table")]
+    partial class Update_Users_table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
