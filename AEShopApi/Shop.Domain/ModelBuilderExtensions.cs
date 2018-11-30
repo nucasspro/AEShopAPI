@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Shop.Domain.Commons;
+using Shop.Common.Commons;
 using Shop.Domain.Entities;
 using System;
 

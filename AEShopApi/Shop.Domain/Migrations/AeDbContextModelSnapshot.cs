@@ -829,8 +829,8 @@ namespace Shop.Domain.Migrations
                     b.ToTable("ProductStatusTypes");
 
                     b.HasData(
-                        new { Id = 1, InsertedAt = 1543558956, Name = "Out of stock", UpdatedAt = 1543558956 },
-                        new { Id = 2, InsertedAt = 1543558956, Name = "Stock", UpdatedAt = 1543558956 }
+                        new { Id = 1, InsertedAt = 1543567737, Name = "Out of stock", UpdatedAt = 1543567737 },
+                        new { Id = 2, InsertedAt = 1543567737, Name = "Stock", UpdatedAt = 1543567737 }
                     );
                 });
 

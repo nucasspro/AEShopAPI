@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using Serilog;
-using Shop.Domain.Commons;
+using Shop.Common.Commons;
 using Shop.Domain.Entities;
 using Shop.Service.Interfaces;
 using Shop.WebApi.Models;

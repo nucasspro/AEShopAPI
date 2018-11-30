@@ -10,8 +10,8 @@ using Shop.Domain;
 namespace Shop.Domain.Migrations
 {
     [DbContext(typeof(AeDbContext))]
-    [Migration("20181130062237_Update_Users_table")]
-    partial class Update_Users_table
+    [Migration("20181130084858_Initial_Database")]
+    partial class Initial_Database
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -831,8 +831,8 @@ namespace Shop.Domain.Migrations
                     b.ToTable("ProductStatusTypes");
 
                     b.HasData(
-                        new { Id = 1, InsertedAt = 1543558956, Name = "Out of stock", UpdatedAt = 1543558956 },
-                        new { Id = 2, InsertedAt = 1543558956, Name = "Stock", UpdatedAt = 1543558956 }
+                        new { Id = 1, InsertedAt = 1543567737, Name = "Out of stock", UpdatedAt = 1543567737 },
+                        new { Id = 2, InsertedAt = 1543567737, Name = "Stock", UpdatedAt = 1543567737 }
                     );
                 });
 

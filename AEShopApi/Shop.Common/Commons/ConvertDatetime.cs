@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Shop.Domain.Commons
+namespace Shop.Common.Commons
 {
     public class ConvertDatetime
     {

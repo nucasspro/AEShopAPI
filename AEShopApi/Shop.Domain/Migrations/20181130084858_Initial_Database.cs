@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata;
+﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Shop.Domain.Migrations
@@ -11,7 +12,7 @@ namespace Shop.Domain.Migrations
                 name: "Abouts",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -26,14 +27,14 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Abouts", x => x.id);
+                    table.PrimaryKey("PK_Abouts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Contacts",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -42,14 +43,14 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Contacts", x => x.id);
+                    table.PrimaryKey("PK_Contacts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Discounts",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -65,14 +66,14 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Discounts", x => x.id);
+                    table.PrimaryKey("PK_Discounts", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Feedbacks",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -85,14 +86,14 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Feedbacks", x => x.id);
+                    table.PrimaryKey("PK_Feedbacks", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Footers",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -101,14 +102,14 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Footers", x => x.id);
+                    table.PrimaryKey("PK_Footers", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "MenuTypes",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -116,14 +117,14 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MenuTypes", x => x.id);
+                    table.PrimaryKey("PK_MenuTypes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Payments",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -132,14 +133,14 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Payments", x => x.id);
+                    table.PrimaryKey("PK_Payments", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "PostCategories",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -155,14 +156,14 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PostCategories", x => x.id);
+                    table.PrimaryKey("PK_PostCategories", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "ProductStatusTypes",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -170,14 +171,14 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductStatusTypes", x => x.id);
+                    table.PrimaryKey("PK_ProductStatusTypes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "ShippingProviders",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -185,14 +186,14 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ShippingProviders", x => x.id);
+                    table.PrimaryKey("PK_ShippingProviders", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Tags",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -200,19 +201,20 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Tags", x => x.id);
+                    table.PrimaryKey("PK_Tags", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
-                    Username = table.Column<string>(type: "varchar(20)", nullable: true),
-                    Password = table.Column<string>(type: "varchar(100)", nullable: true),
+                    UserName = table.Column<string>(type: "varchar(20)", nullable: true),
+                    PasswordHash = table.Column<byte[]>(type: "binary(64)", nullable: true),
+                    PasswordSalt = table.Column<byte[]>(type: "binary(128)", nullable: true),
                     FirstName = table.Column<string>(type: "nvarchar(50)", nullable: true),
                     LastName = table.Column<string>(type: "nvarchar(50)", nullable: true),
                     Address = table.Column<string>(type: "nvarchar(100)", nullable: true),
@@ -222,14 +224,14 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.id);
+                    table.PrimaryKey("PK_Users", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Categories",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -241,18 +243,18 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Categories", x => x.id);
+                    table.PrimaryKey("PK_Categories", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Categories_Discounts_DiscountId",
                         column: x => x.DiscountId,
                         principalTable: "Discounts",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Categories_Categories_ParentId",
                         column: x => x.ParentId,
                         principalTable: "Categories",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -260,7 +262,7 @@ namespace Shop.Domain.Migrations
                 name: "Menus",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -273,12 +275,12 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Menus", x => x.id);
+                    table.PrimaryKey("PK_Menus", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Menus_MenuTypes_MenuTypeID",
                         column: x => x.MenuTypeID,
                         principalTable: "MenuTypes",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -286,7 +288,7 @@ namespace Shop.Domain.Migrations
                 name: "Posts",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -304,12 +306,12 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Posts", x => x.id);
+                    table.PrimaryKey("PK_Posts", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Posts_PostCategories_PostCategoryId",
                         column: x => x.PostCategoryId,
                         principalTable: "PostCategories",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -317,7 +319,7 @@ namespace Shop.Domain.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -351,18 +353,18 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Products", x => x.id);
+                    table.PrimaryKey("PK_Products", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Products_Discounts_DiscountId",
                         column: x => x.DiscountId,
                         principalTable: "Discounts",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Products_ProductStatusTypes_ProductStatusId",
                         column: x => x.ProductStatusId,
                         principalTable: "ProductStatusTypes",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -370,7 +372,7 @@ namespace Shop.Domain.Migrations
                 name: "Shippings",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -381,12 +383,12 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Shippings", x => x.id);
+                    table.PrimaryKey("PK_Shippings", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Shippings_ShippingProviders_ProviderId",
                         column: x => x.ProviderId,
                         principalTable: "ShippingProviders",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -394,7 +396,7 @@ namespace Shop.Domain.Migrations
                 name: "PostTags",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -403,18 +405,18 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_PostTags", x => x.id);
+                    table.PrimaryKey("PK_PostTags", x => x.Id);
                     table.ForeignKey(
                         name: "FK_PostTags_Posts_PostId",
                         column: x => x.PostId,
                         principalTable: "Posts",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_PostTags_Tags_TagId",
                         column: x => x.TagId,
                         principalTable: "Tags",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -422,7 +424,7 @@ namespace Shop.Domain.Migrations
                 name: "ProductCategories",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -432,24 +434,24 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProductCategories", x => x.id);
+                    table.PrimaryKey("PK_ProductCategories", x => x.Id);
                     table.ForeignKey(
                         name: "FK_ProductCategories_Categories_CategoryId",
                         column: x => x.CategoryId,
                         principalTable: "Categories",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_ProductCategories_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_ProductCategories_Products_ProductId1",
                         column: x => x.ProductId1,
                         principalTable: "Products",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -457,7 +459,7 @@ namespace Shop.Domain.Migrations
                 name: "Orders",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -477,24 +479,24 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Orders", x => x.id);
+                    table.PrimaryKey("PK_Orders", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Orders_Payments_PaymentMethodId",
                         column: x => x.PaymentMethodId,
                         principalTable: "Payments",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Orders_Shippings_ShippingId",
                         column: x => x.ShippingId,
                         principalTable: "Shippings",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_Orders_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -502,7 +504,7 @@ namespace Shop.Domain.Migrations
                 name: "OrderDetails",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     InsertedAt = table.Column<int>(type: "int", nullable: false),
                     UpdatedAt = table.Column<int>(type: "int", nullable: false),
@@ -512,30 +514,30 @@ namespace Shop.Domain.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_OrderDetails", x => x.id);
+                    table.PrimaryKey("PK_OrderDetails", x => x.Id);
                     table.ForeignKey(
                         name: "FK_OrderDetails_Orders_OrderId",
                         column: x => x.OrderId,
                         principalTable: "Orders",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_OrderDetails_Products_ProductId",
                         column: x => x.ProductId,
                         principalTable: "Products",
-                        principalColumn: "id",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.InsertData(
                 table: "ProductStatusTypes",
-                columns: new[] { "id", "InsertedAt", "Name", "UpdatedAt" },
-                values: new object[] { 1, 1542879138, "Out of stock", 1542879138 });
+                columns: new[] { "Id", "InsertedAt", "Name", "UpdatedAt" },
+                values: new object[] { 1, 1543567737, "Out of stock", 1543567737 });
 
             migrationBuilder.InsertData(
                 table: "ProductStatusTypes",
-                columns: new[] { "id", "InsertedAt", "Name", "UpdatedAt" },
-                values: new object[] { 2, 1542879138, "Stock", 1542879138 });
+                columns: new[] { "Id", "InsertedAt", "Name", "UpdatedAt" },
+                values: new object[] { 2, 1543567737, "Stock", 1543567737 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Categories_DiscountId",

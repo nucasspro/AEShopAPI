@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Shop.Domain.Commons;
+using Shop.Common.Commons;
 using Shop.Domain.Entities;
 using System;
 

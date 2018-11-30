@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using Shop.Domain.Commons;
+using Shop.Common.Commons;
 using Shop.Domain.Entities;
 using Shop.Domain.Enumerations;
 using Shop.ViewModel.ViewModels;
