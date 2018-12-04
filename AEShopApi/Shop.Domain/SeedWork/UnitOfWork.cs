@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace Shop.Domain.SeedWork
 {
@@ -8,7 +7,6 @@ namespace Shop.Domain.SeedWork
         #region Variables
 
         private readonly AeDbContext _context;
-        private Hashtable repositories = new Hashtable();
 
         #endregion Variables
 
@@ -20,19 +18,6 @@ namespace Shop.Domain.SeedWork
         }
 
         #endregion Constructor
-
-        #region Methods
-
-        public IRepository<T> GetRepository<T>() where T : Entity
-        {
-            if (!repositories.Contains(typeof(T)))
-            {
-                repositories.Add(typeof(T), new Repository<T>(_context));
-            }
-            return (IRepository<T>)repositories[typeof(T)];
-        }
-
-        #endregion Methods
 
         #region Implements
 

@@ -6,17 +6,61 @@ using System.Security.Cryptography;
 using System.Collections.Generic;
 using System.Text;
 using Shop.Domain.Repositories.Interfaces;
+using System.Threading.Tasks;
 
 namespace Shop.Service.Implements
 {
     public class UserService : Service<User>, IUserService
     {
-        private IUserRepository _repository;
+        public IUserRepository _userRepository;
+        public IUnitOfWork _unitOfWork;
 
-        public UserService(IUnitOfWork unitOfWork, IUserRepository repository) : base(unitOfWork)
+        public UserService(IUnitOfWork unitOfWork, IUserRepository userRepository)
         {
-            _repository = repository;
+            _unitOfWork = unitOfWork;
+            _userRepository = userRepository;
         }
+
+        public bool CheckExistsById(int id)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public async Task DeleteAsync(User user)
+        {
+            await _userRepository.DeleteAsync(user);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task DeleteAsync(int id)
+        {
+            await _userRepository.DeleteAsync(id);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task<IEnumerable<User>> GetAllAsync()
+        {
+            return await _userRepository.GetAllAsync();
+        }
+
+        public async Task<User> GetByIdAsync(int id)
+        {
+            return await _userRepository.GetByIdAsync(id);
+        }
+
+        public async Task InsertAsync(User user)
+        {
+            await _userRepository.InsertAsync(user);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
+        public async Task UpdateAsync(User user)
+        {
+            _userRepository.Update(user);
+            await _unitOfWork.SaveChangesAsync();
+        }
+
+
 
         public User Authenticate(string username, string password)
         {
@@ -25,7 +69,7 @@ namespace Shop.Service.Implements
                 return null;
             }
 
-            var user = _repository.GetByUsername(username);
+            var user = _userRepository.GetByUsername(username);
 
             if (user == null)
             {
@@ -81,7 +125,7 @@ namespace Shop.Service.Implements
             if (string.IsNullOrWhiteSpace(password))
                 return false;
 
-            if (_repository.CheckUserExists(user.UserName))
+            if (_userRepository.CheckUserExists(user.UserName))
                 return false;
 
             byte[] passwordHash, passwordSalt;
@@ -90,7 +134,7 @@ namespace Shop.Service.Implements
             user.PasswordHash = passwordHash;
             user.PasswordSalt = passwordSalt;
 
-            _repository.InsertAsync(user);
+            _userRepository.InsertAsync(user);
             _unitOfWork.SaveChanges();
             return true;
         }

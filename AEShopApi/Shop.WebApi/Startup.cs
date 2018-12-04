@@ -130,7 +130,7 @@ namespace Shop.WebApi
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowMyOrigin",
-                builder => builder.WithOrigins("https://localhost:44377"));
+                builder => builder.WithOrigins("https://localhost:44380"));
             });
 
             #endregion Cors

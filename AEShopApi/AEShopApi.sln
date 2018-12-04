@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.WebApi", "Shop.WebApi\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.WebRedux", "Shop.WebRedux\Shop.WebRedux.csproj", "{ADF369B2-D1FA-4DA8-A540-56DF363233AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.ViewModel", "Shop.ViewModel\Shop.ViewModel.csproj", "{402B0E02-E383-4BBB-B47E-0A1A633796B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.ViewModel", "Shop.ViewModel\Shop.ViewModel.csproj", "{402B0E02-E383-4BBB-B47E-0A1A633796B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.Common", "Shop.Common\Shop.Common.csproj", "{84AE5C40-7020-481C-BA8D-B7B0B8A53A9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Common", "Shop.Common\Shop.Common.csproj", "{84AE5C40-7020-481C-BA8D-B7B0B8A53A9D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

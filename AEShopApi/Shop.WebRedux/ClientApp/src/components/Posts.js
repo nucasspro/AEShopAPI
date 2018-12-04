@@ -1,11 +1,25 @@
 ﻿import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import axios from 'axios';
 import { fetchPosts } from '../actions/postActions';
 
 class Posts extends Component {
+    state = {
+        posts: []
+    };
+
     componentWillMount() {
-        //this.props.fetchPosts();
+        axios.get('https://localhost:5001/api/products')
+            .then(response => {
+                this.setState({
+                    posts: response.data
+                })
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+        console.log(this.state.posts)
     }
     componentWillReceiveProps(nextProps, nextContext) {
         if (nextProps.newPost) {
@@ -14,14 +28,11 @@ class Posts extends Component {
     }
 
     render() {
-        console.log("aaaa");
-        console.log(this.props.posts);
-        //const postItem = this.props.posts.map((item, index) => (
-        //    <div key={index}>
-        //        <h3>{item}</h3>
-        //    </div>
-        //));
-        return <div></div>;
+        
+        return <div>{this.state.posts.map((item, index) => <div key={index}>
+            <h3>{item.detail}</h3>
+        </div> 
+        )}</div>;
     }
 }
 
@@ -30,10 +41,12 @@ class Posts extends Component {
 //    posts: PropTypes.array.isRequired,
 //};
 
-const mapStateToProps = state => ({
-    posts: state.posts.items,
-    newPost: state.posts.item
-});
+const mapStateToProps = state => {
+    return {
+        posts: state.items
+    }
+    //newPost: state.posts.item
+};
 
 export default connect(
     mapStateToProps,

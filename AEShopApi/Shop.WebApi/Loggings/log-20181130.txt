@@ -252,3 +252,325 @@ FROM [Users] AS [u]"
 2018-11-30 14:17:14.386 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 439.3232ms
 2018-11-30 14:17:14.425 +07:00 [Information] Request finished in 498.7757ms 200 application/json; charset=utf-8
 2018-11-30 14:17:14.452 +07:00 [Information] Connection id ""0HLIMIBHKB9K7"", Request id ""0HLIMIBHKB9K7:00000001"": the application completed without reading the entire request body.
+2018-11-30 15:55:54.532 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-11-30 15:55:54.676 +07:00 [Information] Request finished in 150.2547ms 200 
+2018-11-30 15:56:55.790 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/ application/json 585
+2018-11-30 15:56:55.811 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-11-30 15:56:56.140 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-11-30 15:56:56.163 +07:00 [Information] Authorization failed.
+2018-11-30 15:56:56.178 +07:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-30 15:56:56.201 +07:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-30 15:56:56.227 +07:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-30 15:56:56.249 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 86.5169ms
+2018-11-30 15:56:56.272 +07:00 [Information] Request finished in 502.1687ms 401 
+2018-11-30 15:56:56.340 +07:00 [Information] Connection id ""0HLIMK6HFE6UT"", Request id ""0HLIMK6HFE6UT:00000001"": the application completed without reading the entire request body.
+2018-11-30 15:58:22.073 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/users/register application/json 56
+2018-11-30 15:58:22.338 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 08:58:22'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 15:58:22.362 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 08:58:22'."
+2018-11-30 15:58:22.410 +07:00 [Information] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)"
+2018-11-30 15:58:23.398 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)" with arguments (["Shop.WebApi.Models.UserViewModel"]) - Validation state: Valid
+2018-11-30 15:58:24.267 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 15:58:24.709 +07:00 [Information] Executed DbCommand ("73"ms) [Parameters=["@__username_0='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [x]
+        WHERE [x].[UserName] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-30 15:58:24.973 +07:00 [Information] Executed DbCommand ("102"ms) [Parameters=["@p0='?' (Size = 100), @p1='?' (Size = 50) (DbType = AnsiString), @p2='?' (Size = 50), @p3='?' (DbType = Int32), @p4='?' (Size = 50), @p5='?' (Size = 64) (DbType = Binary), @p6='?' (Size = 128) (DbType = Binary), @p7='?' (Size = 15) (DbType = AnsiString), @p8='?', @p9='?' (DbType = Int32), @p10='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Users] ([Address], [Name], [FirstName], [InsertedAt], [LastName], [PasswordHash], [PasswordSalt], [Phone], [Status], [UpdatedAt], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10);
+SELECT [Id]
+FROM [Users]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2018-11-30 15:58:25.095 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 1603.0323ms.
+2018-11-30 15:58:25.156 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-30 15:58:25.185 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)" in 2747.1132ms
+2018-11-30 15:58:25.256 +07:00 [Information] Request finished in 3128.4007ms 200 
+2018-11-30 15:58:47.645 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/ application/json 585
+2018-11-30 15:58:47.662 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-11-30 15:58:47.673 +07:00 [Information] Authorization failed.
+2018-11-30 15:58:47.691 +07:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-30 15:58:47.701 +07:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-30 15:58:47.714 +07:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-30 15:58:47.723 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 52.0638ms
+2018-11-30 15:58:47.750 +07:00 [Information] Request finished in 90.9843ms 401 
+2018-11-30 15:58:47.766 +07:00 [Information] Connection id ""0HLIMK6HFE6UU"", Request id ""0HLIMK6HFE6UU:00000002"": the application completed without reading the entire request body.
+2018-11-30 15:58:59.346 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/users/login application/json 56
+2018-11-30 15:58:59.365 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 08:58:59'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 15:58:59.383 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 08:58:59'."
+2018-11-30 15:58:59.405 +07:00 [Information] Route matched with "{action = \"CreateToken\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)"
+2018-11-30 15:58:59.508 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)" with arguments (["Shop.WebApi.Models.LoginModel"]) - Validation state: Valid
+2018-11-30 15:58:59.565 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 15:58:59.747 +07:00 [Information] Executed DbCommand ("119"ms) [Parameters=["@__username_0='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[Address], [x].[Name], [x].[FirstName], [x].[InsertedAt], [x].[LastName], [x].[PasswordHash], [x].[PasswordSalt], [x].[Phone], [x].[Status], [x].[UpdatedAt], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__username_0"
+2018-11-30 15:58:59.796 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 276.1855ms.
+2018-11-30 15:58:59.816 +07:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-30 15:58:59.844 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)" in 428.2964ms
+2018-11-30 15:58:59.856 +07:00 [Information] Request finished in 514.839ms 200 application/json; charset=utf-8
+2018-11-30 15:59:20.770 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/ application/json 585
+2018-11-30 15:59:20.784 +07:00 [Information] Successfully validated the token.
+2018-11-30 15:59:20.810 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-11-30 15:59:20.824 +07:00 [Information] Authorization was successful.
+2018-11-30 15:59:20.880 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-11-30 15:59:20.890 +07:00 [Information] Start HttpGet GetProducts() - ProductController
+2018-11-30 15:59:20.904 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 15:59:21.269 +07:00 [Information] Executed DbCommand ("307"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Description], [p].[Detail], [p].[DiscountId], [p].[Height], [p].[Image1], [p].[Image2], [p].[Image3], [p].[Image4], [p].[IncludeVAT], [p].[InsertedAt], [p].[Length], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[CategoryId], [p].[ProductImage], [p].[ProductStatusId], [p].[PromotionPrice], [p].[Quantity], [p].[RegularPrice], [p].[Sku], [p].[Status], [p].[UpdatedAt], [p].[ViewCounts], [p].[Warranty], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]"
+2018-11-30 15:59:21.280 +07:00 [Information] End HttpGet GetProducts() - ProductController
+2018-11-30 15:59:21.290 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 403.1368ms.
+2018-11-30 15:59:21.304 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-30 15:59:21.322 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 504.9018ms
+2018-11-30 15:59:21.341 +07:00 [Information] Request finished in 607.2529ms 200 application/json; charset=utf-8
+2018-11-30 15:59:21.355 +07:00 [Information] Connection id ""0HLIMK6HFE6UU"", Request id ""0HLIMK6HFE6UU:00000004"": the application completed without reading the entire request body.
+2018-11-30 16:00:07.574 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/products/ application/json 585
+2018-11-30 16:00:07.584 +07:00 [Information] Successfully validated the token.
+2018-11-30 16:00:07.607 +07:00 [Information] Route matched with "{action = \"PostProduct\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)"
+2018-11-30 16:00:07.636 +07:00 [Information] Authorization was successful.
+2018-11-30 16:00:07.743 +07:00 [Information] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.SerializableError"'.
+2018-11-30 16:00:07.778 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)" in 148.8381ms
+2018-11-30 16:00:07.790 +07:00 [Information] Request finished in 217.5453ms 400 application/json; charset=utf-8
+2018-11-30 16:01:29.683 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/products/ application/json 512
+2018-11-30 16:01:29.701 +07:00 [Information] Successfully validated the token.
+2018-11-30 16:01:29.743 +07:00 [Information] Route matched with "{action = \"PostProduct\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)"
+2018-11-30 16:01:29.756 +07:00 [Information] Authorization was successful.
+2018-11-30 16:01:29.817 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)" with arguments (["Shop.Domain.Entities.Product"]) - Validation state: Valid
+2018-11-30 16:01:29.843 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 16:01:30.337 +07:00 [Information] Executed DbCommand ("290"ms) [Parameters=["@p0='?' (Size = 250), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (DbType = Int32), @p3='?', @p4='?' (Size = 100) (DbType = AnsiString), @p5='?' (Size = 100) (DbType = AnsiString), @p6='?' (Size = 100) (DbType = AnsiString), @p7='?' (Size = 100) (DbType = AnsiString), @p8='?', @p9='?' (DbType = Int32), @p10='?', @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 4000), @p15='?' (Size = 100), @p16='?' (DbType = Int32), @p17='?' (Size = 4000), @p18='?' (DbType = Int32), @p19='?' (DbType = Double), @p20='?' (DbType = Int32), @p21='?' (DbType = Double), @p22='?' (Size = 20) (DbType = AnsiString), @p23='?', @p24='?' (DbType = Int32), @p25='?' (DbType = Int32), @p26='?' (Size = 4000), @p27='?', @p28='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Products] ([Description], [Detail], [DiscountId], [Height], [Image1], [Image2], [Image3], [Image4], [IncludeVAT], [InsertedAt], [Length], [MetaDescriptions], [MetaKeywords], [MetaTitle], [MoreImages], [Name], [CategoryId], [ProductImage], [ProductStatusId], [PromotionPrice], [Quantity], [RegularPrice], [Sku], [Status], [UpdatedAt], [ViewCounts], [Warranty], [Weight], [Width])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25, @p26, @p27, @p28);
+SELECT [Id]
+FROM [Products]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2018-11-30 16:01:30.369 +07:00 [Information] End HttpPost PostProduct(Shop.Domain.Entities.Product) - ProductController - Done
+2018-11-30 16:01:30.397 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 569.6703ms.
+2018-11-30 16:01:30.406 +07:00 [Information] Executing ObjectResult, writing value of type '"Shop.Domain.Entities.Product"'.
+2018-11-30 16:01:30.440 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)" in 689.5229ms
+2018-11-30 16:01:30.462 +07:00 [Information] Request finished in 780.2411ms 201 application/json; charset=utf-8
+2018-11-30 16:02:35.079 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/ application/json 512
+2018-11-30 16:02:35.088 +07:00 [Information] Successfully validated the token.
+2018-11-30 16:02:35.101 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-11-30 16:02:35.111 +07:00 [Information] Authorization was successful.
+2018-11-30 16:02:35.178 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-11-30 16:02:35.178 +07:00 [Information] Start HttpGet GetProducts() - ProductController
+2018-11-30 16:02:35.190 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 16:02:35.293 +07:00 [Information] Executed DbCommand ("88"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Description], [p].[Detail], [p].[DiscountId], [p].[Height], [p].[Image1], [p].[Image2], [p].[Image3], [p].[Image4], [p].[IncludeVAT], [p].[InsertedAt], [p].[Length], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[CategoryId], [p].[ProductImage], [p].[ProductStatusId], [p].[PromotionPrice], [p].[Quantity], [p].[RegularPrice], [p].[Sku], [p].[Status], [p].[UpdatedAt], [p].[ViewCounts], [p].[Warranty], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]"
+2018-11-30 16:02:35.308 +07:00 [Information] End HttpGet GetProducts() - ProductController
+2018-11-30 16:02:35.317 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 129.806ms.
+2018-11-30 16:02:35.327 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-30 16:02:35.342 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 227.1464ms
+2018-11-30 16:02:35.458 +07:00 [Information] Request finished in 328.255ms 200 application/json; charset=utf-8
+2018-11-30 16:02:35.475 +07:00 [Information] Connection id ""0HLIMK6HFE6V0"", Request id ""0HLIMK6HFE6V0:00000001"": the application completed without reading the entire request body.
+2018-11-30 17:09:01.853 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/ application/json 512
+2018-11-30 17:09:01.869 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '11/30/2018 10:09:01'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 17:09:01.880 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '11/30/2018 10:09:01'."
+2018-11-30 17:09:01.889 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-11-30 17:09:01.904 +07:00 [Information] Authorization failed.
+2018-11-30 17:09:01.915 +07:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-11-30 17:09:01.925 +07:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-11-30 17:09:01.935 +07:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-11-30 17:09:01.944 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 45.2133ms
+2018-11-30 17:09:01.963 +07:00 [Information] Request finished in 99.7356ms 401 
+2018-11-30 17:09:01.984 +07:00 [Information] Connection id ""0HLIMK6HFE6V1"", Request id ""0HLIMK6HFE6V1:00000001"": the application completed without reading the entire request body.
+2018-11-30 16:31:13.775 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/ application/json 512
+2018-11-30 16:31:13.888 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-11-30 16:31:14.013 +07:00 [Information] Successfully validated the token.
+2018-11-30 16:31:14.205 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-11-30 16:31:14.225 +07:00 [Information] Authorization was successful.
+2018-11-30 16:31:14.377 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-11-30 16:31:14.390 +07:00 [Information] Start HttpGet GetProducts() - ProductController
+2018-11-30 16:31:14.940 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 16:31:15.196 +07:00 [Information] Executed DbCommand ("15"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Description], [p].[Detail], [p].[DiscountId], [p].[Height], [p].[Image1], [p].[Image2], [p].[Image3], [p].[Image4], [p].[IncludeVAT], [p].[InsertedAt], [p].[Length], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[MoreImages], [p].[Name], [p].[CategoryId], [p].[ProductImage], [p].[ProductStatusId], [p].[PromotionPrice], [p].[Quantity], [p].[RegularPrice], [p].[Sku], [p].[Status], [p].[UpdatedAt], [p].[ViewCounts], [p].[Warranty], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]"
+2018-11-30 16:31:15.203 +07:00 [Information] End HttpGet GetProducts() - ProductController
+2018-11-30 16:31:15.212 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 823.8536ms.
+2018-11-30 16:31:15.225 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-11-30 16:31:15.277 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 1065.085ms
+2018-11-30 16:31:15.305 +07:00 [Information] Request finished in 1532.3419ms 200 application/json; charset=utf-8
+2018-11-30 16:31:15.326 +07:00 [Information] Connection id ""0HLIMKQ92N1R9"", Request id ""0HLIMKQ92N1R9:00000001"": the application completed without reading the entire request body.
+2018-11-30 16:31:29.527 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/users/login application/json 58
+2018-11-30 16:31:29.581 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:31:29'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 16:31:29.584 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:31:29'."
+2018-11-30 16:31:29.621 +07:00 [Information] Route matched with "{action = \"CreateToken\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)"
+2018-11-30 16:31:30.107 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)" with arguments (["Shop.WebApi.Models.LoginModel"]) - Validation state: Valid
+2018-11-30 16:31:30.135 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 16:31:30.245 +07:00 [Information] Executed DbCommand ("7"ms) [Parameters=["@__username_0='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[Address], [x].[Name], [x].[FirstName], [x].[InsertedAt], [x].[LastName], [x].[PasswordHash], [x].[PasswordSalt], [x].[Phone], [x].[Status], [x].[UpdatedAt], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__username_0"
+2018-11-30 16:31:30.270 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.UnauthorizedResult" in 138.862ms.
+2018-11-30 16:31:30.277 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 401
+2018-11-30 16:31:30.278 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)" in 657.0154ms
+2018-11-30 16:31:30.281 +07:00 [Information] Request finished in 753.2793ms 401 
+2018-11-30 16:32:43.214 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/users/register application/json 58
+2018-11-30 16:32:43.219 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:32:43'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 16:32:43.220 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:32:43'."
+2018-11-30 16:32:43.224 +07:00 [Information] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)"
+2018-11-30 16:32:43.285 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)" with arguments (["Shop.WebApi.Models.UserViewModel"]) - Validation state: Valid
+2018-11-30 16:32:43.342 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 16:32:43.379 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__username_0='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [x]
+        WHERE [x].[UserName] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-30 16:32:43.383 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 97.3821ms.
+2018-11-30 16:32:43.383 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-30 16:32:43.383 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)" in 158.5631ms
+2018-11-30 16:32:43.383 +07:00 [Information] Request finished in 169.4021ms 200 
+2018-11-30 16:32:54.793 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/users/login application/json 57
+2018-11-30 16:32:54.794 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:32:54'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 16:32:54.795 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:32:54'."
+2018-11-30 16:32:54.795 +07:00 [Information] Route matched with "{action = \"CreateToken\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)"
+2018-11-30 16:32:54.796 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)" with arguments (["Shop.WebApi.Models.LoginModel"]) - Validation state: Valid
+2018-11-30 16:32:54.797 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 16:32:54.820 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=["@__username_0='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[Address], [x].[Name], [x].[FirstName], [x].[InsertedAt], [x].[LastName], [x].[PasswordHash], [x].[PasswordSalt], [x].[Phone], [x].[Status], [x].[UpdatedAt], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__username_0"
+2018-11-30 16:32:54.820 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.UnauthorizedResult" in 24.0173ms.
+2018-11-30 16:32:54.821 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 401
+2018-11-30 16:32:54.821 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)" in 25.2696ms
+2018-11-30 16:32:54.821 +07:00 [Information] Request finished in 29.0342ms 401 
+2018-11-30 16:33:02.247 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/users/login application/json 56
+2018-11-30 16:33:02.249 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:33:02'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 16:33:02.250 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:33:02'."
+2018-11-30 16:33:02.250 +07:00 [Information] Route matched with "{action = \"CreateToken\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)"
+2018-11-30 16:33:02.252 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)" with arguments (["Shop.WebApi.Models.LoginModel"]) - Validation state: Valid
+2018-11-30 16:33:02.252 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 16:33:02.257 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=["@__username_0='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[Address], [x].[Name], [x].[FirstName], [x].[InsertedAt], [x].[LastName], [x].[PasswordHash], [x].[PasswordSalt], [x].[Phone], [x].[Status], [x].[UpdatedAt], [x].[UserName]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__username_0"
+2018-11-30 16:33:02.260 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 8.5597ms.
+2018-11-30 16:33:02.261 +07:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-11-30 16:33:02.266 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)" in 15.6065ms
+2018-11-30 16:33:02.266 +07:00 [Information] Request finished in 19.7949ms 200 application/json; charset=utf-8
+2018-11-30 16:33:25.852 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/users/register application/json 57
+2018-11-30 16:33:25.854 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:33:25'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 16:33:25.855 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:33:25'."
+2018-11-30 16:33:25.855 +07:00 [Information] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)"
+2018-11-30 16:33:25.856 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)" with arguments (["Shop.WebApi.Models.UserViewModel"]) - Validation state: Valid
+2018-11-30 16:33:25.859 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 16:33:25.881 +07:00 [Information] Executed DbCommand ("21"ms) [Parameters=["@__username_0='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [x]
+        WHERE [x].[UserName] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-30 16:33:25.882 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 25.5673ms.
+2018-11-30 16:33:25.882 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-30 16:33:25.882 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)" in 27.0511ms
+2018-11-30 16:33:25.882 +07:00 [Information] Request finished in 30.7802ms 200 
+2018-11-30 16:33:50.702 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-11-30 16:33:50.829 +07:00 [Information] Request finished in 136.5602ms 200 
+2018-11-30 16:39:31.345 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/users/register application/json 57
+2018-11-30 16:39:31.361 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-11-30 16:39:31.653 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:39:31'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 16:39:31.665 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:39:31'."
+2018-11-30 16:39:31.926 +07:00 [Information] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)"
+2018-11-30 16:39:33.144 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)" with arguments (["Shop.WebApi.Models.UserViewModel"]) - Validation state: Valid
+2018-11-30 16:39:34.026 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 16:39:34.463 +07:00 [Information] Executed DbCommand ("74"ms) [Parameters=["@__username_0='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [x]
+        WHERE [x].[UserName] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-30 16:39:34.492 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 1322.6042ms.
+2018-11-30 16:39:34.509 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-30 16:39:34.525 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)" in 2584.1059ms
+2018-11-30 16:39:34.559 +07:00 [Information] Request finished in 3206.0582ms 200 
+2018-11-30 16:40:30.488 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/Users/register application/json 57
+2018-11-30 16:40:30.552 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:40:30'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-11-30 16:40:30.568 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 07:45:10', Current time: '11/30/2018 09:40:30'."
+2018-11-30 16:40:30.582 +07:00 [Information] Route matched with "{action = \"Register\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)"
+2018-11-30 16:40:30.647 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)" with arguments (["Shop.WebApi.Models.UserViewModel"]) - Validation state: Valid
+2018-11-30 16:40:43.649 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-11-30 16:40:43.709 +07:00 [Information] Executed DbCommand ("44"ms) [Parameters=["@__username_0='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [x]
+        WHERE [x].[UserName] = @__username_0)
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END"
+2018-11-30 16:40:55.512 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkResult" in 24857.6393ms.
+2018-11-30 16:40:55.522 +07:00 [Information] Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-11-30 16:40:55.536 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.Register (Shop.WebApi)" in 24941.6582ms
+2018-11-30 16:40:55.589 +07:00 [Information] Request finished in 25062.5838ms 200 

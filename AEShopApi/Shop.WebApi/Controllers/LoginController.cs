@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using Serilog;
 using Shop.Domain.Entities;
 using Shop.Service.Interfaces;
 using Shop.WebApi.Models;
@@ -25,11 +26,11 @@ namespace Shop.WebApi.Controllers
         }
 
         [AllowAnonymous]
-        //[HttpPost("authenticate")]
         [HttpPost]
         [Route("authenticate")]
         public IActionResult CreateToken([FromBody]LoginModel login)
         {
+            Log.Information("Start CreateToken - LoginController");
             IActionResult response = Unauthorized();
             var user = Authenticate(login);
 
@@ -37,8 +38,9 @@ namespace Shop.WebApi.Controllers
             {
                 var tokenString = BuildToken(user);
                 response = Ok(new { token = tokenString });
+                Log.Information("End CreateToken - LoginController - Done");
             }
-
+            Log.Information("End CreateToken - LoginController - User null");
             return response;
         }
 
