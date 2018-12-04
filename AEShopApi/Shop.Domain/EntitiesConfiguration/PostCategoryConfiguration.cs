@@ -14,7 +14,10 @@ namespace Shop.Domain.EntitiesConfiguration
             base.Configure(builder);
             builder.Property(x => x.Name ).IsRequired(false).HasColumnName("Name").HasColumnType("nvarchar(250)");
             builder.Property(x => x.MetaTitle ).IsRequired(false).HasColumnName("MetaTitle").HasColumnType("nvarchar(250)");
+
             builder.Property(x => x.ParentId ).IsRequired(false).HasColumnName("ParentId").HasColumnType("int");
+            builder.HasOne(x => x.Parent).WithMany().HasForeignKey(y => y.ParentId);
+
             builder.Property(x => x.DisplayOrder ).IsRequired(false).HasColumnName("DisplayOrder").HasColumnType("int");
             builder.Property(x => x.SeoTitle ).IsRequired(false).HasColumnName("SeoTitle").HasColumnType("nvarchar(250)");
             builder.Property(x => x.MetaKeywords ).IsRequired(false).HasColumnName("MetaKeywords").HasColumnType("nvarchar(250)");

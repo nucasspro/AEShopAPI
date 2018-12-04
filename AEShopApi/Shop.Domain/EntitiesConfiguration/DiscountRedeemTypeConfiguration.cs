@@ -7,12 +7,14 @@ using System.Text;
 
 namespace Shop.Domain.EntitiesConfiguration
 {
-   public class MenuTypeConfiguration : BaseConfiguration<MenuType>
+   public class DiscountRedeemTypeConfiguration : BaseConfiguration<DiscountRedeemType>
     {
-        public override void Configure(EntityTypeBuilder<MenuType> builder)
+        public override void Configure(EntityTypeBuilder<DiscountRedeemType> builder)
         {
             base.Configure(builder);
-            builder.Property(x=>x.Name).IsRequired(false).HasColumnName("MetaDescriptions").HasColumnType("nvarchar(250)");
+            builder.Property(x => x.Name).IsRequired(false).HasColumnName("Name").HasColumnType("nvarchar(50)");
+
         }
+
     }
 }

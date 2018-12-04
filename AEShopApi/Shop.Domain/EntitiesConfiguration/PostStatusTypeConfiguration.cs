@@ -7,12 +7,13 @@ using System.Text;
 
 namespace Shop.Domain.EntitiesConfiguration
 {
-   public class TagConfiguration : BaseConfiguration<Tag>
+    public class PostStatusTypeConfiguration: BaseConfiguration<PostStatusType>
     {
-        public override void Configure(EntityTypeBuilder<Tag> builder)
+        public override void Configure(EntityTypeBuilder<PostStatusType> builder)
         {
             base.Configure(builder);
-            builder.Property(x => x.Name).IsRequired(false).HasColumnName("Name").HasColumnType("nvarchar(100)");
+            builder.Property(x => x.Name).IsRequired(false).HasColumnName("Name").HasColumnType("nvarchar(50)");
+
         }
     }
 }

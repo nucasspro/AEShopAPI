@@ -15,6 +15,12 @@ namespace Shop.Domain.EntitiesConfiguration
             builder.Property(x => x.ProductId).IsRequired(false).HasColumnName("ProductId").HasColumnType("int");
             builder.HasOne(x => x.Product).WithMany(y => y.OrderDetails).HasForeignKey(z => z.ProductId);
 
+            builder.Property(x => x.UserId).IsRequired(false).HasColumnName("UserId").HasColumnType("int");
+            builder.HasOne(x => x.User).WithMany(y => y.OrderDetails).HasForeignKey(z => z.UserId);
+
+            builder.Property(x => x.ShippingId).IsRequired(false).HasColumnName("ShippingId").HasColumnType("int");
+            builder.HasOne(x => x.Shipping).WithMany(y => y.OrderDetails).HasForeignKey(z => z.ShippingId);
+
             builder.Property(x => x.Quantity).IsRequired(false).HasColumnName("Quantity").HasColumnType("int");
         }
     }

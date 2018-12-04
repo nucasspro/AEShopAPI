@@ -17,8 +17,8 @@ namespace Shop.Domain.EntitiesConfiguration
             builder.Property(x => x.Address).IsRequired(false).HasColumnName("Address").HasColumnType("nvarchar(100)");
             builder.Property(x => x.Phone).IsRequired(false).HasColumnName("Phone").HasColumnType("varchar(15)");
             builder.Property(x => x.Email).IsRequired(false).HasColumnName("Name").HasColumnType("varchar(50)");
-            builder.Property(x => x.Status).IsRequired(false).HasColumnName("Status").HasColumnType("bit");
-
+            builder.Property(x => x.UserStatusTypeId).IsRequired(false).HasColumnName("Status").HasColumnType("int");
+            builder.HasOne(x => x.UserStatusType).WithMany(y => y.Users).HasForeignKey(z => z.UserStatusTypeId);
         }
     }
 }

@@ -18,27 +18,26 @@ namespace Shop.Domain
 
         #region MyRegion Add DbSet<T>
 
-        public DbSet<About> Abouts { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Contact> Contacts { get; set; }
         public DbSet<Discount> Discounts { get; set; }
-        public DbSet<Feedback> Feedbacks { get; set; }
-        public DbSet<Footer> Footers { get; set; }
-        public DbSet<Menu> Menus { get; set; }
-        public DbSet<MenuType> MenuTypes { get; set; }
+        public DbSet<DiscountActiveType> DiscountActiveTypes { get; set; }
+        public DbSet<DiscountRedeemType> DiscountRedeemTypes { get; set; }
+        public DbSet<District> Districts { get; set; }
         public DbSet<Order> Orders { get; set; }
         public DbSet<OrderDetail> OrderDetails { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<Post> Posts { get; set; }
         public DbSet<PostCategory> PostCategories { get; set; }
-        public DbSet<PostTag> PostTags { get; set; }
+        public DbSet<PostStatusType> PostStatusTypes { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<ProductStatusType> ProductStatusTypes { get; set; }
+        public DbSet<Province> Provinces { get; set; }
         public DbSet<Shipping> Shippings { get; set; }
         public DbSet<ShippingProvider> ShippingProviders { get; set; }
-        public DbSet<Tag> Tags { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<UserStatusType> UserStatusTypes { get; set; }
+        public DbSet<Ward> Wards { get; set; }
 
         #endregion MyRegion Add DbSet<T>
 
@@ -54,27 +53,26 @@ namespace Shop.Domain
         {
             #region Add Entity Configurations
 
-            modelBuilder.ApplyConfiguration(new AboutConfiguration());
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new ContactConfiguration());
             modelBuilder.ApplyConfiguration(new DiscountConfiguration());
-            modelBuilder.ApplyConfiguration(new FeedbackConfiguration());
-            modelBuilder.ApplyConfiguration(new FooterConfiguration());
-            modelBuilder.ApplyConfiguration(new MenuConfiguration());
-            modelBuilder.ApplyConfiguration(new MenuTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DiscountActiveTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DiscountRedeemTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new DistrictsConfiguration());
             modelBuilder.ApplyConfiguration(new OrderConfiguration());
             modelBuilder.ApplyConfiguration(new OrderDetailConfiguration());
             modelBuilder.ApplyConfiguration(new PaymentConfiguration());
             modelBuilder.ApplyConfiguration(new PostConfiguration());
             modelBuilder.ApplyConfiguration(new PostCategoryConfiguration());
-            modelBuilder.ApplyConfiguration(new PostTagConfiguration());
+            modelBuilder.ApplyConfiguration(new PostStatusTypeConfiguration());
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
             modelBuilder.ApplyConfiguration(new ProductCategoryConfiguration());
             modelBuilder.ApplyConfiguration(new ProductStatusTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new ProvinceConfiguration());
             modelBuilder.ApplyConfiguration(new ShippingConfiguration());
             modelBuilder.ApplyConfiguration(new ShippingProviderConfiguration());
-            modelBuilder.ApplyConfiguration(new TagConfiguration());
             modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new UserStatusTypeConfiguration());
+            modelBuilder.ApplyConfiguration(new WardConfiguration());
 
             #endregion Add Entity Configurations
 

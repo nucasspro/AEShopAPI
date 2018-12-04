@@ -84,7 +84,7 @@ namespace Shop.WebRedux.Mappings
             #region Mapping Product Model
 
             CreateMap<ProductViewModel, Product>()
-                .ForMember(model => model.ProductStatusId,
+                .ForMember(model => model.ProductStatusTypeId,
                 opt=> opt.MapFrom(viewmodel => ProductStatusTypeEnum.FromName(viewmodel.ProductStatusName).Id));
             CreateMap<Product, ProductViewModel>()
                 //.ForMember(viewmodel => viewmodel.ProductStatusName,

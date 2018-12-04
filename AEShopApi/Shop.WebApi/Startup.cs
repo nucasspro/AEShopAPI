@@ -51,9 +51,7 @@ namespace Shop.WebApi
 
             #region Dependency Injection for Repositories
 
-            services.AddScoped<IAboutRepository, AboutRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
-            services.AddScoped<IContactRepository, ContactRepository>();
 
             //services.AddScoped<IDiscountRepository, DiscountRepository>();
             //services.AddScoped<IFeedbackRepository, FeedbackRepository>();
@@ -77,9 +75,7 @@ namespace Shop.WebApi
 
             #region Dependency Injection for Services
 
-            services.AddScoped<IAboutService, AboutService>();
             services.AddScoped<ICategoryService, CategoryService>();
-            services.AddScoped<IContactService, ContactService>();
 
             //services.AddScoped<IDiscountService, DiscountService>();
             //services.AddScoped<IFeedbackService, FeedbackService>();
