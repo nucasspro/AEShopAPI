@@ -10,7 +10,7 @@ namespace Shop.Domain.Entities
         public string Name { get; set; }
         public string Type { get; set; }
         public string Location { get; set; }
-        public int DistrictId { get; set; }
+        public int? DistrictId { get; set; }
         public virtual District District{ get; set; }
     }
 }
