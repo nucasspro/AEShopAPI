@@ -1,9 +1,8 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Serilog;
 using Shop.Common.Commons;
 using Shop.Domain.Entities;
-using Shop.Service.Implements;
+using Shop.Service.Interfaces;
 using System;
 using System.Threading.Tasks;
 
@@ -38,16 +37,49 @@ namespace Shop.WebApi.Controllers
         {
             Log.Information("Start HttpGet GetProducts() - ProductController");
             var products = await _productService.GetAllAsync();
+
             if (products == null)
             {
                 Log.Information("Product null");
                 return NotFound();
             }
+
             Log.Information("End HttpGet GetProducts() - ProductController");
             return Ok(products);
         }
 
         #endregion GET: api/Products
+
+        #region GET: api/products/get/1?pageSize=0&getNumber=2
+
+        [HttpGet("get/{id}")]
+        public async Task<IActionResult> GetProductsByCategory([FromRoute]int id, [FromQuery(Name = "pageSize")] int pageSize = 0, [FromQuery(Name = "getNumber")]int getNumber = 5)
+        {
+            //Log.Information("Start HttpGet GetProducts() - ProductController");
+            var products = await _productService.GetByCategoryAsync(id, pageSize, getNumber);
+
+            if (products == null)
+            {
+                //Log.Information("Product null");
+                return NotFound();
+            }
+
+            //Log.Information("End HttpGet GetProducts() - ProductController");
+            return Ok(products);
+        }
+
+        #endregion GET: api/products/get/1?pageSize=0&getNumber=2
+
+        #region GET: api/products/GetWithPagination?PageSize=0&GetNumber=2
+
+        [HttpGet("GetWithPagination")]
+        public async Task<IActionResult> GetProductsWithPagination([FromQuery(Name = "PageSize")] int PageSize = 0, [FromQuery(Name = "GetNumber")] int GetNumber = 12)
+        {
+            var data = await _productService.GetProductsWithPagination(PageSize, GetNumber);
+            return Ok(data);
+        }
+
+        #endregion GET: api/products/GetWithPagination?PageSize=0&GetNumber=2
 
         #region GET: api/Products/5
 

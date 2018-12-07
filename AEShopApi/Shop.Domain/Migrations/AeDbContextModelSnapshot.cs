@@ -216,10 +216,6 @@ namespace Shop.Domain.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("BillingAddress")
-                        .HasColumnName("BillingAddress")
-                        .HasColumnType("nvarchar(100)");
-
                     b.Property<double?>("GrandTotal")
                         .HasColumnName("GrandTotal")
                         .HasColumnType("float");
@@ -257,9 +253,9 @@ namespace Shop.Domain.Migrations
                         .HasColumnName("PaymentMethodId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ShippingAddress")
+                    b.Property<int?>("ShippingAddress")
                         .HasColumnName("ShippingAddress")
-                        .HasColumnType("nvarchar(100)");
+                        .HasColumnType("int");
 
                     b.Property<double?>("SubTotal")
                         .HasColumnName("SubTotal")
@@ -274,6 +270,8 @@ namespace Shop.Domain.Migrations
                     b.HasIndex("OrderStatusTypeId");
 
                     b.HasIndex("PaymentMethodId");
+
+                    b.HasIndex("ShippingAddress");
 
                     b.ToTable("Orders");
                 });
@@ -699,8 +697,8 @@ namespace Shop.Domain.Migrations
                     b.ToTable("ProductStatusTypes");
 
                     b.HasData(
-                        new { Id = 1, InsertedAt = 1543909009, Name = "Out of stock", UpdatedAt = 1543909009 },
-                        new { Id = 2, InsertedAt = 1543909009, Name = "Stock", UpdatedAt = 1543909009 }
+                        new { Id = 1, InsertedAt = 1543910290, Name = "Out of stock", UpdatedAt = 1543910290 },
+                        new { Id = 2, InsertedAt = 1543910290, Name = "Stock", UpdatedAt = 1543910290 }
                     );
                 });
 
@@ -956,6 +954,10 @@ namespace Shop.Domain.Migrations
                     b.HasOne("Shop.Domain.Entities.Payment", "Payment")
                         .WithMany("Orders")
                         .HasForeignKey("PaymentMethodId");
+
+                    b.HasOne("Shop.Domain.Entities.Ward", "ShippingWard")
+                        .WithMany("Orders")
+                        .HasForeignKey("ShippingAddress");
                 });
 
             modelBuilder.Entity("Shop.Domain.Entities.OrderDetail", b =>

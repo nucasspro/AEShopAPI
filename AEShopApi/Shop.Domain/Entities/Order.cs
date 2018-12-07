@@ -14,8 +14,11 @@ namespace Shop.Domain.Entities
 
         public bool? IsVerify { get; set; }
 
-        public string ShippingAddress { get; set; }
-        public string BillingAddress { get; set; }
+        public int? ShippingAddress { get; set; }
+        public virtual Ward ShippingWard { get; set; }
+
+
+
 
         public float? PackageWidth { get; set; }
         public float? PackageHeight { get; set; }

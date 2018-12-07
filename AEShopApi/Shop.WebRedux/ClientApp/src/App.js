@@ -1,6 +1,7 @@
 ﻿import React, { Component } from 'react';
 import Posts from './components/Posts';
 //import Postfrom from './components/postForm';
+import Product from './components/Product';
 import store from './store';
 import { Provider } from 'react-redux';
 
@@ -9,7 +10,7 @@ class App extends Component {
         return (
             <Provider store={store}>
                 <div className="App">
-                    <Posts />
+                    <Product></Product>
                     <hr />
                 </div>
             </Provider>

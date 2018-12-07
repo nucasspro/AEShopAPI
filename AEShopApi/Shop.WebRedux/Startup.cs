@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AutoMapper;
+using Shop.WebRedux.Services.Interfaces;
+using Shop.WebRedux.Services;
 
 namespace Shop.WebRedux
 {
@@ -29,6 +31,8 @@ namespace Shop.WebRedux
                 configuration.RootPath = "ClientApp/build";
             });
 
+
+            services.AddScoped<IHomeService, HomeService>();
             services.AddAutoMapper();
         }
 

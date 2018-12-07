@@ -1,5 +1,4 @@
 ﻿using Shop.Domain.SeedWork;
-using System.Collections.Generic;
 
 namespace Shop.Domain.Entities
 {

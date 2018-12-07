@@ -1,13 +1,16 @@
 ﻿using Shop.Domain.Entities;
-using Shop.Service.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Shop.Service.Implements
+namespace Shop.Service.Interfaces
 {
     public interface IProductService : IService<Product>
     {
         Task<IEnumerable<Product>> GetAllAsync();
+
+        Task<IEnumerable<Product>> GetByCategoryAsync(int categoryId, int pageSize, int getNumber);
+
+        Task<IEnumerable<Product>> GetProductsWithPagination(int PageSize, int GetNumber);
 
         Task<Product> GetByIdAsync(int id);
 

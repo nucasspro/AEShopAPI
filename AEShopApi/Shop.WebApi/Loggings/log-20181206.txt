@@ -1,0 +1,639 @@
+2018-12-06 15:03:06.487 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-12-06 15:03:07.098 +07:00 [Information] Request finished in 618.3069ms 200 
+2018-12-06 15:10:34.321 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products?id=1 application/json 512
+2018-12-06 15:10:34.409 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 15:10:34.675 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:10:34'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 15:10:34.678 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:10:34'."
+2018-12-06 15:10:34.797 +07:00 [Error] Request matched multiple actions resulting in ambiguity. Matching actions: "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)
+Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 15:10:34.932 +07:00 [Error] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Mvc.Internal.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)
+Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-12-06 15:10:35.168 +07:00 [Information] Request finished in 853.7648ms 500 text/html; charset=utf-8
+2018-12-06 15:10:35.196 +07:00 [Information] Connection id ""0HLIRA96237VK"", Request id ""0HLIRA96237VK:00000001"": the application completed without reading the entire request body.
+2018-12-06 15:10:58.018 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-12-06 15:10:58.129 +07:00 [Information] Request finished in 122.6927ms 200 
+2018-12-06 15:11:03.279 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products?id=1 application/json 512
+2018-12-06 15:11:03.298 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 15:11:04.079 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:11:03'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 15:11:04.095 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:11:03'."
+2018-12-06 15:11:04.314 +07:00 [Error] Request matched multiple actions resulting in ambiguity. Matching actions: "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)
+Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 15:11:04.339 +07:00 [Error] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Mvc.Internal.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)
+Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.RouteCollection.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-12-06 15:11:04.420 +07:00 [Information] Request finished in 1144.2694ms 500 text/html; charset=utf-8
+2018-12-06 15:11:04.516 +07:00 [Information] Connection id ""0HLIRA9D2UELF"", Request id ""0HLIRA9D2UELF:00000002"": the application completed without reading the entire request body.
+2018-12-06 15:12:23.109 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory?id=1 application/json 512
+2018-12-06 15:12:23.109 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-12-06 15:12:23.202 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 15:12:23.217 +07:00 [Information] Request finished in 111.6445ms 200 
+2018-12-06 15:12:23.526 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:12:23'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 15:12:23.539 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:12:23'."
+2018-12-06 15:12:23.770 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 15:12:24.421 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 15:12:45.285 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 15:14:00.252 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 95804.4477ms.
+2018-12-06 15:14:00.275 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 15:14:00.381 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 96599.405ms
+2018-12-06 15:14:00.423 +07:00 [Information] Request finished in 97312.1996ms 200 application/json; charset=utf-8
+2018-12-06 15:14:00.471 +07:00 [Information] Connection id ""0HLIRAA6EHLHV"", Request id ""0HLIRAA6EHLHV:00000001"": the application completed without reading the entire request body.
+2018-12-06 15:14:06.873 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory?1 application/json 512
+2018-12-06 15:14:06.929 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:14:06'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 15:14:06.940 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:14:06'."
+2018-12-06 15:14:06.959 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 15:14:07.049 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 15:14:12.750 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 15:47:36.157 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 15:47:36.249 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 15:47:36.472 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:47:36'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 15:47:36.475 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:47:36'."
+2018-12-06 15:47:36.605 +07:00 [Information] Request finished in 459.2643ms 404 
+2018-12-06 15:47:36.639 +07:00 [Information] Connection id ""0HLIRATS6P01O"", Request id ""0HLIRATS6P01O:00000001"": the application completed without reading the entire request body.
+2018-12-06 15:47:44.258 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory?id=1 application/json 512
+2018-12-06 15:47:44.260 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:47:44'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 15:47:44.261 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:47:44'."
+2018-12-06 15:47:44.328 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 15:47:44.502 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 15:47:45.217 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 15:47:45.491 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 969.513ms.
+2018-12-06 15:47:45.504 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 15:47:45.540 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 1207.031ms
+2018-12-06 15:47:45.552 +07:00 [Information] Request finished in 1294.3476ms 200 application/json; charset=utf-8
+2018-12-06 15:47:45.553 +07:00 [Information] Connection id ""0HLIRATS6P01O"", Request id ""0HLIRATS6P01O:00000002"": the application completed without reading the entire request body.
+2018-12-06 15:47:50.498 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory?id=1 application/json 512
+2018-12-06 15:47:50.501 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:47:50'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 15:47:50.502 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:47:50'."
+2018-12-06 15:47:50.502 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 15:47:50.504 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 15:47:50.505 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 15:47:50.549 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 44.991ms.
+2018-12-06 15:47:50.550 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 15:47:50.550 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 47.8479ms
+2018-12-06 15:47:50.551 +07:00 [Information] Request finished in 52.7041ms 200 application/json; charset=utf-8
+2018-12-06 15:47:50.551 +07:00 [Information] Connection id ""0HLIRATS6P01O"", Request id ""0HLIRATS6P01O:00000003"": the application completed without reading the entire request body.
+2018-12-06 15:56:34.661 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory?categoryId=1&pageSize=5&getNumber=5 application/json 512
+2018-12-06 15:56:34.756 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 15:56:34.925 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:56:34'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 15:56:34.927 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 08:56:34'."
+2018-12-06 15:56:35.118 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 15:56:35.311 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["1", "5", "5"]) - Validation state: Valid
+2018-12-06 15:56:35.949 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 15:56:36.231 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 899.4407ms.
+2018-12-06 15:56:36.243 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 15:56:36.280 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 1154.5919ms
+2018-12-06 15:56:36.339 +07:00 [Information] Request finished in 1690.8585ms 200 application/json; charset=utf-8
+2018-12-06 15:56:36.434 +07:00 [Information] Connection id ""0HLIRB2SMISLF"", Request id ""0HLIRB2SMISLF:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:02:15.436 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory?categoryId=1&pageSize=5&getNumber=5  
+2018-12-06 16:02:15.439 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:02:15.441 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["1", "5", "5"]) - Validation state: Valid
+2018-12-06 16:02:15.443 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:02:15.481 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 39.7003ms.
+2018-12-06 16:02:15.483 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:02:15.484 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 44.8264ms
+2018-12-06 16:02:15.484 +07:00 [Information] Request finished in 48.9827ms 200 application/json; charset=utf-8
+2018-12-06 16:02:16.744 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/favicon.ico  
+2018-12-06 16:02:16.748 +07:00 [Information] Request finished in 4.5399ms 404 
+2018-12-06 16:02:20.734 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products  
+2018-12-06 16:02:20.743 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-12-06 16:02:20.759 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-12-06 16:02:20.767 +07:00 [Information] Start HttpGet GetProducts() - ProductController
+2018-12-06 16:02:20.773 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:02:20.972 +07:00 [Information] Executed DbCommand ("5"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Description], [p].[Detail], [p].[DiscountId], [p].[Height], [p].[Image1], [p].[Image2], [p].[Image3], [p].[Image4], [p].[IncludeVAT], [p].[InsertedAt], [p].[Length], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[Name], [p].[ProductImage], [p].[ProductStatusTypeId], [p].[PromotionPrice], [p].[Quantity], [p].[RegularPrice], [p].[Sku], [p].[UpdatedAt], [p].[ViewCounts], [p].[Warranty], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]"
+2018-12-06 16:02:20.981 +07:00 [Information] End HttpGet GetProducts() - ProductController
+2018-12-06 16:02:20.982 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 221.7527ms.
+2018-12-06 16:02:20.982 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:02:21.003 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 259.1246ms
+2018-12-06 16:02:21.003 +07:00 [Information] Request finished in 269.0174ms 200 application/json; charset=utf-8
+2018-12-06 16:02:28.894 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory  
+2018-12-06 16:02:28.894 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:02:28.897 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 16:02:28.898 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:02:28.899 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.9386ms.
+2018-12-06 16:02:28.900 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:02:28.900 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 5.6383ms
+2018-12-06 16:02:28.901 +07:00 [Information] Request finished in 6.9691ms 200 application/json; charset=utf-8
+2018-12-06 16:02:32.791 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1  
+2018-12-06 16:02:32.792 +07:00 [Information] Request finished in 0.803ms 404 
+2018-12-06 16:02:36.888 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory$1  
+2018-12-06 16:02:36.895 +07:00 [Information] Route matched with "{action = \"GetProduct\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProduct (Shop.WebApi)"
+2018-12-06 16:02:37.096 +07:00 [Information] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.SerializableError"'.
+2018-12-06 16:02:37.121 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProduct (Shop.WebApi)" in 225.8417ms
+2018-12-06 16:02:37.121 +07:00 [Information] Request finished in 233.0434ms 400 application/json; charset=utf-8
+2018-12-06 16:02:43.821 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory?1  
+2018-12-06 16:02:43.821 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:02:43.822 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 16:02:43.823 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:02:43.825 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2.6708ms.
+2018-12-06 16:02:43.826 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:02:43.826 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 4.4395ms
+2018-12-06 16:02:43.826 +07:00 [Information] Request finished in 5.6219ms 200 application/json; charset=utf-8
+2018-12-06 16:02:49.291 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory?2  
+2018-12-06 16:02:49.291 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:02:49.292 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 16:02:49.293 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:02:49.294 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1.7024ms.
+2018-12-06 16:02:49.294 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:02:49.294 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 3.1788ms
+2018-12-06 16:02:49.295 +07:00 [Information] Request finished in 4.3772ms 200 application/json; charset=utf-8
+2018-12-06 16:02:57.144 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory?0  
+2018-12-06 16:02:57.145 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:02:57.146 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 16:02:57.146 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:02:57.158 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 11.4664ms.
+2018-12-06 16:02:57.158 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:02:57.158 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 13.5939ms
+2018-12-06 16:02:57.162 +07:00 [Information] Request finished in 17.7324ms 200 application/json; charset=utf-8
+2018-12-06 16:03:37.158 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-12-06 16:03:37.265 +07:00 [Information] Request finished in 119.6828ms 200 
+2018-12-06 16:03:46.675 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory?0  
+2018-12-06 16:03:46.688 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:03:47.416 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:03:48.117 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 16:03:59.746 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:04:06.524 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 18374.981ms.
+2018-12-06 16:04:06.553 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:04:06.850 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 19265.5329ms
+2018-12-06 16:04:06.919 +07:00 [Information] Request finished in 20217.2807ms 200 application/json; charset=utf-8
+2018-12-06 16:04:10.092 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory?1  
+2018-12-06 16:04:10.163 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:04:16.132 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 16:04:22.238 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:04:22.310 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 6170.2317ms.
+2018-12-06 16:04:22.320 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:04:22.333 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 12159.8703ms
+2018-12-06 16:04:22.402 +07:00 [Information] Request finished in 12254.8614ms 200 application/json; charset=utf-8
+2018-12-06 16:04:35.079 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory?1  
+2018-12-06 16:04:35.089 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:04:35.142 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 16:06:30.138 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:06:30.216 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 115067.8287ms.
+2018-12-06 16:06:30.222 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:06:30.238 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 115133.2693ms
+2018-12-06 16:06:30.291 +07:00 [Information] Request finished in 115172.2895ms 200 application/json; charset=utf-8
+2018-12-06 16:14:56.768 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1&pageSize=5&getNumber=5 application/json 512
+2018-12-06 16:14:56.866 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:14:57.045 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:14:57'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 16:14:57.047 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:14:57'."
+2018-12-06 16:14:57.231 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:14:57.382 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 16:14:57.856 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:14:58.056 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 654.5003ms.
+2018-12-06 16:14:58.068 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:14:58.103 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 864.1349ms
+2018-12-06 16:14:58.124 +07:00 [Information] Request finished in 1363.1041ms 200 application/json; charset=utf-8
+2018-12-06 16:14:58.149 +07:00 [Information] Connection id ""0HLIRBD54R015"", Request id ""0HLIRBD54R015:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:15:16.373 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-12-06 16:15:16.477 +07:00 [Information] Request finished in 109.7251ms 200 
+2018-12-06 16:15:33.642 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1&pageSize=5&getNumber=5 application/json 512
+2018-12-06 16:15:33.667 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:15:33.999 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:15:33'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 16:15:34.043 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:15:33'."
+2018-12-06 16:15:34.369 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:15:34.751 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 16:15:56.222 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:15:56.717 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 21936.7006ms.
+2018-12-06 16:15:56.744 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:15:56.804 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 22419.4335ms
+2018-12-06 16:15:56.877 +07:00 [Information] Request finished in 23222.3824ms 200 application/json; charset=utf-8
+2018-12-06 16:15:56.907 +07:00 [Information] Connection id ""0HLIRBDAVIBPS"", Request id ""0HLIRBDAVIBPS:00000002"": the application completed without reading the entire request body.
+2018-12-06 16:16:48.167 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1&pageSize=5&getNumber=5 application/json 512
+2018-12-06 16:16:48.167 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-12-06 16:16:48.270 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:16:48.282 +07:00 [Information] Request finished in 122.8375ms 200 
+2018-12-06 16:16:48.579 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:16:48'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 16:16:48.592 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:16:48'."
+2018-12-06 16:16:48.838 +07:00 [Information] Request finished in 667.3287ms 404 
+2018-12-06 16:16:48.872 +07:00 [Information] Connection id ""0HLIRBE6AH4S1"", Request id ""0HLIRBE6AH4S1:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:16:56.136 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1&pageSize=5&getNumber=5 application/json 512
+2018-12-06 16:16:56.158 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:16:56'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 16:16:56.168 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:16:56'."
+2018-12-06 16:16:56.198 +07:00 [Information] Request finished in 40.9022ms 404 
+2018-12-06 16:16:56.220 +07:00 [Information] Connection id ""0HLIRBE6AH4S0"", Request id ""0HLIRBE6AH4S0:00000002"": the application completed without reading the entire request body.
+2018-12-06 16:17:19.100 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1&pageSize=5&getNumber=5 application/json 512
+2018-12-06 16:17:19.118 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:17:19'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 16:17:19.130 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:17:19'."
+2018-12-06 16:17:19.156 +07:00 [Information] Request finished in 48.9774ms 404 
+2018-12-06 16:17:19.171 +07:00 [Information] Connection id ""0HLIRBE6AH4S1"", Request id ""0HLIRBE6AH4S1:00000002"": the application completed without reading the entire request body.
+2018-12-06 16:17:26.617 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1&pageSize=5&getNumber=5 application/json 512
+2018-12-06 16:17:26.656 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:17:26'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 16:17:27.004 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:17:26'."
+2018-12-06 16:17:27.086 +07:00 [Information] Request finished in 396.3267ms 404 
+2018-12-06 16:17:27.134 +07:00 [Information] Connection id ""0HLIRBE6AH4S0"", Request id ""0HLIRBE6AH4S0:00000003"": the application completed without reading the entire request body.
+2018-12-06 16:18:19.932 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1&pageSize=5&getNumber=5 application/json 512
+2018-12-06 16:18:20.004 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:18:20.184 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:18:20'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 16:18:20.186 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:18:20'."
+2018-12-06 16:18:20.326 +07:00 [Information] Request finished in 401.4529ms 404 
+2018-12-06 16:18:20.354 +07:00 [Information] Connection id ""0HLIRBF1MHIC2"", Request id ""0HLIRBF1MHIC2:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:18:35.946 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-12-06 16:18:36.032 +07:00 [Information] Request finished in 89.2271ms 200 
+2018-12-06 16:18:51.095 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1&pageSize=5&getNumber=5 application/json 512
+2018-12-06 16:18:51.159 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:18:51.741 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:18:51'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 16:18:51.751 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '11/30/2018 09:28:59', Current time: '12/06/2018 09:18:51'."
+2018-12-06 16:18:51.965 +07:00 [Information] Request finished in 852.6896ms 404 
+2018-12-06 16:18:52.004 +07:00 [Information] Connection id ""0HLIRBF6EUTPV"", Request id ""0HLIRBF6EUTPV:00000002"": the application completed without reading the entire request body.
+2018-12-06 16:19:30.235 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/users/login application/json 52
+2018-12-06 16:19:30.301 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/03/2018 07:51:36', Current time: '12/06/2018 09:19:30'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 16:19:30.312 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/03/2018 07:51:36', Current time: '12/06/2018 09:19:30'."
+2018-12-06 16:19:30.389 +07:00 [Information] Route matched with "{action = \"GetUser\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUser (Shop.WebApi)"
+2018-12-06 16:19:30.453 +07:00 [Information] Authorization failed.
+2018-12-06 16:19:30.471 +07:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-12-06 16:19:30.491 +07:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-12-06 16:19:30.519 +07:00 [Information] AuthenticationScheme: "Bearer" was challenged.
+2018-12-06 16:19:30.537 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUser (Shop.WebApi)" in 129.7126ms
+2018-12-06 16:19:30.551 +07:00 [Information] Request finished in 325.1771ms 401 
+2018-12-06 16:19:30.560 +07:00 [Information] Connection id ""0HLIRBF6EUTPV"", Request id ""0HLIRBF6EUTPV:00000003"": the application completed without reading the entire request body.
+2018-12-06 16:19:50.116 +07:00 [Information] Request starting HTTP/1.1 POST http://localhost:8878/api/users/login application/json 52
+2018-12-06 16:19:50.125 +07:00 [Information] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/03/2018 07:51:36', Current time: '12/06/2018 09:19:50'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateTokenPayload(JwtSecurityToken jwtToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.HandleAuthenticateAsync()
+2018-12-06 16:19:50.138 +07:00 [Information] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired. ValidTo: '12/03/2018 07:51:36', Current time: '12/06/2018 09:19:50'."
+2018-12-06 16:19:50.153 +07:00 [Information] Route matched with "{action = \"CreateToken\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)"
+2018-12-06 16:19:51.081 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)" with arguments (["Shop.WebApi.Models.LoginModel"]) - Validation state: Valid
+2018-12-06 16:19:51.817 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:19:52.794 +07:00 [Information] Executed DbCommand ("198"ms) [Parameters=["@__username_0='?' (Size = 20) (DbType = AnsiString)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(2) [x].[Id], [x].[Address], [x].[Name], [x].[FirstName], [x].[InsertedAt], [x].[LastName], [x].[PasswordHash], [x].[PasswordSalt], [x].[Phone], [x].[UpdatedAt], [x].[UserName], [x].[Status]
+FROM [Users] AS [x]
+WHERE [x].[UserName] = @__username_0"
+2018-12-06 16:19:52.935 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1817.2338ms.
+2018-12-06 16:19:52.960 +07:00 [Information] Executing ObjectResult, writing value of type '"<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]"'.
+2018-12-06 16:19:52.997 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.CreateToken (Shop.WebApi)" in 2823.8374ms
+2018-12-06 16:19:53.009 +07:00 [Information] Request finished in 2896.7537ms 200 application/json; charset=utf-8
+2018-12-06 16:20:15.383 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1&pageSize=5&getNumber=5 application/json 512
+2018-12-06 16:20:15.411 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:20:15.477 +07:00 [Information] Request finished in 69.0471ms 404 
+2018-12-06 16:20:15.487 +07:00 [Information] Connection id ""0HLIRBF6EUTPV"", Request id ""0HLIRBF6EUTPV:00000005"": the application completed without reading the entire request body.
+2018-12-06 16:20:26.702 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory application/json 512
+2018-12-06 16:20:26.712 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:20:26.731 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:20:26.786 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 16:21:21.179 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:21:21.253 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:21:21.368 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:21:21.490 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:21:21.604 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "5", "5"]) - Validation state: Valid
+2018-12-06 16:21:22.069 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:21:22.338 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 711.6268ms.
+2018-12-06 16:21:22.354 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:21:22.384 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 886.375ms
+2018-12-06 16:21:22.413 +07:00 [Information] Request finished in 1240.1906ms 200 application/json; charset=utf-8
+2018-12-06 16:21:22.434 +07:00 [Information] Connection id ""0HLIRBGNNBRR2"", Request id ""0HLIRBGNNBRR2:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:22:11.631 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:22:11.701 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:22:11.807 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:22:11.928 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:22:12.046 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "0", "5"]) - Validation state: Valid
+2018-12-06 16:22:12.484 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:22:12.750 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 685.0008ms.
+2018-12-06 16:22:12.763 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:22:12.787 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 852.3418ms
+2018-12-06 16:22:12.806 +07:00 [Information] Request finished in 1183.7142ms 200 application/json; charset=utf-8
+2018-12-06 16:22:12.830 +07:00 [Information] Connection id ""0HLIRBH6OF45A"", Request id ""0HLIRBH6OF45A:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:22:45.239 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:22:45.355 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:22:45.538 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:22:45.706 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:22:45.886 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "0", "5"]) - Validation state: Valid
+2018-12-06 16:22:46.403 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:22:46.597 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 680.5699ms.
+2018-12-06 16:22:46.609 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Int32"'.
+2018-12-06 16:22:46.634 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 919.2306ms
+2018-12-06 16:22:46.661 +07:00 [Information] Request finished in 1431.1193ms 200 application/json; charset=utf-8
+2018-12-06 16:22:46.681 +07:00 [Information] Connection id ""0HLIRBHGOI7H1"", Request id ""0HLIRBHGOI7H1:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:25:34.138 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:25:34.215 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:25:34.320 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:25:34.453 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:25:34.560 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "0", "5"]) - Validation state: Valid
+2018-12-06 16:25:35.020 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:25:35.239 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 662.3288ms.
+2018-12-06 16:25:35.251 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:25:35.293 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 833.3503ms
+2018-12-06 16:25:35.311 +07:00 [Information] Request finished in 1181.227ms 200 application/json; charset=utf-8
+2018-12-06 16:25:35.340 +07:00 [Information] Connection id ""0HLIRBJ33LM2V"", Request id ""0HLIRBJ33LM2V:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:26:22.064 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:26:22.128 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:26:22.234 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:26:22.360 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:26:22.469 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "0", "5"]) - Validation state: Valid
+2018-12-06 16:26:22.958 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:26:23.165 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 678.6663ms.
+2018-12-06 16:26:23.180 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:26:23.214 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 846.7263ms
+2018-12-06 16:26:23.235 +07:00 [Information] Request finished in 1175.9218ms 200 application/json; charset=utf-8
+2018-12-06 16:26:23.258 +07:00 [Information] Connection id ""0HLIRBJHCQQN1"", Request id ""0HLIRBJHCQQN1:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:27:16.308 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:27:16.374 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:27:16.477 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:27:16.570 +07:00 [Information] Request finished in 269.7842ms 404 
+2018-12-06 16:27:16.600 +07:00 [Information] Connection id ""0HLIRBK1HVUD3"", Request id ""0HLIRBK1HVUD3:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:27:21.687 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:27:21.689 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:27:21.690 +07:00 [Information] Request finished in 3.3353ms 404 
+2018-12-06 16:27:21.691 +07:00 [Information] Connection id ""0HLIRBK1HVUD3"", Request id ""0HLIRBK1HVUD3:00000002"": the application completed without reading the entire request body.
+2018-12-06 16:27:50.944 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:27:51.038 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:27:51.140 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:27:51.242 +07:00 [Information] Request finished in 305.2574ms 404 
+2018-12-06 16:27:51.263 +07:00 [Information] Connection id ""0HLIRBKBS9VUP"", Request id ""0HLIRBKBS9VUP:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:29:43.904 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:29:43.967 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:29:44.070 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:29:44.201 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:29:44.323 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "0", "5"]) - Validation state: Valid
+2018-12-06 16:29:44.761 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:29:44.960 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 620.8469ms.
+2018-12-06 16:29:44.973 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:29:44.999 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 791.7266ms
+2018-12-06 16:29:45.015 +07:00 [Information] Request finished in 1118.4176ms 200 application/json; charset=utf-8
+2018-12-06 16:29:45.039 +07:00 [Information] Connection id ""0HLIRBLDHK7D2"", Request id ""0HLIRBLDHK7D2:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:29:53.514 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:29:53.516 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:29:53.517 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:29:53.518 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "0", "5"]) - Validation state: Valid
+2018-12-06 16:29:53.519 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:29:53.537 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 18.7385ms.
+2018-12-06 16:29:53.538 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:29:53.539 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 22.1447ms
+2018-12-06 16:29:53.540 +07:00 [Information] Request finished in 26.0199ms 200 application/json; charset=utf-8
+2018-12-06 16:29:53.541 +07:00 [Information] Connection id ""0HLIRBLDHK7D2"", Request id ""0HLIRBLDHK7D2:00000002"": the application completed without reading the entire request body.
+2018-12-06 16:30:17.821 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:30:17.900 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:30:18.006 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:30:18.127 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:30:18.247 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "0", "5"]) - Validation state: Valid
+2018-12-06 16:30:18.695 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:30:18.898 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 634.2744ms.
+2018-12-06 16:30:18.911 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:30:18.936 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 802.6285ms
+2018-12-06 16:30:18.960 +07:00 [Information] Request finished in 1143.7637ms 200 application/json; charset=utf-8
+2018-12-06 16:30:18.978 +07:00 [Information] Connection id ""0HLIRBLNL5CQ9"", Request id ""0HLIRBLNL5CQ9:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:30:21.687 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:30:21.689 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:30:21.689 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:30:21.691 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "0", "5"]) - Validation state: Valid
+2018-12-06 16:30:21.693 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:30:21.740 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 46.843ms.
+2018-12-06 16:30:21.741 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:30:21.742 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 52.0004ms
+2018-12-06 16:30:21.743 +07:00 [Information] Request finished in 58.473ms 200 application/json; charset=utf-8
+2018-12-06 16:30:21.744 +07:00 [Information] Connection id ""0HLIRBLNL5CQ9"", Request id ""0HLIRBLNL5CQ9:00000002"": the application completed without reading the entire request body.
+2018-12-06 16:31:11.612 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-12-06 16:31:11.711 +07:00 [Information] Request finished in 110.8901ms 200 
+2018-12-06 16:32:20.927 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:32:20.966 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:32:21.257 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:32:21.770 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:32:22.238 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["0", "0", "5"]) - Validation state: Valid
+2018-12-06 16:34:51.027 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-12-06 16:34:51.229 +07:00 [Information] Request finished in 219.4411ms 200 
+2018-12-06 16:35:45.478 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/getbycategory/1 application/json 512
+2018-12-06 16:35:45.491 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:35:45.790 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:35:45.954 +07:00 [Information] Request finished in 471.266ms 404 
+2018-12-06 16:35:45.985 +07:00 [Information] Connection id ""0HLIRBO90O8B0"", Request id ""0HLIRBO90O8B0:00000002"": the application completed without reading the entire request body.
+2018-12-06 16:35:51.228 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/get/1 application/json 512
+2018-12-06 16:35:51.263 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:35:51.344 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:35:51.743 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["1"]) - Validation state: Valid
+2018-12-06 16:36:07.709 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:36:11.851 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 20077.2205ms.
+2018-12-06 16:36:11.880 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:36:11.945 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 20586.4615ms
+2018-12-06 16:36:12.001 +07:00 [Information] Request finished in 20744.2408ms 200 application/json; charset=utf-8
+2018-12-06 16:36:12.013 +07:00 [Information] Connection id ""0HLIRBO90O8B0"", Request id ""0HLIRBO90O8B0:00000003"": the application completed without reading the entire request body.
+2018-12-06 16:38:26.163 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/get/1&pageSize=0&getNumber=2 application/json 512
+2018-12-06 16:38:26.243 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:38:26.364 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:38:26.513 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:38:26.661 +07:00 [Information] Executing ObjectResult, writing value of type '"Microsoft.AspNetCore.Mvc.SerializableError"'.
+2018-12-06 16:38:26.683 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 161.6932ms
+2018-12-06 16:38:26.698 +07:00 [Information] Request finished in 543.9675ms 400 application/json; charset=utf-8
+2018-12-06 16:38:26.723 +07:00 [Information] Connection id ""0HLIRBQ9674NR"", Request id ""0HLIRBQ9674NR:00000001"": the application completed without reading the entire request body.
+2018-12-06 16:38:35.549 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/get/1?pageSize=0&getNumber=2 application/json 512
+2018-12-06 16:38:35.551 +07:00 [Information] Successfully validated the token.
+2018-12-06 16:38:35.551 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:38:35.576 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["1", "0", "2"]) - Validation state: Valid
+2018-12-06 16:38:36.256 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:38:36.510 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 913.2975ms.
+2018-12-06 16:38:36.515 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:38:36.551 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 999.4767ms
+2018-12-06 16:38:36.566 +07:00 [Information] Request finished in 1016.9615ms 200 application/json; charset=utf-8
+2018-12-06 16:38:36.567 +07:00 [Information] Connection id ""0HLIRBQ9674NR"", Request id ""0HLIRBQ9674NR:00000002"": the application completed without reading the entire request body.
+2018-12-06 16:50:07.930 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/swagger  
+2018-12-06 16:50:08.071 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 16:50:08.130 +07:00 [Information] Request finished in 211.1743ms 301 
+2018-12-06 16:50:08.151 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/swagger/index.html  
+2018-12-06 16:50:08.327 +07:00 [Information] Request finished in 176.1439ms 200 text/html
+2018-12-06 16:50:08.450 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/swagger/swagger-ui-bundle.js  
+2018-12-06 16:50:08.456 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/swagger/swagger-ui.css  
+2018-12-06 16:50:08.457 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/swagger/swagger-ui-standalone-preset.js  
+2018-12-06 16:50:08.668 +07:00 [Information] Sending file. Request path: '"/swagger-ui.css"'. Physical path: '"N/A"'
+2018-12-06 16:50:08.679 +07:00 [Information] Request finished in 222.7037ms 200 text/css
+2018-12-06 16:50:08.741 +07:00 [Information] Sending file. Request path: '"/swagger-ui-standalone-preset.js"'. Physical path: '"N/A"'
+2018-12-06 16:50:08.742 +07:00 [Information] Request finished in 284.4141ms 200 application/javascript
+2018-12-06 16:50:08.799 +07:00 [Information] Sending file. Request path: '"/swagger-ui-bundle.js"'. Physical path: '"N/A"'
+2018-12-06 16:50:08.799 +07:00 [Information] Request finished in 349.1968ms 200 application/javascript
+2018-12-06 16:50:11.433 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/swagger/v1/swagger.json  
+2018-12-06 16:50:11.710 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/swagger/favicon-32x32.png  
+2018-12-06 16:50:11.736 +07:00 [Information] Sending file. Request path: '"/favicon-32x32.png"'. Physical path: '"N/A"'
+2018-12-06 16:50:11.736 +07:00 [Information] Request finished in 26.9593ms 200 image/png
+2018-12-06 16:50:11.794 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/swagger/favicon-16x16.png  
+2018-12-06 16:50:11.795 +07:00 [Information] Sending file. Request path: '"/favicon-16x16.png"'. Physical path: '"N/A"'
+2018-12-06 16:50:11.795 +07:00 [Information] Request finished in 1.0859ms 200 image/png
+2018-12-06 16:50:12.134 +07:00 [Information] Request finished in 699.2512ms 200 application/json;charset=utf-8
+2018-12-06 16:51:53.313 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/Products/get/1?pageSize=0&getNumber=3  
+2018-12-06 16:51:53.446 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 16:51:53.602 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["1", "0", "3"]) - Validation state: Valid
+2018-12-06 16:51:54.180 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 16:51:54.477 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 831.5447ms.
+2018-12-06 16:51:54.493 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 16:51:54.531 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 1078.8588ms
+2018-12-06 16:51:54.534 +07:00 [Information] Request finished in 1221.3152ms 200 application/json; charset=utf-8
+2018-12-06 17:00:59.642 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/get/1  
+2018-12-06 17:00:59.644 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 17:00:59.648 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["1", "0", "0"]) - Validation state: Valid
+2018-12-06 17:00:59.649 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 17:00:59.849 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 204.365ms
+2018-12-06 17:01:00.434 +07:00 [Error] An unhandled exception has occurred while executing the request.
+System.Data.SqlClient.SqlException (0x80131904): The number of rows provided for a FETCH clause must be greater then zero.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at System.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at System.Data.SqlClient.SqlDataReader.<>c__DisplayClass190_0.<ReadAsync>b__1(Task t)
+   at System.Data.SqlClient.SqlDataReader.InvokeRetryable[T](Func`2 moreFunc, TaskCompletionSource`1 source, IDisposable objectToDispose)
+--- End of stack trace from previous location where exception was thrown ---
+   at Dapper.SqlMapper.QueryAsync[T](IDbConnection cnn, Type effectiveType, CommandDefinition command) in C:\projects\dapper\Dapper\SqlMapper.Async.cs:line 437
+   at Shop.Domain.Repositories.Implements.ProductRepository.GetByCategoryAsync(Int32 categoryId, Int32 pageSize, Int32 getNumber) in D:\Fetch Training\AEShopAPI\AEShopAPI\AEShopApi\Shop.Domain\Repositories\Implements\ProductRepository.cs:line 39
+   at Shop.Service.Implements.ProductService.GetByCategoryAsync(Int32 categoryId, Int32 pageSize, Int32 getNumber) in D:\Fetch Training\AEShopAPI\AEShopAPI\AEShopApi\Shop.Service\Implements\ProductService.cs:line 44
+   at Shop.WebApi.Controllers.ProductController.GetProductsByCategory(Int32 id, Int32 pageSize, Int32 getNumber) in D:\Fetch Training\AEShopAPI\AEShopAPI\AEShopApi\Shop.WebApi\Controllers\ProductController.cs:line 59
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+ClientConnectionId:b4bea8ea-aae7-4fb2-a30f-41a828775cbd
+Error Number:10744,State:1,Class:15
+2018-12-06 17:01:00.635 +07:00 [Information] Request finished in 993.9391ms 500 text/html; charset=utf-8
+2018-12-06 17:01:31.959 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/get/1  
+2018-12-06 17:01:32.036 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-06 17:01:32.234 +07:00 [Information] Route matched with "{action = \"GetProductsByCategory\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)"
+2018-12-06 17:01:32.357 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" with arguments (["1", "0", "5"]) - Validation state: Valid
+2018-12-06 17:01:32.842 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-06 17:01:33.066 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 690.8607ms.
+2018-12-06 17:01:33.080 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-06 17:01:33.168 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProductsByCategory (Shop.WebApi)" in 925.4375ms
+2018-12-06 17:01:33.212 +07:00 [Information] Request finished in 1260.8454ms 200 application/json; charset=utf-8

@@ -10,15 +10,9 @@ class Posts extends Component {
     };
 
     componentWillMount() {
-        axios.get('https://localhost:5001/api/products')
-            .then(response => {
-                this.setState({
-                    posts: response.data
-                })
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        axios.get('api/home/getall')
+            .then(response => { this.setState({ posts: response.data }) })
+            .catch(function (error) { console.log(error); });
         console.log(this.state.posts)
     }
     componentWillReceiveProps(nextProps, nextContext) {
@@ -28,10 +22,9 @@ class Posts extends Component {
     }
 
     render() {
-        
         return <div>{this.state.posts.map((item, index) => <div key={index}>
             <h3>{item.detail}</h3>
-        </div> 
+        </div>
         )}</div>;
     }
 }

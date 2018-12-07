@@ -18,8 +18,8 @@ namespace Shop.Domain.EntitiesConfiguration
 
             builder.Property(x => x.IsVerify).IsRequired(false).HasColumnName("IsVerify").HasColumnType("bit");
 
-            builder.Property(x => x.ShippingAddress).IsRequired(false).HasColumnName("ShippingAddress").HasColumnType("nvarchar(100)");
-            builder.Property(x => x.BillingAddress).IsRequired(false).HasColumnName("BillingAddress").HasColumnType("nvarchar(100)");
+            builder.Property(x => x.ShippingAddress).IsRequired(false).HasColumnName("ShippingAddress").HasColumnType("int");
+            builder.HasOne(x => x.ShippingWard).WithMany(y => y.Orders).HasForeignKey(z => z.ShippingAddress);
 
             builder.Property(x => x.PackageWidth).IsRequired(false).HasColumnName("PackageWidth").HasColumnType("float");
             builder.Property(x => x.PackageHeight).IsRequired(false).HasColumnName("PackageHeight").HasColumnType("float");

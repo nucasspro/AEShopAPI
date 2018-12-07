@@ -16,6 +16,7 @@ using Shop.Domain.Repositories.Interfaces;
 using Shop.Domain.SeedWork;
 using Shop.Service.Implements;
 using Shop.Service.Interfaces;
+using Swashbuckle.AspNetCore.Swagger;
 using System.Text;
 
 namespace Shop.WebApi
@@ -120,6 +121,12 @@ namespace Shop.WebApi
             #endregion Authentication by JWT
 
             services.AddAutoMapper();
+            services.AddSwaggerGen(
+                c =>
+                {
+                    c.SwaggerDoc("v1", new Info { Title = "Core API", Description = "Swagger Core API"});
+                }
+                );
 
             #region Cors
 
@@ -144,11 +151,13 @@ namespace Shop.WebApi
             }
             else
             {
-                app.UseHsts();
+                app.UseHsts();  
             }
 
             app.UseHttpsRedirection();
             app.UseCors("AllowMyOrigin");
+            app.UseSwagger();
+            app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Core API"); });
             app.UseAuthentication();
             app.UseMvc();
         }

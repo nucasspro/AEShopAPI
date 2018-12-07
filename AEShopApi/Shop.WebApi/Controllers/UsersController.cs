@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
@@ -10,7 +11,6 @@ using Shop.Service.Interfaces;
 using Shop.WebApi.Models;
 using System;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -45,6 +45,8 @@ namespace Shop.WebApi.Controllers
         #region GET: api/Users
 
         [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public async Task<IActionResult> GetUsers()
         {
             Log.Information("Start HttpGet GetUsers() - UsersController");
@@ -158,7 +160,7 @@ namespace Shop.WebApi.Controllers
         #region POST: api/Users/login
 
         [AllowAnonymous]
-        //[HttpPost("authenticate")]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
         [HttpPost]
         [Route("login")]
         public IActionResult CreateToken([FromBody]LoginModel login)

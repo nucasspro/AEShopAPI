@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 export const fetchPosts = () => dispatch => {
-    axios.get('api/product')
+    axios.get('api/home/getall')
         .then(function (response) {
             dispatch({ type: FETCH_POSTS, posts: response })
         })

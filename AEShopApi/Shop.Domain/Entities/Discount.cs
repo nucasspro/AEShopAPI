@@ -14,7 +14,7 @@ namespace Shop.Domain.Entities
         public string CouponCode { get; set; }
 
         public int? DiscountActiveTypeId { get; set; }
-        public virtual DiscountActiveType DiscountActiveType{ get; set; }
+        public virtual DiscountActiveType DiscountActiveType { get; set; }
 
         public int? DiscountRedeemTypeId { get; set; }
         public virtual DiscountRedeemType DiscountRedeemType { get; set; }

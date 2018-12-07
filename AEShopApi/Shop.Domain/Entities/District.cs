@@ -9,8 +9,8 @@ namespace Shop.Domain.Entities
         public string Type { get; set; }
         public string Location { get; set; }
         public int ProvinceId { get; set; }
-        public virtual Province Province{ get; set; }
+        public virtual Province Province { get; set; }
 
-        public virtual ICollection<Ward> Wards{ get; set; }
+        public virtual ICollection<Ward> Wards { get; set; }
     }
 }

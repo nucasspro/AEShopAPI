@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using Shop.Domain.Entities;
+﻿using Shop.Domain.Entities;
 using Shop.Domain.Repositories.Interfaces;
 using Shop.Domain.SeedWork;
+using Shop.Service.Interfaces;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Shop.Service.Implements
 {
@@ -16,7 +17,7 @@ namespace Shop.Service.Implements
             _unitOfWork = unitOfWork;
             _productRepository = productRepository;
         }
-        
+
         public bool CheckExistsById(int id)
         {
             throw new System.NotImplementedException();
@@ -37,6 +38,17 @@ namespace Shop.Service.Implements
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
             return await _productRepository.GetAllAsync();
+        }
+
+        public async Task<IEnumerable<Product>> GetProductsWithPagination(int PageSize, int GetNumber)
+        {
+            var data = await _productRepository.GetProductsWithPaginationAsync(PageSize, GetNumber);
+            return data;
+        }
+
+        public async Task<IEnumerable<Product>> GetByCategoryAsync(int categoryId, int pageSize, int getNumber)
+        {
+            return await _productRepository.GetByCategoryAsync(categoryId, pageSize, getNumber);
         }
 
         public async Task<Product> GetByIdAsync(int id)
