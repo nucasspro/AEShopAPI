@@ -13,9 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.ViewModel", "Shop.View
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.Common", "Shop.Common\Shop.Common.csproj", "{84AE5C40-7020-481C-BA8D-B7B0B8A53A9D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.WebReact", "Shop.WebReact\Shop.WebReact.csproj", "{68019206-E897-41C8-B353-492E46ED6D0A}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shop.xUnitTest", "Shop.xUnitTest\Shop.xUnitTest.csproj", "{126608EC-08C8-4BF2-A3F3-1861709FB9F8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shop.xUnitTest", "Shop.xUnitTest\Shop.xUnitTest.csproj", "{126608EC-08C8-4BF2-A3F3-1861709FB9F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +41,6 @@ Global
 		{84AE5C40-7020-481C-BA8D-B7B0B8A53A9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84AE5C40-7020-481C-BA8D-B7B0B8A53A9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84AE5C40-7020-481C-BA8D-B7B0B8A53A9D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{68019206-E897-41C8-B353-492E46ED6D0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{68019206-E897-41C8-B353-492E46ED6D0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{68019206-E897-41C8-B353-492E46ED6D0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{68019206-E897-41C8-B353-492E46ED6D0A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{126608EC-08C8-4BF2-A3F3-1861709FB9F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{126608EC-08C8-4BF2-A3F3-1861709FB9F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{126608EC-08C8-4BF2-A3F3-1861709FB9F8}.Release|Any CPU.ActiveCfg = Release|Any CPU

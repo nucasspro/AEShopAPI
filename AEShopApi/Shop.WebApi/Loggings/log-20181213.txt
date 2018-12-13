@@ -1,0 +1,372 @@
+2018-12-13 09:43:21.222 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 09:43:21.548 +07:00 [Information] Policy execution successful.
+2018-12-13 09:43:22.184 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 09:43:22.792 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 09:43:23.926 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 09:43:24.993 +07:00 [Information] Executed DbCommand ("198"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 09:43:25.017 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2203.1135ms.
+2018-12-13 09:43:25.054 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 09:43:25.475 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 3280.9439ms
+2018-12-13 09:43:25.527 +07:00 [Information] Request finished in 4322.6614ms 200 application/json; charset=utf-8
+2018-12-13 09:43:44.180 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 09:43:44.181 +07:00 [Information] Policy execution successful.
+2018-12-13 09:43:44.183 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 09:43:44.186 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 09:43:44.190 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 09:43:44.214 +07:00 [Information] Executed DbCommand ("17"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 09:43:44.219 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 30.2551ms.
+2018-12-13 09:43:44.245 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 09:43:44.272 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 86.382ms
+2018-12-13 09:43:44.274 +07:00 [Information] Request finished in 94.0426ms 200 application/json; charset=utf-8
+2018-12-13 09:54:48.799 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 09:54:48.799 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/user  
+2018-12-13 09:54:48.800 +07:00 [Information] Policy execution successful.
+2018-12-13 09:54:48.801 +07:00 [Information] Policy execution successful.
+2018-12-13 09:54:48.802 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 09:54:48.805 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 09:54:48.805 +07:00 [Information] Request finished in 6.3578ms 404 
+2018-12-13 09:54:48.809 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 09:54:48.825 +07:00 [Information] Executed DbCommand ("2"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 09:54:48.834 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 25.6363ms.
+2018-12-13 09:54:48.837 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 09:54:48.842 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 37.1863ms
+2018-12-13 09:54:48.844 +07:00 [Information] Request finished in 44.8398ms 200 application/json; charset=utf-8
+2018-12-13 09:55:24.982 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 09:55:24.983 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/users  
+2018-12-13 09:55:24.984 +07:00 [Information] Policy execution successful.
+2018-12-13 09:55:24.985 +07:00 [Information] Policy execution successful.
+2018-12-13 09:55:24.986 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 09:55:24.989 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 09:55:24.992 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 09:55:24.995 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-12-13 09:55:24.996 +07:00 [Information] Executed DbCommand ("1"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 09:55:25.005 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 14.1332ms.
+2018-12-13 09:55:25.008 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 09:55:25.011 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 22.3479ms
+2018-12-13 09:55:25.016 +07:00 [Information] Request finished in 34.1507ms 200 application/json; charset=utf-8
+2018-12-13 09:55:25.046 +07:00 [Information] Authorization failed.
+2018-12-13 09:55:25.069 +07:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-12-13 09:55:25.084 +07:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-12-13 09:55:25.142 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 141.6719ms
+2018-12-13 09:55:25.735 +07:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found.
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ChallengeResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAlwaysRunResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-12-13 09:55:25.832 +07:00 [Information] Request finished in 848.6639ms 500 text/html; charset=utf-8
+2018-12-13 09:56:48.304 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/user application/json 512
+2018-12-13 09:56:48.305 +07:00 [Information] Request finished in 1.4689ms 404 
+2018-12-13 09:56:48.332 +07:00 [Information] Connection id ""0HLJ0KIV414EA"", Request id ""0HLJ0KIV414EA:00000001"": the application completed without reading the entire request body.
+2018-12-13 09:56:48.356 +07:00 [Debug] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.PartialFrameCallback(AsyncProtocolRequest asyncRequest)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Net.Security.SslState.ThrowIfExceptional()
+   at System.Net.Security.SslState.InternalEndProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslState.EndProcessAuthentication(IAsyncResult result)
+   at System.Net.Security.SslStream.EndAuthenticateAsServer(IAsyncResult asyncResult)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_1(IAsyncResult iar)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncCoreLogic(IAsyncResult iar, Func`2 endFunction, Action`1 endAction, Task`1 promise, Boolean requiresSynchronization)
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-12-13 09:56:55.594 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/users application/json 512
+2018-12-13 09:56:55.610 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-12-13 09:56:55.614 +07:00 [Information] Authorization failed.
+2018-12-13 09:56:55.615 +07:00 [Information] Authorization failed for the request at filter '"Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter"'.
+2018-12-13 09:56:55.618 +07:00 [Information] Executing ChallengeResult with authentication schemes ([]).
+2018-12-13 09:56:55.619 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 5.9189ms
+2018-12-13 09:56:55.625 +07:00 [Error] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: No authenticationScheme was specified, and there was no DefaultChallengeScheme found.
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.ChallengeAsync(HttpContext context, String scheme, AuthenticationProperties properties)
+   at Microsoft.AspNetCore.Mvc.ChallengeResult.ExecuteResultAsync(ActionContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeResultAsync(IActionResult result)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAlwaysRunResultFilters()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2018-12-13 09:56:55.659 +07:00 [Information] Request finished in 67.7123ms 500 text/html; charset=utf-8
+2018-12-13 09:56:55.665 +07:00 [Information] Connection id ""0HLJ0KIV414EA"", Request id ""0HLJ0KIV414EA:00000002"": the application completed without reading the entire request body.
+2018-12-13 10:01:40.662 +07:00 [Debug] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-12-13 10:01:40.984 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/users application/json 512
+2018-12-13 10:01:41.875 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-12-13 10:01:43.203 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" - Validation state: Valid
+2018-12-13 10:01:43.332 +07:00 [Information] Start HttpGet GetUsers() - UsersController
+2018-12-13 10:01:44.815 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 10:01:45.729 +07:00 [Information] Executed DbCommand ("240"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[Address], [u].[Name], [u].[FirstName], [u].[InsertedAt], [u].[LastName], [u].[PasswordHash], [u].[PasswordSalt], [u].[Phone], [u].[UpdatedAt], [u].[UserName], [u].[Status]
+FROM [Users] AS [u]"
+2018-12-13 10:01:45.943 +07:00 [Information] End HttpGet GetUsers() - UsersController
+2018-12-13 10:01:45.970 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2651.1282ms.
+2018-12-13 10:01:46.251 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.User, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 10:01:46.512 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 4587.6506ms
+2018-12-13 10:01:46.721 +07:00 [Information] Request finished in 5739.2701ms 200 application/json; charset=utf-8
+2018-12-13 10:01:46.856 +07:00 [Information] Connection id ""0HLJ0KT6RDJU2"", Request id ""0HLJ0KT6RDJU2:00000001"": the application completed without reading the entire request body.
+2018-12-13 10:02:43.539 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/users  
+2018-12-13 10:02:43.539 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 10:02:43.652 +07:00 [Information] Policy execution successful.
+2018-12-13 10:02:43.752 +07:00 [Information] Policy execution successful.
+2018-12-13 10:02:43.825 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-12-13 10:02:44.098 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 10:02:44.178 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" - Validation state: Valid
+2018-12-13 10:02:44.180 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 10:02:44.180 +07:00 [Information] Start HttpGet GetUsers() - UsersController
+2018-12-13 10:02:44.184 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 10:02:44.187 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 10:02:44.391 +07:00 [Information] Executed DbCommand ("202"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[Address], [u].[Name], [u].[FirstName], [u].[InsertedAt], [u].[LastName], [u].[PasswordHash], [u].[PasswordSalt], [u].[Phone], [u].[UpdatedAt], [u].[UserName], [u].[Status]
+FROM [Users] AS [u]"
+2018-12-13 10:02:44.635 +07:00 [Information] End HttpGet GetUsers() - UsersController
+2018-12-13 10:02:44.655 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 473.9549ms.
+2018-12-13 10:02:44.722 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.User, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 10:02:44.762 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 586.4134ms
+2018-12-13 10:02:44.764 +07:00 [Information] Request finished in 1225.126ms 200 application/json; charset=utf-8
+2018-12-13 10:02:45.286 +07:00 [Information] Executed DbCommand ("149"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 10:02:45.346 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 1164.2536ms.
+2018-12-13 10:02:45.414 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 10:02:45.551 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 1372.0346ms
+2018-12-13 10:02:45.588 +07:00 [Information] Request finished in 2049.1908ms 200 application/json; charset=utf-8
+2018-12-13 10:07:31.526 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 10:07:31.531 +07:00 [Information] Policy execution successful.
+2018-12-13 10:07:31.534 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 10:07:31.549 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 10:07:31.595 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 10:07:31.611 +07:00 [Information] Executed DbCommand ("11"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 10:07:31.615 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 20.1948ms.
+2018-12-13 10:07:31.618 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 10:07:31.633 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 84.0846ms
+2018-12-13 10:07:31.640 +07:00 [Information] Request finished in 114.8753ms 200 application/json; charset=utf-8
+2018-12-13 10:07:31.755 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/users  
+2018-12-13 10:07:31.762 +07:00 [Information] Policy execution successful.
+2018-12-13 10:07:31.764 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-12-13 10:07:31.779 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" - Validation state: Valid
+2018-12-13 10:07:31.831 +07:00 [Information] Start HttpGet GetUsers() - UsersController
+2018-12-13 10:07:31.849 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 10:07:31.910 +07:00 [Information] Executed DbCommand ("59"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[Address], [u].[Name], [u].[FirstName], [u].[InsertedAt], [u].[LastName], [u].[PasswordHash], [u].[PasswordSalt], [u].[Phone], [u].[UpdatedAt], [u].[UserName], [u].[Status]
+FROM [Users] AS [u]"
+2018-12-13 10:07:31.959 +07:00 [Information] End HttpGet GetUsers() - UsersController
+2018-12-13 10:07:31.960 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 128.02ms.
+2018-12-13 10:07:31.962 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.User, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 10:07:31.967 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 187.8823ms
+2018-12-13 10:07:31.981 +07:00 [Information] Request finished in 226.8974ms 200 application/json; charset=utf-8
+2018-12-13 10:08:48.373 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 10:08:48.390 +07:00 [Information] Policy execution successful.
+2018-12-13 10:08:48.394 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 10:08:48.395 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 10:08:48.397 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 10:08:48.402 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/users  
+2018-12-13 10:08:48.403 +07:00 [Information] Policy execution successful.
+2018-12-13 10:08:48.404 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-12-13 10:08:48.406 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" - Validation state: Valid
+2018-12-13 10:08:48.408 +07:00 [Information] Start HttpGet GetUsers() - UsersController
+2018-12-13 10:08:48.410 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 10:08:48.475 +07:00 [Information] Executed DbCommand ("73"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 10:08:48.529 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 132.4215ms.
+2018-12-13 10:08:48.573 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 10:08:48.676 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 280.5401ms
+2018-12-13 10:08:48.677 +07:00 [Information] Request finished in 304.1258ms 200 application/json; charset=utf-8
+2018-12-13 10:08:48.859 +07:00 [Information] Executed DbCommand ("79"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[Address], [u].[Name], [u].[FirstName], [u].[InsertedAt], [u].[LastName], [u].[PasswordHash], [u].[PasswordSalt], [u].[Phone], [u].[UpdatedAt], [u].[UserName], [u].[Status]
+FROM [Users] AS [u]"
+2018-12-13 10:08:48.868 +07:00 [Information] End HttpGet GetUsers() - UsersController
+2018-12-13 10:08:48.872 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 464.0918ms.
+2018-12-13 10:08:48.876 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.User, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 10:08:48.879 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 472.5607ms
+2018-12-13 10:08:48.881 +07:00 [Information] Request finished in 478.2932ms 200 application/json; charset=utf-8
+2018-12-13 10:09:59.736 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 10:09:59.738 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/users  
+2018-12-13 10:09:59.740 +07:00 [Information] Policy execution successful.
+2018-12-13 10:09:59.742 +07:00 [Information] Policy execution successful.
+2018-12-13 10:09:59.744 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 10:09:59.744 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-12-13 10:09:59.746 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 10:09:59.750 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" - Validation state: Valid
+2018-12-13 10:09:59.754 +07:00 [Information] Start HttpGet GetUsers() - UsersController
+2018-12-13 10:09:59.751 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 10:09:59.755 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 10:09:59.816 +07:00 [Information] Executed DbCommand ("58"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 10:09:59.820 +07:00 [Information] Executed DbCommand ("60"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[Address], [u].[Name], [u].[FirstName], [u].[InsertedAt], [u].[LastName], [u].[PasswordHash], [u].[PasswordSalt], [u].[Phone], [u].[UpdatedAt], [u].[UserName], [u].[Status]
+FROM [Users] AS [u]"
+2018-12-13 10:09:59.829 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 78.3645ms.
+2018-12-13 10:10:00.043 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 10:10:00.029 +07:00 [Information] End HttpGet GetUsers() - UsersController
+2018-12-13 10:10:00.051 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 296.9733ms.
+2018-12-13 10:10:00.056 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.User, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 10:10:00.045 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 299.5834ms
+2018-12-13 10:10:00.078 +07:00 [Information] Request finished in 342.3436ms 200 application/json; charset=utf-8
+2018-12-13 10:10:00.075 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 325.2822ms
+2018-12-13 10:10:00.088 +07:00 [Information] Request finished in 349.8319ms 200 application/json; charset=utf-8
+2018-12-13 10:36:00.662 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 10:36:00.662 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/users  
+2018-12-13 10:36:00.664 +07:00 [Information] Policy execution successful.
+2018-12-13 10:36:00.664 +07:00 [Information] Policy execution successful.
+2018-12-13 10:36:00.665 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 10:36:00.666 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-12-13 10:36:00.668 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 10:36:00.684 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" - Validation state: Valid
+2018-12-13 10:36:00.695 +07:00 [Information] Start HttpGet GetUsers() - UsersController
+2018-12-13 10:36:00.688 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 10:36:00.698 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 10:36:01.138 +07:00 [Information] Executed DbCommand ("39"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 10:36:01.172 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 484.7081ms.
+2018-12-13 10:36:01.181 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 10:36:01.185 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 516.6909ms
+2018-12-13 10:36:01.188 +07:00 [Information] Request finished in 526.0923ms 200 application/json; charset=utf-8
+2018-12-13 10:36:01.202 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[Address], [u].[Name], [u].[FirstName], [u].[InsertedAt], [u].[LastName], [u].[PasswordHash], [u].[PasswordSalt], [u].[Phone], [u].[UpdatedAt], [u].[UserName], [u].[Status]
+FROM [Users] AS [u]"
+2018-12-13 10:36:01.229 +07:00 [Information] End HttpGet GetUsers() - UsersController
+2018-12-13 10:36:01.234 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 538.4921ms.
+2018-12-13 10:36:01.236 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.User, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 10:36:01.239 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 555.0627ms
+2018-12-13 10:36:01.241 +07:00 [Information] Request finished in 579.284ms 200 application/json; charset=utf-8
+2018-12-13 11:18:02.923 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 11:18:02.924 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/users  
+2018-12-13 11:18:02.995 +07:00 [Information] Policy execution successful.
+2018-12-13 11:18:02.995 +07:00 [Information] Policy execution successful.
+2018-12-13 11:18:03.016 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-12-13 11:18:03.016 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 11:18:03.153 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 11:18:03.153 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" - Validation state: Valid
+2018-12-13 11:18:03.158 +07:00 [Information] Start HttpGet GetUsers() - UsersController
+2018-12-13 11:18:03.174 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 11:18:03.177 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 11:18:03.338 +07:00 [Information] Executed DbCommand ("12"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 11:18:03.342 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 186.981ms.
+2018-12-13 11:18:03.348 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 11:18:03.354 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 330.4117ms
+2018-12-13 11:18:03.377 +07:00 [Information] Request finished in 485.2769ms 200 application/json; charset=utf-8
+2018-12-13 11:18:03.410 +07:00 [Information] Executed DbCommand ("13"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[Address], [u].[Name], [u].[FirstName], [u].[InsertedAt], [u].[LastName], [u].[PasswordHash], [u].[PasswordSalt], [u].[Phone], [u].[UpdatedAt], [u].[UserName], [u].[Status]
+FROM [Users] AS [u]"
+2018-12-13 11:18:03.420 +07:00 [Information] End HttpGet GetUsers() - UsersController
+2018-12-13 11:18:03.421 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 264.2468ms.
+2018-12-13 11:18:03.425 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.User, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 11:18:03.430 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 409.4133ms
+2018-12-13 11:18:03.435 +07:00 [Information] Request finished in 552.2398ms 200 application/json; charset=utf-8
+2018-12-13 11:44:22.292 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 11:44:22.295 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/users  
+2018-12-13 11:44:22.308 +07:00 [Information] Policy execution successful.
+2018-12-13 11:44:22.311 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 11:44:22.315 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 11:44:22.318 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 11:44:22.310 +07:00 [Information] Policy execution successful.
+2018-12-13 11:44:22.325 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-12-13 11:44:22.327 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" - Validation state: Valid
+2018-12-13 11:44:22.330 +07:00 [Information] Start HttpGet GetUsers() - UsersController
+2018-12-13 11:44:22.331 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 11:44:22.487 +07:00 [Information] Executed DbCommand ("40"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 11:44:22.499 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 180.8253ms.
+2018-12-13 11:44:22.510 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 11:44:22.514 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 199.1377ms
+2018-12-13 11:44:22.516 +07:00 [Information] Executed DbCommand ("4"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[Address], [u].[Name], [u].[FirstName], [u].[InsertedAt], [u].[LastName], [u].[PasswordHash], [u].[PasswordSalt], [u].[Phone], [u].[UpdatedAt], [u].[UserName], [u].[Status]
+FROM [Users] AS [u]"
+2018-12-13 11:44:22.520 +07:00 [Information] Request finished in 227.7572ms 200 application/json; charset=utf-8
+2018-12-13 11:44:22.525 +07:00 [Information] End HttpGet GetUsers() - UsersController
+2018-12-13 11:44:22.551 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 221.6185ms.
+2018-12-13 11:44:22.555 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.User, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 11:44:22.563 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 235.4563ms
+2018-12-13 11:44:22.565 +07:00 [Information] Request finished in 270.1075ms 200 application/json; charset=utf-8
+2018-12-13 11:45:22.068 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 11:45:22.069 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/users  
+2018-12-13 11:45:22.071 +07:00 [Information] Policy execution successful.
+2018-12-13 11:45:22.072 +07:00 [Information] Policy execution successful.
+2018-12-13 11:45:22.095 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 11:45:22.096 +07:00 [Information] Route matched with "{action = \"GetUsers\", controller = \"Users\"}". Executing action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)"
+2018-12-13 11:45:22.098 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 11:45:22.101 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" - Validation state: Valid
+2018-12-13 11:45:22.108 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 11:45:22.110 +07:00 [Information] Start HttpGet GetUsers() - UsersController
+2018-12-13 11:45:22.115 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 11:45:22.160 +07:00 [Information] Executed DbCommand ("47"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 11:45:22.176 +07:00 [Information] Executed DbCommand ("58"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [u].[Id], [u].[Address], [u].[Name], [u].[FirstName], [u].[InsertedAt], [u].[LastName], [u].[PasswordHash], [u].[PasswordSalt], [u].[Phone], [u].[UpdatedAt], [u].[UserName], [u].[Status]
+FROM [Users] AS [u]"
+2018-12-13 11:45:22.180 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 72.924ms.
+2018-12-13 11:45:22.185 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 11:45:22.183 +07:00 [Information] End HttpGet GetUsers() - UsersController
+2018-12-13 11:45:22.188 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 89.8535ms
+2018-12-13 11:45:22.190 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 79.8344ms.
+2018-12-13 11:45:22.192 +07:00 [Information] Request finished in 124.4933ms 200 application/json; charset=utf-8
+2018-12-13 11:45:22.203 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.User, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 11:45:22.246 +07:00 [Information] Executed action "Shop.WebApi.Controllers.UsersController.GetUsers (Shop.WebApi)" in 145.0626ms
+2018-12-13 11:45:22.249 +07:00 [Information] Request finished in 180.787ms 200 application/json; charset=utf-8
+2018-12-13 11:51:32.640 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/categories  
+2018-12-13 11:51:32.642 +07:00 [Information] Policy execution successful.
+2018-12-13 11:51:32.644 +07:00 [Information] Route matched with "{action = \"GetCategories\", controller = \"Categories\"}". Executing action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)"
+2018-12-13 11:51:32.657 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" - Validation state: Valid
+2018-12-13 11:51:32.661 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 11:51:32.777 +07:00 [Information] Executed DbCommand ("3"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [c].[Id], [c].[Description], [c].[Image], [c].[InsertedAt], [c].[Name], [c].[ParentId], [c].[UpdatedAt]
+FROM [Categories] AS [c]"
+2018-12-13 11:51:32.825 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 165.3655ms.
+2018-12-13 11:51:32.833 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Category, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 11:51:32.838 +07:00 [Information] Executed action "Shop.WebApi.Controllers.CategoriesController.GetCategories (Shop.WebApi)" in 181.2788ms
+2018-12-13 11:51:32.840 +07:00 [Information] Request finished in 200.7689ms 200 application/json; charset=utf-8
+2018-12-13 11:51:39.967 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/products  
+2018-12-13 11:51:39.970 +07:00 [Information] Policy execution successful.
+2018-12-13 11:51:40.157 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-12-13 11:51:40.183 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-12-13 11:51:40.225 +07:00 [Information] Start HttpGet GetProducts() - ProductController
+2018-12-13 11:51:40.279 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-13 11:51:40.659 +07:00 [Information] Executed DbCommand ("162"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Description], [p].[Detail], [p].[DiscountId], [p].[Height], [p].[Image1], [p].[Image2], [p].[Image3], [p].[Image4], [p].[IncludeVAT], [p].[InsertedAt], [p].[Length], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[Name], [p].[ProductImage], [p].[ProductStatusTypeId], [p].[PromotionPrice], [p].[Quantity], [p].[RegularPrice], [p].[Sku], [p].[UpdatedAt], [p].[ViewCounts], [p].[Warranty], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]"
+2018-12-13 11:51:40.680 +07:00 [Information] End HttpGet GetProducts() - ProductController
+2018-12-13 11:51:40.701 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 515.1882ms.
+2018-12-13 11:51:40.704 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-13 11:51:40.812 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 652.9503ms
+2018-12-13 11:51:40.816 +07:00 [Information] Request finished in 849.5352ms 200 application/json; charset=utf-8

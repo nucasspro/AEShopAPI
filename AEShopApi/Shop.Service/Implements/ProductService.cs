@@ -20,7 +20,8 @@ namespace Shop.Service.Implements
 
         public bool CheckExistsById(int id)
         {
-            throw new System.NotImplementedException();
+            //throw new System.NotImplementedException();
+            return true;
         }
 
         public async Task DeleteAsync(Product product)

@@ -18,7 +18,7 @@ namespace Shop.WebApi.Controllers
 {
     [Route("api/Users")]
     [ApiController]
-    [Authorize]
+    // [Authorize]
     public class UsersController : ControllerBase
     {
         #region Variables

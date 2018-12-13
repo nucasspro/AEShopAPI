@@ -1,0 +1,14 @@
+2018-12-12 14:56:31.801 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/products  
+2018-12-12 14:56:32.110 +07:00 [Information] Policy execution successful.
+2018-12-12 14:56:32.672 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-12-12 14:56:33.584 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-12-12 14:56:33.635 +07:00 [Information] Start HttpGet GetProducts() - ProductController
+2018-12-12 14:56:34.724 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-12 14:56:35.827 +07:00 [Information] Executed DbCommand ("131"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Description], [p].[Detail], [p].[DiscountId], [p].[Height], [p].[Image1], [p].[Image2], [p].[Image3], [p].[Image4], [p].[IncludeVAT], [p].[InsertedAt], [p].[Length], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[Name], [p].[ProductImage], [p].[ProductStatusTypeId], [p].[PromotionPrice], [p].[Quantity], [p].[RegularPrice], [p].[Sku], [p].[UpdatedAt], [p].[ViewCounts], [p].[Warranty], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]"
+2018-12-12 14:56:35.855 +07:00 [Information] End HttpGet GetProducts() - ProductController
+2018-12-12 14:56:35.876 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2274.1001ms.
+2018-12-12 14:56:35.945 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-12 14:56:36.303 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 3617.8975ms
+2018-12-12 14:56:36.350 +07:00 [Information] Request finished in 4558.3548ms 200 application/json; charset=utf-8

@@ -98,33 +98,33 @@ namespace Shop.WebApi
 
             #endregion Dependency Injection for Services
 
-            #region Authentication by JWT
+            //#region Authentication by JWT
 
-            services
-                .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-                .AddJwtBearer(options =>
-                {
-                    TokenValidationParameters parameters = new TokenValidationParameters()
-                    {
-                        ValidateIssuer = true,
-                        ValidateAudience = true,
-                        ValidateLifetime = true,
-                        ValidateIssuerSigningKey = true,
-                        ValidIssuer = Configuration["Jwt:Issuer"],
-                        ValidAudience = Configuration["Jwt:Issuer"],
-                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
-                    };
+            //services
+            //    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            //    .AddJwtBearer(options =>
+            //    {
+            //        TokenValidationParameters parameters = new TokenValidationParameters()
+            //        {
+            //            ValidateIssuer = true,
+            //            ValidateAudience = true,
+            //            ValidateLifetime = true,
+            //            ValidateIssuerSigningKey = true,
+            //            ValidIssuer = Configuration["Jwt:Issuer"],
+            //            ValidAudience = Configuration["Jwt:Issuer"],
+            //            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["Jwt:Key"]))
+            //        };
 
-                    options.TokenValidationParameters = parameters;
-                });
+            //        options.TokenValidationParameters = parameters;
+            //    });
 
-            #endregion Authentication by JWT
+            //#endregion Authentication by JWT
 
             services.AddAutoMapper();
             services.AddSwaggerGen(
                 c =>
                 {
-                    c.SwaggerDoc("v1", new Info { Title = "Core API", Description = "Swagger Core API"});
+                    c.SwaggerDoc("v1", new Info { Title = "Core API", Description = "Swagger Core API" });
                 }
                 );
 
@@ -132,8 +132,10 @@ namespace Shop.WebApi
 
             services.AddCors(options =>
             {
+                //options.AddPolicy("AllowMyOrigin",
+                //builder => builder.WithOrigins("https://localhost:3000"));
                 options.AddPolicy("AllowMyOrigin",
-                builder => builder.WithOrigins("https://localhost:44380"));
+                builder => builder.AllowAnyOrigin());
             });
 
             #endregion Cors
@@ -151,14 +153,14 @@ namespace Shop.WebApi
             }
             else
             {
-                app.UseHsts();  
+                app.UseHsts();
             }
 
             app.UseHttpsRedirection();
             app.UseCors("AllowMyOrigin");
             app.UseSwagger();
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Core API"); });
-            app.UseAuthentication();
+            //app.UseAuthentication();
             app.UseMvc();
         }
     }
