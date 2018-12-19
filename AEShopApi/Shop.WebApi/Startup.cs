@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -7,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 using Shop.Domain;
@@ -17,7 +15,6 @@ using Shop.Domain.SeedWork;
 using Shop.Service.Implements;
 using Shop.Service.Interfaces;
 using Swashbuckle.AspNetCore.Swagger;
-using System.Text;
 
 namespace Shop.WebApi
 {
@@ -98,7 +95,7 @@ namespace Shop.WebApi
 
             #endregion Dependency Injection for Services
 
-            //#region Authentication by JWT
+            #region Authentication by JWT
 
             //services
             //    .AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -118,9 +115,12 @@ namespace Shop.WebApi
             //        options.TokenValidationParameters = parameters;
             //    });
 
-            //#endregion Authentication by JWT
+            #endregion Authentication by JWT
 
             services.AddAutoMapper();
+
+            #region Swagger
+
             services.AddSwaggerGen(
                 c =>
                 {
@@ -128,15 +128,19 @@ namespace Shop.WebApi
                 }
                 );
 
+            #endregion Swagger
+
             #region Cors
 
             services.AddCors(options =>
             {
-                //options.AddPolicy("AllowMyOrigin",
-                //builder => builder.WithOrigins("https://localhost:3000"));
                 options.AddPolicy("AllowMyOrigin",
-                builder => builder.AllowAnyOrigin());
+                    builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+                // options.AddPolicy("AllowMyOrigin",
+                // builder => builder.AllowAnyOrigin());
             });
+
+            services.AddCors();
 
             #endregion Cors
         }
@@ -157,10 +161,11 @@ namespace Shop.WebApi
             }
 
             app.UseHttpsRedirection();
-            app.UseCors("AllowMyOrigin");
+            //app.UseCors();
             app.UseSwagger();
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Core API"); });
             //app.UseAuthentication();
+            app.UseCors("AllowMyOrigin");
             app.UseMvc();
         }
     }

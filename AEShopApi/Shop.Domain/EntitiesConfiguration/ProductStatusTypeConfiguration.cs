@@ -14,7 +14,8 @@ namespace Shop.Domain.EntitiesConfiguration
             builder.Property(x => x.Name).IsRequired(false).HasColumnName("Name").HasColumnType("nvarchar(50)");
             builder.HasData(
                 new ProductStatusType { Id = 1, Name = "Out of stock", InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) },
-                new ProductStatusType { Id = 2, Name = "Stock", InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) }
+                new ProductStatusType { Id = 2, Name = "Stock", InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) },
+                new ProductStatusType { Id = 3, Name = "Removed", InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) }
             );
         }
     }

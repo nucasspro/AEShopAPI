@@ -8,6 +8,7 @@ namespace Shop.Domain.Enumerations
     {
         public static readonly ProductStatusTypeEnum OutOfStock = new ProductStatusTypeEnum(1, "Out of stock");
         public static readonly ProductStatusTypeEnum Stock = new ProductStatusTypeEnum(2, "Stock");
+        public static readonly ProductStatusTypeEnum Removed = new ProductStatusTypeEnum(3, "Removed");
 
         protected ProductStatusTypeEnum()
         {

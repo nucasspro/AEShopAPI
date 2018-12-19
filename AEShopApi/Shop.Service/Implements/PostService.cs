@@ -27,7 +27,7 @@ namespace Shop.Service.Implements
 
         public async Task DeleteAsync(Post post)
         {
-            await _postRepository.DeleteAsync(post);
+            _postRepository.Delete(post);
             await _unitOfWork.SaveChangesAsync();
         }
 

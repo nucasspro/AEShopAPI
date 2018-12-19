@@ -50,36 +50,36 @@ namespace Shop.WebApi.Controllers
 
         #endregion GET: api/Products
 
-        #region GET: api/products/get/1?pageSize=0&getNumber=2
+        //#region GET: api/products/get/1?pageSize=0&getNumber=2
 
-        [HttpGet("get/{id}")]
-        public async Task<IActionResult> GetProductsByCategory([FromRoute]int id, [FromQuery(Name = "pageSize")] int pageSize = 0, [FromQuery(Name = "getNumber")]int getNumber = 5)
-        {
-            //Log.Information("Start HttpGet GetProducts() - ProductController");
-            var products = await _productService.GetByCategoryAsync(id, pageSize, getNumber);
+        //[HttpGet("get/{id}")]
+        //public async Task<IActionResult> GetProductsByCategory([FromRoute]int id, [FromQuery(Name = "pageSize")] int pageSize = 0, [FromQuery(Name = "getNumber")]int getNumber = 5)
+        //{
+        //    //Log.Information("Start HttpGet GetProducts() - ProductController");
+        //    var products = await _productService.GetByCategoryAsync(id, pageSize, getNumber);
 
-            if (products == null)
-            {
-                //Log.Information("Product null");
-                return NotFound();
-            }
+        //    if (products == null)
+        //    {
+        //        //Log.Information("Product null");
+        //        return NotFound();
+        //    }
 
-            //Log.Information("End HttpGet GetProducts() - ProductController");
-            return Ok(products);
-        }
+        //    //Log.Information("End HttpGet GetProducts() - ProductController");
+        //    return Ok(products);
+        //}
 
-        #endregion GET: api/products/get/1?pageSize=0&getNumber=2
+        //#endregion GET: api/products/get/1?pageSize=0&getNumber=2
 
-        #region GET: api/products/GetWithPagination?PageSize=0&GetNumber=2
+        //#region GET: api/products/GetWithPagination?PageSize=0&GetNumber=2
 
-        [HttpGet("GetWithPagination")]
-        public async Task<IActionResult> GetProductsWithPagination([FromQuery(Name = "PageSize")] int PageSize = 0, [FromQuery(Name = "GetNumber")] int GetNumber = 12)
-        {
-            var data = await _productService.GetProductsWithPagination(PageSize, GetNumber);
-            return Ok(data);
-        }
+        //[HttpGet("GetWithPagination")]
+        //public async Task<IActionResult> GetProductsWithPagination([FromQuery(Name = "PageSize")] int PageSize = 0, [FromQuery(Name = "GetNumber")] int GetNumber = 12)
+        //{
+        //    var data = await _productService.GetProductsWithPagination(PageSize, GetNumber);
+        //    return Ok(data);
+        //}
 
-        #endregion GET: api/products/GetWithPagination?PageSize=0&GetNumber=2
+        //#endregion GET: api/products/GetWithPagination?PageSize=0&GetNumber=2
 
         #region GET: api/Products/5
 
@@ -105,6 +105,31 @@ namespace Shop.WebApi.Controllers
         }
 
         #endregion GET: api/Products/5
+
+        //#region GET: api/Products?sku=sku05
+
+        //[HttpGet("{sku}")]
+        //public async Task<IActionResult> GetBySku(string sku)
+        //{
+        //    Log.Information($"Start HttpGet GetProduct({sku}) - ProductController");
+        //    if (!ModelState.IsValid)
+        //    {
+        //        Log.Information($"End HttpGet GetProduct({sku}) - ProductController - BadRequest");
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    var product = await _productService.GetBySkuAsync(sku);
+
+        //    if (product == null)
+        //    {
+        //        Log.Information($"End HttpGet GetProduct({sku}) - ProductController - NotFound");
+        //        return NotFound();
+        //    }
+        //    Log.Information($"End HttpGet GetProduct({sku}) - ProductController - Done");
+        //    return Ok(product);
+        //}
+
+        //#endregion GET: api/Products?sku=sku05
 
         #region PUT: api/Products/5
 
@@ -184,19 +209,44 @@ namespace Shop.WebApi.Controllers
                 return BadRequest(ModelState);
             }
 
-            var product = await _productService.GetByIdAsync(id);
-            if (product == null)
-            {
-                Log.Information($"End HttpDelete DeleteProduct({id}) - ProductController - NotFound");
-                return NotFound();
-            }
+            //var product = await _productService.GetByIdAsync(id);
+            //if (product == null)
+            //{
+            //    Log.Information($"End HttpDelete DeleteProduct({id}) - ProductController - NotFound");
+            //    return NotFound();
+            //}
 
-            await _productService.DeleteAsync(product);
+            await _productService.DeleteAsync(id);
             Log.Information($"End HttpDelete DeleteProduct({id}) - ProductController - Done");
-            return Ok(product);
+            return Ok();
         }
 
         #endregion DELETE: api/Products/5
+
+        //#region DELETE: api/Products?sku=5
+
+        //[HttpDelete]
+        //public async Task<IActionResult> DeleteBySku([FromQuery] string sku)
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        Log.Information($"End HttpDelete DeleteBySku({sku}) - ProductController - BadRequest");
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    //var product = await _productService.getbysku(id);
+        //    //if (product == null)
+        //    //{
+        //    //Log.Information($"End HttpDelete DeleteBySku({sku}) - ProductController - NotFound");
+        //    //return NotFound();
+        //    //}
+
+        //    await _productService.DeleteBySku(sku);
+        //    Log.Information($"End HttpDelete DeleteBySku({sku}) - ProductController - Done");
+        //    return Ok();
+        //}
+
+        //#endregion DELETE: api/Products?sku=5
 
         #endregion Rest API
     }

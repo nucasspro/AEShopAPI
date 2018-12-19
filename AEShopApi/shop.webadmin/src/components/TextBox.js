@@ -15,7 +15,7 @@ import React, { Component } from 'react';
 
 export default class TextBox extends Component {
   render() {
-    const { htmlFor, content, placeHolder, type, id } = this.props;
+    const { htmlFor, content, placeHolder, value, type, id } = this.props;
     return (
       <React.Fragment>
         <div className="form-group">
@@ -26,6 +26,7 @@ export default class TextBox extends Component {
             className="form-control"
             type={type}
             placeholder={placeHolder}
+            defaultValue={value}
             id={id}
           />
         </div>

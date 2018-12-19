@@ -25,7 +25,7 @@ namespace Shop.Service.Implements
 
         public async Task DeleteAsync(Category category)
         {
-            await _categoryRepository.DeleteAsync(category);
+            _categoryRepository.Delete(category);
             await _unitOfWork.SaveChangesAsync();
         }
 

@@ -25,7 +25,7 @@ namespace Shop.Service.Implements
 
         public async Task DeleteAsync(Payment Payment)
         {
-            await _paymentRepository.DeleteAsync(Payment);
+            _paymentRepository.Delete(Payment);
             await _unitOfWork.SaveChangesAsync();
         }
 

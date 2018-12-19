@@ -26,19 +26,19 @@ namespace Shop.Service.Implements
 
         public async Task DeleteAsync(Product product)
         {
-            await _productRepository.DeleteAsync(product);
+            _productRepository.Delete(product);
             await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(int id)
         {
-            await _productRepository.DeleteAsync(id);
+            await _productRepository.Delete(id);
             await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
-            return await _productRepository.GetAllAsync();
+            return await _productRepository.GetProductAsync();
         }
 
         public async Task<IEnumerable<Product>> GetProductsWithPagination(int PageSize, int GetNumber)
@@ -56,6 +56,11 @@ namespace Shop.Service.Implements
         {
             return await _productRepository.GetByIdAsync(id);
         }
+        public async Task<Product> GetBySkuAsync(string sku)
+        {
+            return await _productRepository.GetBySkuAsync(sku);
+        }
+
 
         public async Task InsertAsync(Product product)
         {

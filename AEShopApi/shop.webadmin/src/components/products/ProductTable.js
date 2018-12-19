@@ -1,17 +1,62 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ProductDialog from './ProductDialog';
+import DeleteIcon from '@material-ui/icons/Delete';
+import { BASE_URL } from '../../settings';
+import { withStyles } from '@material-ui/core/styles';
+import {
+  Fab,
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableRow,
+  Paper
+} from '@material-ui/core';
 
-export default class ProductTable extends Component {
-  state = {
-    products: [],
-    isLoading: true,
-    error: null
-  };
+const CustomTableCell = withStyles(theme => ({
+  head: {
+    backgroundColor: theme.palette.common.blue,
+    color: theme.palette.common.white
+  },
+  body: {
+    fontSize: 14
+  }
+}))(TableCell);
 
-  // Call API to get product with asynchronous
+const styles = theme => ({
+  root: {
+    width: '100%',
+    marginTop: theme.spacing.unit * 3,
+    overflowX: 'auto'
+  },
+  table: {
+    minWidth: 700
+  },
+  row: {
+    '&:nth-of-type(odd)': {
+      backgroundColor: theme.palette.background.default
+    }
+  }
+});
+
+class ProductTable extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: [],
+      isLoading: true,
+      error: null,
+      button: { size: 'large' },
+      searchText: '',
+      editVisible: false,
+      addNewVisible: false
+    };
+  }
+
   async getProducts() {
     try {
-      var response = await axios.get('https://localhost:5001/api/products');
+      var response = await axios.get(`${BASE_URL}/products`);
 
       this.setState({
         products: response.data,
@@ -26,223 +71,98 @@ export default class ProductTable extends Component {
     }
   }
 
+  deleteProduct = id => {
+    let axiosConfig = {
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin': '*'
+      }
+    };
+
+    axios
+      .delete(`${BASE_URL}/products/${id}`, axiosConfig)
+      .then(res => {
+        console.log('RESPONSE RECEIVED: ', res);
+        this.getProducts();
+      })
+      .catch(err => {
+        console.log('AXIOS ERROR: ', err);
+      });
+  };
+
+  handleDelete(id) {
+    this.deleteProduct(id);
+  }
+
   componentDidMount() {
     this.getProducts();
   }
 
-  render() {
-    const { products } = this.state;
+  handleOpenModal = () => {
+    this.setState({ addNewVisible: true });
+  };
 
+  handleCloseModal = () => {
+    this.setState({ addNewVisible: false });
+  };
+
+  render() {
     return (
-      <React.Fragment>
+      <Paper>
         <div className="card">
           <div className="card-body">
             <h4 className="header-title">Product Table</h4>
+            <div className="btn-add-new mb-3">
+              <ProductDialog />
+            </div>
             <div className="data-tables datatable-dark">
               <div
                 id="dataTable3_wrapper"
                 className="dataTables_wrapper dt-bootstrap4 no-footer"
               >
-                <div className="row">
-                  <div className="col-sm-12 col-md-6">
-                    <div className="dataTables_length" id="dataTable3_length">
-                      <label>
-                        Show{' '}
-                        <select
-                          name="dataTable3_length"
-                          aria-controls="dataTable3"
-                          className="custom-select custom-select-sm form-control form-control-sm"
-                        >
-                          <option value="10">10</option>
-                          <option value="25">25</option>
-                          <option value="50">50</option>
-                          <option value="100">100</option>
-                        </select>{' '}
-                        entries
-                      </label>
-                    </div>
-                  </div>
-                  <div className="col-sm-12 col-md-6">
-                    <div id="dataTable3_filter" className="dataTables_filter">
-                      <label>
-                        Search:
-                        <input
-                          type="search"
-                          className="form-control form-control-sm"
-                          placeholder=""
-                          aria-controls="dataTable3"
-                        />
-                      </label>
-                    </div>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-sm-12">
-                    <table
-                      id="dataTable3"
-                      className="text-center dataTable no-footer dtr-inline w-100"
-                      role="grid"
-                      aria-describedby="dataTable3_info"
-                    >
-                      <thead className="text-capitalize">
-                        <tr role="row">
-                          <th
-                            className="sorting w-20"
-                            tabIndex="0"
-                            aria-controls="dataTable3"
-                            rowSpan="1"
-                            colSpan="1"
-                            aria-label="Name: activate to sort column ascending"
-                          >
-                            Name
-                          </th>
-                          <th
-                            className="sorting_desc w-20"
-                            tabIndex="0"
-                            aria-controls="dataTable3"
-                            rowSpan="1"
-                            colSpan="1"
-                            aria-label="Position: activate to sort column ascending"
-                            aria-sort="descending"
-                          >
-                            Position
-                          </th>
-                          <th
-                            className="sorting w-20"
-                            tabIndex="0"
-                            aria-controls="dataTable3"
-                            rowSpan="1"
-                            colSpan="1"
-                            aria-label="Office: activate to sort column ascending"
-                          >
-                            Office
-                          </th>
-                          <th
-                            className="sorting w-20"
-                            tabIndex="0"
-                            aria-controls="dataTable3"
-                            rowSpan="1"
-                            colSpan="1"
-                            aria-label="Age: activate to sort column ascending"
-                          >
-                            Age
-                          </th>
-                          <th
-                            className="sorting w-20"
-                            tabIndex="0"
-                            aria-controls="dataTable3"
-                            rowSpan="1"
-                            colSpan="1"
-                            aria-label="Start Date: activate to sort column ascending"
-                          >
-                            Start Date
-                          </th>
-                          <th
-                            className="sorting w-20"
-                            tabIndex="0"
-                            aria-controls="dataTable3"
-                            rowSpan="1"
-                            colSpan="1"
-                            aria-label="salary: activate to sort column ascending"
-                          >
-                            salary
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {}
-                        {products.map((item, index) => (
-                          <tr key={index} role="row" className="odd">
-                            <td tabIndex="0" className="">
-                              {item.name}
-                            </td>
-                            <td className="sorting_1">Software Engineer</td>
-                            <td>London</td>
-                            <td>41</td>
-                            <td>2012/10/13</td>
-                            <td>$132,000</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="col-sm-12 col-md-5">
-                    <div
-                      className="dataTables_info"
-                      id="dataTable3_info"
-                      role="status"
-                      aria-live="polite"
-                    >
-                      Showing 1 to 10 of 11 entries
-                    </div>
-                  </div>
-                  <div className="col-sm-12 col-md-7">
-                    <div
-                      className="dataTables_paginate paging_simple_numbers"
-                      id="dataTable3_paginate"
-                    >
-                      <ul className="pagination">
-                        <li
-                          className="paginate_button page-item previous disabled"
-                          id="dataTable3_previous"
-                        >
-                          <a
-                            href="/"
-                            aria-controls="dataTable3"
-                            data-dt-idx="0"
-                            tabIndex="0"
-                            className="page-link"
-                          >
-                            Previous
-                          </a>
-                        </li>
-                        <li className="paginate_button page-item active">
-                          <a
-                            href="/"
-                            aria-controls="dataTable3"
-                            data-dt-idx="1"
-                            tabIndex="0"
-                            className="page-link"
-                          >
-                            1
-                          </a>
-                        </li>
-                        <li className="paginate_button page-item ">
-                          <a
-                            href="/"
-                            aria-controls="dataTable3"
-                            data-dt-idx="2"
-                            tabIndex="0"
-                            className="page-link"
-                          >
-                            2
-                          </a>
-                        </li>
-                        <li
-                          className="paginate_button page-item next"
-                          id="dataTable3_next"
-                        >
-                          <a
-                            href="/"
-                            aria-controls="dataTable3"
-                            data-dt-idx="3"
-                            tabIndex="0"
-                            className="page-link"
-                          >
-                            Next
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+                <Table className="toolbar">
+                  <TableHead>
+                    <TableRow>
+                      <CustomTableCell>Id</CustomTableCell>
+                      <CustomTableCell>Name</CustomTableCell>
+                      <CustomTableCell>Sku</CustomTableCell>
+                      <CustomTableCell>Quantity</CustomTableCell>
+                      <CustomTableCell>Regular Price</CustomTableCell>
+                      <CustomTableCell>Actions</CustomTableCell>
+                    </TableRow>
+                  </TableHead>
+                  <TableBody>
+                    {this.state.products.map(row => {
+                      return (
+                        <TableRow key={row.id}>
+                          <TableCell component="th" scope="row">
+                            {row.id}
+                          </TableCell>
+                          <CustomTableCell>{row.name}</CustomTableCell>
+                          <CustomTableCell>{row.sku}</CustomTableCell>
+                          <CustomTableCell>{row.quantity}</CustomTableCell>
+                          <CustomTableCell>{row.regularprice}</CustomTableCell>
+                          <CustomTableCell>
+                            <Fab
+                              aria-label="Delete"
+                              className="fab"
+                              onClick={() => this.handleDelete(row.id)}
+                            >
+                              <DeleteIcon />
+                            </Fab>
+                          </CustomTableCell>
+                        </TableRow>
+                      );
+                    })}
+                  </TableBody>
+                </Table>
               </div>
             </div>
           </div>
         </div>
-      </React.Fragment>
+      </Paper>
     );
   }
 }
+
+export default withStyles(styles)(ProductTable);

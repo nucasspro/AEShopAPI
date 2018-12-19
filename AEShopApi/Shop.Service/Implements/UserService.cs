@@ -28,7 +28,7 @@ namespace Shop.Service.Implements
 
         public async Task DeleteAsync(User user)
         {
-            await _userRepository.DeleteAsync(user);
+            _userRepository.Delete(user);
             await _unitOfWork.SaveChangesAsync();
         }
 
