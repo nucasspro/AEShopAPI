@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { BASE_URL } from '../../settings';
+import { BASE_URL } from '../settings';
 import {
   withStyles,
   DialogTitle,
@@ -11,33 +11,22 @@ import {
   TextField
 } from '@material-ui/core';
 
-let product = {};
+let category = {};
 
-class ProductDialog extends React.Component {
+class CategoryDialog extends React.Component {
   state = {
     open: false,
-    product: {
-      name: null,
-      sku: null,
-      quantity: null,
-      ProductStatusId: 1,
-      description: null,
-      detail: null,
-      weight: null,
-      width: null,
-      height: null,
-      length: null,
-      promotionPrice: 1,
-      regularPrice: null,
-      categoryId: 1,
-      productImage: null,
-      image1: null,
-      image2: null,
-      image3: null,
-      image4: null,
-      discountId: null
-    },
-    categories: []
+    product: [],
+    categories: {
+        id: 0,
+        name: "Undefined",
+        description: "Undefined",
+        image: "Undefined",
+        parentId: null,
+        productCategories: null,
+        insertedAt: "12/05/2018",
+        updatedAt: "12/05/2018"
+    }
   };
 
   componentDidMount() {
@@ -45,7 +34,6 @@ class ProductDialog extends React.Component {
   }
 
   getCategories() {
-    // event.preventDefault();
     let axiosConfig = {
       headers: {
         'Content-Type': 'application/json;charset=UTF-8',
@@ -71,26 +59,26 @@ class ProductDialog extends React.Component {
     this.setState({ open: false });
   };
 
-  handleChangeProduct = name => event => {
-    if (
-      name === 'ProductStatusId' &&
-      event.target.value > 2 &&
-      event.target.value < 1
-    ) {
-      product[name] = 1;
-    } else {
-      product[name] = event.target.value;
-    }
-    this.setState({ product: product });
-  };
+    handleChange = name => event => {
+    //   if (
+    //     name === 'ProductStatusId' &&
+    //     event.target.value > 2 &&
+    //     event.target.value < 1
+    //   ) {
+    //     product[name] = 1;
+    //   } else {
+    //     product[name] = event.target.value;
+    //   }
+    //   this.setState({ product: product });
+    };
 
   handleSubmit = event => {
     event.preventDefault();
-    this.props.onAddProduct(product);
+    this.props.onAddProduct(category);
   };
 
   render() {
-    product = this.state.product;
+    category = this.state.product;
     return (
       <div>
         <Button
@@ -113,23 +101,10 @@ class ProductDialog extends React.Component {
           <div className="card">
             <div className="card-body">
               <TextField
-                id="textfield-sku"
-                label="Sku"
-                style={{ margin: 8 }}
-                onChange={this.handleChangeProduct('sku')}
-                placeholder="Placeholder"
-                fullWidth
-                margin="normal"
-                variant="outlined"
-                InputLabelProps={{
-                  shrink: true
-                }}
-              />
-              <TextField
                 id="textfield-name"
                 label="Name"
                 style={{ margin: 8 }}
-                onChange={this.handleChangeProduct('name')}
+                onChange={this.handleChange('name')}
                 placeholder="Placeholder"
                 fullWidth
                 margin="normal"
@@ -143,7 +118,7 @@ class ProductDialog extends React.Component {
                 label="Thumbnail"
                 style={{ margin: 8 }}
                 placeholder="Image link"
-                onChange={this.handleChangeProduct('productImage')}
+                onChange={this.handleChange('productImage')}
                 fullWidth
                 margin="normal"
                 variant="outlined"
@@ -156,7 +131,7 @@ class ProductDialog extends React.Component {
                 label="Image 1"
                 style={{ margin: 8 }}
                 placeholder="Placeholder"
-                onChange={this.handleChangeProduct('image1')}
+                onChange={this.handleChange('image1')}
                 fullWidth
                 margin="normal"
                 variant="outlined"
@@ -169,7 +144,7 @@ class ProductDialog extends React.Component {
                 label="Image 2"
                 style={{ margin: 8 }}
                 placeholder="Placeholder"
-                onChange={this.handleChangeProduct('image2')}
+                onChange={this.handleChange('image2')}
                 fullWidth
                 margin="normal"
                 variant="outlined"
@@ -182,7 +157,7 @@ class ProductDialog extends React.Component {
                 label="Image 3"
                 style={{ margin: 8 }}
                 placeholder="Placeholder"
-                onChange={this.handleChangeProduct('image3')}
+                onChange={this.handleChange('image3')}
                 fullWidth
                 margin="normal"
                 variant="outlined"
@@ -195,7 +170,7 @@ class ProductDialog extends React.Component {
                 label="Image 4"
                 style={{ margin: 8 }}
                 placeholder="Placeholder"
-                onChange={this.handleChangeProduct('image4')}
+                onChange={this.handleChange('image4')}
                 fullWidth
                 margin="normal"
                 variant="outlined"
@@ -207,7 +182,7 @@ class ProductDialog extends React.Component {
                 id="textfield-description"
                 label="Description"
                 style={{ margin: 8 }}
-                onChange={this.handleChangeProduct('description')}
+                onChange={this.handleChange('description')}
                 placeholder="Full Description!"
                 fullWidth
                 margin="normal"
@@ -220,7 +195,7 @@ class ProductDialog extends React.Component {
                 id="textfield-detail"
                 label="Detail"
                 style={{ margin: 8 }}
-                onChange={this.handleChangeProduct('detail')}
+                onChange={this.handleChange('detail')}
                 placeholder="Placeholder"
                 multiline
                 margin="normal"
@@ -231,7 +206,7 @@ class ProductDialog extends React.Component {
                 label="Promotion Price"
                 type="number"
                 style={{ margin: 8 }}
-                onChange={this.handleChangeProduct('promotionPrice')}
+                onChange={this.handleChange('promotionPrice')}
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -243,7 +218,7 @@ class ProductDialog extends React.Component {
                 label="Regular Price"
                 type="number"
                 style={{ margin: 8 }}
-                onChange={this.handleChangeProduct('regularPrice')}
+                onChange={this.handleChange('regularPrice')}
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -255,7 +230,7 @@ class ProductDialog extends React.Component {
                 label="Quantity"
                 type="number"
                 style={{ margin: 8 }}
-                onChange={this.handleChangeProduct('quantity')}
+                onChange={this.handleChange('quantity')}
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -268,7 +243,7 @@ class ProductDialog extends React.Component {
                 label="Weight"
                 type="number"
                 style={{ margin: 8 }}
-                onChange={this.handleChangeProduct('weight')}
+                onChange={this.handleChange('weight')}
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -280,7 +255,7 @@ class ProductDialog extends React.Component {
                 label="Width"
                 type="number"
                 style={{ margin: 8 }}
-                onChange={this.handleChangeProduct('width')}
+                onChange={this.handleChange('width')}
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -292,7 +267,7 @@ class ProductDialog extends React.Component {
                 label="Height"
                 type="number"
                 style={{ margin: 8 }}
-                onChange={this.handleChangeProduct('height')}
+                onChange={this.handleChange('height')}
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -304,7 +279,7 @@ class ProductDialog extends React.Component {
                 label="Length"
                 type="number"
                 style={{ margin: 8 }}
-                onChange={this.handleChangeProduct('length')}
+                onChange={this.handleChange('length')}
                 InputLabelProps={{
                   shrink: true
                 }}
@@ -318,7 +293,7 @@ class ProductDialog extends React.Component {
                 label="Is stock?"
                 style={{ margin: 8, width: 209 }}
                 value={this.state.product.ProductStatusId}
-                onChange={this.handleChangeProduct('ProductStatusId')}
+                onChange={this.handleChange('ProductStatusId')}
                 margin="normal"
                 variant="outlined"
               >
@@ -336,7 +311,7 @@ class ProductDialog extends React.Component {
                 label="Category"
                 style={{ margin: 8, width: 209 }}
                 value={this.state.product.categoryId}
-                onChange={this.handleChangeProduct('categoryId')}
+                onChange={this.handleChange('categoryId')}
                 margin="normal"
                 variant="outlined"
               >
@@ -357,4 +332,4 @@ class ProductDialog extends React.Component {
   }
 }
 
-export default ProductDialog;
+export default CategoryDialog;

@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -14,6 +16,8 @@ using Shop.Domain.Repositories.Interfaces;
 using Shop.Domain.SeedWork;
 using Shop.Service.Implements;
 using Shop.Service.Interfaces;
+using Shop.ViewModel.ViewModels;
+using Shop.WebApi.ValidationModels;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace Shop.WebApi
@@ -22,28 +26,29 @@ namespace Shop.WebApi
     {
         public IConfiguration Configuration { get; }
 
-        public Startup(IHostingEnvironment environment)
+        public Startup(IHostingEnvironment environment, IConfiguration configuration)
         {
-            var builder = new ConfigurationBuilder()
-              .SetBasePath(environment.ContentRootPath)
-              .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
-              .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", optional: true, reloadOnChange: false)
-              .AddEnvironmentVariables();
-
-            Configuration = builder.Build();
+            Configuration = configuration;
 
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel
                 .Debug()
                 .WriteTo.Console(theme: AnsiConsoleTheme.Code)
-                .WriteTo.RollingFile("./Loggings/log-{Date}.txt")
-                .CreateLogger();
+                //.ReadFrom.Configuration(Configuration.GetSection("pathFormat")).CreateLogger();
+                .WriteTo.RollingFile("./Loggings/log-{Date}.txt").CreateLogger();
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddDbContext<AeDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            #region Dependency Injection for Fluent Validators
+
+            services.AddSingleton<IValidator<ProductViewModel>, ProductValidator>();
+            services.AddSingleton<IValidator<CategoryViewModel>, CategoryValidator>();
+
+            #endregion Dependency Injection for Fluent Validators
+
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddFluentValidation();
+            services.AddDbContext<AeDbContext>(options => options.UseSqlServer(Configuration["Data:ConnectionStrings:DefaultConnection"]));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -147,7 +152,8 @@ namespace Shop.WebApi
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            //loggerFactory.AddConsole();
             loggerFactory.AddDebug();
             loggerFactory.AddSerilog();
 

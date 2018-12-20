@@ -9,6 +9,9 @@ namespace Shop.Domain.Entities
         public string Description { get; set; }
         public string Image { get; set; }
 
+        public int? CategoryStatusTypeId { get; set; }
+        public CategoryStatusType CategoryStatusType { get; set; }
+
         public int? ParentId { get; set; }
         public virtual Category Parent { get; set; }
 

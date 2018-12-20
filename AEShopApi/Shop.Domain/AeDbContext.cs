@@ -19,6 +19,7 @@ namespace Shop.Domain
         #region MyRegion Add DbSet<T>
 
         public DbSet<Category> Categories { get; set; }
+        public DbSet<CategoryStatusType> CategoryStatusTypes { get; set; }
         public DbSet<Discount> Discounts { get; set; }
         public DbSet<DiscountActiveType> DiscountActiveTypes { get; set; }
         public DbSet<DiscountRedeemType> DiscountRedeemTypes { get; set; }
@@ -54,6 +55,7 @@ namespace Shop.Domain
             #region Add Entity Configurations
 
             modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+            modelBuilder.ApplyConfiguration(new CategoryStatusTypeConfiguration());
             modelBuilder.ApplyConfiguration(new DiscountConfiguration());
             modelBuilder.ApplyConfiguration(new DiscountActiveTypeConfiguration());
             modelBuilder.ApplyConfiguration(new DiscountRedeemTypeConfiguration());

@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+using Serilog;
 
 namespace Shop.WebApi
 {
@@ -11,7 +13,31 @@ namespace Shop.WebApi
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
-            WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>();
+            WebHost
+            .CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostingContext, config) =>
+            {
+                var env = hostingContext.HostingEnvironment;
+
+                config
+                    .SetBasePath(env.ContentRootPath)
+                    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
+                    .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: false)
+                    .AddEnvironmentVariables();
+            })
+            .UseStartup<Startup>()
+            .UseSerilog();
+
+        //public static IWebHostBuilder ConfigureAppConfiguration(WebHostBuilderContext hostingContext, IConfiguration config)
+        //{
+        //    var env = hostingContext.HostingEnvironment;
+
+        //    config
+        //        .SetBasePath(env.ContentRootPath)
+        //        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
+        //        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: false)
+        //        .AddEnvironmentVariables();
+        //    return config;
+        //}
     }
 }

@@ -11,7 +11,8 @@ import {
   TableCell,
   TableHead,
   TableRow,
-  Paper
+  Paper,
+  CircularProgress
 } from '@material-ui/core';
 
 const CustomTableCell = withStyles(theme => ({
@@ -53,6 +54,27 @@ class ProductTable extends Component {
       addNewVisible: false
     };
   }
+
+  handleAdd = product => {
+    let axiosConfig = {
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        'Access-Control-Allow-Origin': '*'
+      }
+    };
+
+    // axios
+    //   .post(`${BASE_URL}/products`, product, axiosConfig)
+    //   .then(res => {
+    //     console.log('RESPONSE RECEIVED: ', res);
+    //     this.getProducts();
+    //   })
+    //   .catch(err => {
+    //     console.log('AXIOS ERROR: ', err);
+    //   });
+    console.log(product);
+    
+  };
 
   async getProducts() {
     try {
@@ -113,49 +135,58 @@ class ProductTable extends Component {
           <div className="card-body">
             <h4 className="header-title">Product Table</h4>
             <div className="btn-add-new mb-3">
-              <ProductDialog />
+              <ProductDialog onAddProduct={this.handleAdd} />
             </div>
             <div className="data-tables datatable-dark">
               <div
                 id="dataTable3_wrapper"
                 className="dataTables_wrapper dt-bootstrap4 no-footer"
               >
-                <Table className="toolbar">
-                  <TableHead>
-                    <TableRow>
-                      <CustomTableCell>Id</CustomTableCell>
-                      <CustomTableCell>Name</CustomTableCell>
-                      <CustomTableCell>Sku</CustomTableCell>
-                      <CustomTableCell>Quantity</CustomTableCell>
-                      <CustomTableCell>Regular Price</CustomTableCell>
-                      <CustomTableCell>Actions</CustomTableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {this.state.products.map(row => {
-                      return (
-                        <TableRow key={row.id}>
-                          <TableCell component="th" scope="row">
-                            {row.id}
-                          </TableCell>
-                          <CustomTableCell>{row.name}</CustomTableCell>
-                          <CustomTableCell>{row.sku}</CustomTableCell>
-                          <CustomTableCell>{row.quantity}</CustomTableCell>
-                          <CustomTableCell>{row.regularprice}</CustomTableCell>
-                          <CustomTableCell>
-                            <Fab
-                              aria-label="Delete"
-                              className="fab"
-                              onClick={() => this.handleDelete(row.id)}
-                            >
-                              <DeleteIcon />
-                            </Fab>
-                          </CustomTableCell>
-                        </TableRow>
-                      );
-                    })}
-                  </TableBody>
-                </Table>
+                {!this.state.isLoading ? (
+                  <Table className="toolbar">
+                    <TableHead>
+                      <TableRow>
+                        <CustomTableCell>Id</CustomTableCell>
+                        <CustomTableCell>Name</CustomTableCell>
+                        <CustomTableCell>Sku</CustomTableCell>
+                        <CustomTableCell>Quantity</CustomTableCell>
+                        <CustomTableCell>Regular Price</CustomTableCell>
+                        <CustomTableCell>Updated At</CustomTableCell>
+                        <CustomTableCell>Actions</CustomTableCell>
+                      </TableRow>
+                    </TableHead>
+                    <TableBody>
+                      {this.state.products.map(row => {
+                        return (
+                          <TableRow key={row.id}>
+                            <CustomTableCell component="th" scope="row">
+                              {row.id}
+                            </CustomTableCell>
+                            <CustomTableCell>{row.name}</CustomTableCell>
+                            <CustomTableCell>{row.sku}</CustomTableCell>
+                            <CustomTableCell>{row.quantity}</CustomTableCell>
+                            <CustomTableCell>
+                              {row.regularPrice}
+                            </CustomTableCell>
+                            <CustomTableCell>{row.updatedAt}</CustomTableCell>
+
+                            <CustomTableCell>
+                              <Fab
+                                aria-label="Delete"
+                                className="fab"
+                                onClick={() => this.handleDelete(row.id)}
+                              >
+                                <DeleteIcon />
+                              </Fab>
+                            </CustomTableCell>
+                          </TableRow>
+                        );
+                      })}
+                    </TableBody>
+                  </Table>
+                ) : (
+                  <CircularProgress color="secondary" />
+                )}
               </div>
             </div>
           </div>

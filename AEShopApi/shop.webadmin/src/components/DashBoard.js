@@ -40,7 +40,7 @@ export default class DashBoard extends Component {
         )}
         {value === 1 && (
           <TabContainer>
-            <h1>Category</h1>
+            {/* <CategoryTable /> */}
           </TabContainer>
         )}
       </React.Fragment>

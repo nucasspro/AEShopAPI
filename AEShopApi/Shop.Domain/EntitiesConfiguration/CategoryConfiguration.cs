@@ -15,6 +15,9 @@ namespace Shop.Domain.EntitiesConfiguration
 
             builder.Property(x => x.ParentId).IsRequired(false).HasColumnName("ParentId").HasColumnType("int");
             builder.HasOne(x => x.Parent).WithMany().HasForeignKey(z => z.ParentId);
+
+            builder.Property(x => x.CategoryStatusTypeId).IsRequired(false).HasColumnName("CategoryStatusTypeId").HasColumnType("int");
+            builder.HasOne(x => x.CategoryStatusType).WithMany(y => y.Categories).HasForeignKey(z => z.CategoryStatusTypeId);
         }
     }
 }

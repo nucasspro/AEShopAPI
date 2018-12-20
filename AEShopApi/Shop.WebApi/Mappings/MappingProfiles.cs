@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using Shop.Common.Commons;
 using Shop.Domain.Entities;
+using Shop.Domain.Enumerations;
+using Shop.ViewModel.ViewModels;
 using Shop.WebApi.Models;
 
 namespace Shop.WebApi.Mappings
@@ -8,8 +11,9 @@ namespace Shop.WebApi.Mappings
     {
         /// <summary>
         /// CreateMap<Product, ProductViewModel>();
-        /// Source: Product Model
-        /// Destination: ProductViewModel viewmodel
+        /// 
+        /// Product -> ProductViewModel 
+        /// 
         /// </summary>
         public MappingProfiles()
         {
@@ -29,9 +33,9 @@ namespace Shop.WebApi.Mappings
             #endregion Mapping User Model
 
             //CreateMap<ProductCategory, ProductCategoryViewModel>();
-            ////CreateMap<Category, CategoryViewModel>()
-            ////    .ForMember(destination => destination.ParentName,
-            ////    opt => opt.MapFrom(source => Enum.GetName(typeof(CategoryType), source.ParentId)));
+            //CreateMap<Category, CategoryViewModel>()
+            //    .ForMember(destination => destination.ParentName,
+            //    opt => opt.MapFrom(source => Enum.GetName(typeof(CategoryType), source.ParentId)));
 
             #region Mapping Customer
 
@@ -81,17 +85,15 @@ namespace Shop.WebApi.Mappings
 
             #region Mapping Product Model
 
-            //CreateMap<ProductViewModel, Product>()
-            //    .ForMember(model => model.ProductStatusId,
-            //    opt=> opt.MapFrom(viewmodel => ProductStatusTypeEnum.FromName(viewmodel.ProductStatusName).Id));
-            //CreateMap<Product, ProductViewModel>()
-            //    //.ForMember(viewmodel => viewmodel.ProductStatusName,
-            //    //opt => opt.MapFrom(model => Enumeration.FromValue<ProductStatusTypeEnum>(model.ProductStatusId).ToString()))
-            //    //opt => opt.MapFrom(model => ProductStatusTypeEnum.From(model.ProductStatusId).Name))
-            //    .ForMember(viewmodel => viewmodel.InsertedAt,
-            //    opt => opt.MapFrom(source => ConvertDatetime.UnixTimestampToDateTime(source.InsertedAt)))
-            //    .ForMember(viewmodel => viewmodel.UpdatedAt,
-            //    opt => opt.MapFrom(model => ConvertDatetime.UnixTimestampToDateTime(model.UpdatedAt)));
+            CreateMap<ProductViewModel, Product>();
+
+            CreateMap<Product, ProductViewModel>()
+                .ForMember(viewmodel => viewmodel.ProductStatusTypeId,
+                opt=> opt.MapFrom(view => view.ProductStatusTypeId))
+                .ForMember(viewmodel => viewmodel.InsertedAt,
+                opt => opt.MapFrom(source => ConvertDatetime.UnixTimestampToDateTime(source.InsertedAt).ToShortDateString()))
+                .ForMember(viewmodel => viewmodel.UpdatedAt,
+                opt => opt.MapFrom(model => ConvertDatetime.UnixTimestampToDateTime(model.UpdatedAt).ToShortDateString()));
 
             #endregion Mapping Product Model
 
@@ -133,8 +135,8 @@ namespace Shop.WebApi.Mappings
 
             #region Mapping Category
 
-            //CreateMap<Category, CategoryViewModel>();
-            //CreateMap<CategoryViewModel, Category>();
+            CreateMap<Category, CategoryViewModel>();
+            CreateMap<CategoryViewModel, Category>();
 
             #endregion Mapping Category
         }

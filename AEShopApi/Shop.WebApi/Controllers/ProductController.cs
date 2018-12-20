@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Serilog;
+﻿using AutoMapper;
+using FluentValidation;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using Shop.Common.Commons;
 using Shop.Domain.Entities;
 using Shop.Service.Interfaces;
+using Shop.ViewModel.ViewModels;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace Shop.WebApi.Controllers
@@ -16,14 +20,20 @@ namespace Shop.WebApi.Controllers
         #region Variables
 
         private readonly IProductService _productService;
+        private readonly IMapper _mapper;
+        private readonly IValidator<ProductViewModel> _validator;
+        //private readonly ILogger<ProductController> _logger;
 
         #endregion Variables
 
         #region Constructor
 
-        public ProductController(IProductService productService)
+        public ProductController(IProductService productService, IMapper mapper, IValidator<ProductViewModel> validator/*, ILogger<ProductController> logger*/)
         {
             _productService = productService;
+            _mapper = mapper;
+            _validator = validator;
+            //_logger = logger;
         }
 
         #endregion Constructor
@@ -35,17 +45,18 @@ namespace Shop.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetProducts()
         {
-            Log.Information("Start HttpGet GetProducts() - ProductController");
+            //_logger.LogInformation("Start HttpGet GetProducts() - ProductController");
             var products = await _productService.GetAllAsync();
 
             if (products == null)
             {
-                Log.Information("Product null");
+                //_logger.LogInformation("Product null");
                 return NotFound();
             }
 
-            Log.Information("End HttpGet GetProducts() - ProductController");
-            return Ok(products);
+            var productsMapping = _mapper.Map<IEnumerable<ProductViewModel>>(products);
+            //_logger.LogInformation("End HttpGet GetProducts() - ProductController");
+            return Ok(productsMapping);
         }
 
         #endregion GET: api/Products
@@ -55,16 +66,16 @@ namespace Shop.WebApi.Controllers
         //[HttpGet("get/{id}")]
         //public async Task<IActionResult> GetProductsByCategory([FromRoute]int id, [FromQuery(Name = "pageSize")] int pageSize = 0, [FromQuery(Name = "getNumber")]int getNumber = 5)
         //{
-        //    //Log.Information("Start HttpGet GetProducts() - ProductController");
+        //    //_logger.Information("Start HttpGet GetProducts() - ProductController");
         //    var products = await _productService.GetByCategoryAsync(id, pageSize, getNumber);
 
         //    if (products == null)
         //    {
-        //        //Log.Information("Product null");
+        //        //_logger.Information("Product null");
         //        return NotFound();
         //    }
 
-        //    //Log.Information("End HttpGet GetProducts() - ProductController");
+        //    //_logger.Information("End HttpGet GetProducts() - ProductController");
         //    return Ok(products);
         //}
 
@@ -86,10 +97,10 @@ namespace Shop.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetProduct(int id)
         {
-            Log.Information($"Start HttpGet GetProduct({id}) - ProductController");
+            //_logger.LogInformation($"Start HttpGet GetProduct({id}) - ProductController");
             if (!ModelState.IsValid)
             {
-                Log.Information($"End HttpGet GetProduct({id}) - ProductController - BadRequest");
+                //_logger.LogInformation($"End HttpGet GetProduct({id}) - ProductController - BadRequest");
                 return BadRequest(ModelState);
             }
 
@@ -97,11 +108,13 @@ namespace Shop.WebApi.Controllers
 
             if (product == null)
             {
-                Log.Information($"End HttpGet GetProduct({id}) - ProductController - NotFound");
+                //_logger.LogInformation($"End HttpGet GetProduct({id}) - ProductController - NotFound");
                 return NotFound();
             }
-            Log.Information($"End HttpGet GetProduct({id}) - ProductController - Done");
-            return Ok(product);
+            var productViewModel = _mapper.Map<ProductViewModel>(product);
+
+            //_logger.LogInformation($"End HttpGet GetProduct({id}) - ProductController - Done");
+            return Ok(productViewModel);
         }
 
         #endregion GET: api/Products/5
@@ -111,10 +124,10 @@ namespace Shop.WebApi.Controllers
         //[HttpGet("{sku}")]
         //public async Task<IActionResult> GetBySku(string sku)
         //{
-        //    Log.Information($"Start HttpGet GetProduct({sku}) - ProductController");
+        //    _logger.Information($"Start HttpGet GetProduct({sku}) - ProductController");
         //    if (!ModelState.IsValid)
         //    {
-        //        Log.Information($"End HttpGet GetProduct({sku}) - ProductController - BadRequest");
+        //        _logger.Information($"End HttpGet GetProduct({sku}) - ProductController - BadRequest");
         //        return BadRequest(ModelState);
         //    }
 
@@ -122,10 +135,10 @@ namespace Shop.WebApi.Controllers
 
         //    if (product == null)
         //    {
-        //        Log.Information($"End HttpGet GetProduct({sku}) - ProductController - NotFound");
+        //        _logger.Information($"End HttpGet GetProduct({sku}) - ProductController - NotFound");
         //        return NotFound();
         //    }
-        //    Log.Information($"End HttpGet GetProduct({sku}) - ProductController - Done");
+        //    _logger.Information($"End HttpGet GetProduct({sku}) - ProductController - Done");
         //    return Ok(product);
         //}
 
@@ -134,36 +147,46 @@ namespace Shop.WebApi.Controllers
         #region PUT: api/Products/5
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutProduct([FromRoute] int id, [FromBody] Product updateProduct)
+        public async Task<IActionResult> PutProduct([FromRoute] int id, [FromBody] ProductViewModel updateProductViewModel)
         {
             if (!ModelState.IsValid)
             {
-                Log.Information($"End HttpPut PutProduct({id}) - ProductController - BadRequest");
+                //_logger.LogInformation($"End HttpPut PutProduct({id}) - ProductController - BadRequest");
                 return BadRequest(ModelState);
             }
-            if (id != updateProduct.Id)
+
+            if (id != updateProductViewModel.Id)
             {
-                Log.Information($"End HttpPut PutProduct({id}) - ProductController - BadRequest: {id} != {updateProduct.Id}");
+                //_logger.LogInformation($"End HttpPut PutProduct({id}) - ProductController - BadRequest: {id} != {updateProductViewModel.Id}");
                 return BadRequest();
+            }
+
+            var result = _validator.Validate(updateProductViewModel);
+            if (!result.IsValid)
+            {
+                return BadRequest(result.ToString("~"));
             }
 
             var product = await _productService.GetByIdAsync(id);
 
             if (product == null)
             {
-                Log.Information($"End HttpPut PutProduct({id}) - ProductController - NotFound");
+                //_logger.LogInformation($"End HttpPut PutProduct({id}) - ProductController - NotFound");
                 return NotFound();
             }
 
             try
             {
+                var updateProduct = _mapper.Map<Product>(updateProductViewModel);
+                updateProduct.InsertedAt = product.InsertedAt;
+                updateProduct.UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
                 await _productService.UpdateAsync(updateProduct);
-                Log.Information($"End HttpPut PutProduct({id}) - ProductController - Done");
+                //_logger.LogInformation($"End HttpPut PutProduct({id}) - ProductController - Done");
                 return Ok();
             }
             catch (Exception e)
             {
-                Log.Information($"End HttpPut PutProduct({id}) - ProductController - BadRequest: {e.Message}");
+                //_logger.LogError($"End HttpPut PutProduct({id}) - ProductController - BadRequest: {e.Message}");
                 return BadRequest($"Error! {e.Message}");
             }
         }
@@ -173,25 +196,38 @@ namespace Shop.WebApi.Controllers
         #region POST: api/Products
 
         [HttpPost]
-        public async Task<IActionResult> PostProduct([FromBody] Product product)
+        public async Task<IActionResult> PostProduct([FromBody] ProductViewModel productViewModel)
         {
             if (!ModelState.IsValid)
             {
-                Log.Information($"End HttpPost PostProduct({product}) - ProductController - BadRequest");
+                //_logger.LogInformation($"End HttpPost PostProduct({productViewModel}) - ProductController - BadRequest");
                 return BadRequest(ModelState);
+            }
+
+            var result = _validator.Validate(productViewModel);
+            if (!result.IsValid)
+            {
+                return BadRequest(result.ToString("~"));
             }
 
             try
             {
-                product.InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
-                product.UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
+                var product = _mapper.Map<Product>(productViewModel);
+
+                var datetime = ConvertDatetime.ConvertToTimeSpan(DateTime.Now);
+
+                product.InsertedAt = datetime;
+                product.UpdatedAt = datetime;
+
                 await _productService.InsertAsync(product);
-                Log.Information($"End HttpPost PostProduct({product}) - ProductController - Done");
-                return CreatedAtAction("GetProduct", new { id = product.Id }, product);
+                //_logger.LogInformation($"End HttpPost PostProduct({productViewModel}) - ProductController - Done");
+
+                var newProductViewModel = _mapper.Map<ProductViewModel>(product);
+                return CreatedAtAction("GetProduct", new { id = newProductViewModel.Id }, newProductViewModel);
             }
             catch (Exception e)
             {
-                Log.Information($"End HttpPost PostProduct({product}) - BadRequest: {e.Message}");
+                //_logger.LogError($"End HttpPost PostProduct({productViewModel}) - BadRequest: {e.Message}");
                 return BadRequest(e.Message);
             }
         }
@@ -205,19 +241,12 @@ namespace Shop.WebApi.Controllers
         {
             if (!ModelState.IsValid)
             {
-                Log.Information($"End HttpDelete DeleteProduct({id}) - ProductController - BadRequest");
+                //_logger.LogInformation($"End HttpDelete DeleteProduct({id}) - ProductController - BadRequest");
                 return BadRequest(ModelState);
             }
 
-            //var product = await _productService.GetByIdAsync(id);
-            //if (product == null)
-            //{
-            //    Log.Information($"End HttpDelete DeleteProduct({id}) - ProductController - NotFound");
-            //    return NotFound();
-            //}
-
             await _productService.DeleteAsync(id);
-            Log.Information($"End HttpDelete DeleteProduct({id}) - ProductController - Done");
+            //_logger.LogInformation($"End HttpDelete DeleteProduct({id}) - ProductController - Done");
             return Ok();
         }
 
@@ -230,19 +259,19 @@ namespace Shop.WebApi.Controllers
         //{
         //    if (!ModelState.IsValid)
         //    {
-        //        Log.Information($"End HttpDelete DeleteBySku({sku}) - ProductController - BadRequest");
+        //        _logger.Information($"End HttpDelete DeleteBySku({sku}) - ProductController - BadRequest");
         //        return BadRequest(ModelState);
         //    }
 
         //    //var product = await _productService.getbysku(id);
         //    //if (product == null)
         //    //{
-        //    //Log.Information($"End HttpDelete DeleteBySku({sku}) - ProductController - NotFound");
+        //    //_logger.Information($"End HttpDelete DeleteBySku({sku}) - ProductController - NotFound");
         //    //return NotFound();
         //    //}
 
         //    await _productService.DeleteBySku(sku);
-        //    Log.Information($"End HttpDelete DeleteBySku({sku}) - ProductController - Done");
+        //    _logger.Information($"End HttpDelete DeleteBySku({sku}) - ProductController - Done");
         //    return Ok();
         //}
 

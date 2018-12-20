@@ -56,11 +56,11 @@ namespace Shop.Service.Implements
         {
             return await _productRepository.GetByIdAsync(id);
         }
+
         public async Task<Product> GetBySkuAsync(string sku)
         {
             return await _productRepository.GetBySkuAsync(sku);
         }
-
 
         public async Task InsertAsync(Product product)
         {
