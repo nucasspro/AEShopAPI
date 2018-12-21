@@ -10,8 +10,11 @@ namespace Shop.Domain.Repositories.Interfaces
     {
         bool CheckExistsById(int id);
         Task<IEnumerable<Product>> GetByCategoryAsync(int categoryId, int pageSize, int getNumber);
-        Task<IEnumerable<Product>> GetProductsWithPaginationAsync(int PageSize, int GetNumber);
+        Task<IEnumerable<Product>> GetProductAsync();
 
+        Task<IEnumerable<Product>> GetProductsWithPaginationAsync(int PageSize, int GetNumber);
+        Task<Product> GetBySkuAsync(string sku);
+        Task<bool> Delete(int id);
     }
 
 

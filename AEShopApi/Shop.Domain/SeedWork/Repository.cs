@@ -40,9 +40,9 @@ namespace Shop.Domain.SeedWork
             _context.Set<T>().Update(entity);
         }
 
-        public async Task DeleteAsync(T entity)
+        public void Delete(T entity)
         {
-            var result = await _context.Set<T>().FirstOrDefaultAsync(x => x.Id == entity.Id);
+            //var result = await _context.Set<T>().FirstOrDefaultAsync(x => x.Id == entity.Id);
             _context.Set<T>().Remove(entity);
         }
 

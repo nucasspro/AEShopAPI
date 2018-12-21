@@ -20,12 +20,14 @@ export default class Layout extends Component {
             </div>
             <div className="main-content-inner">
               <div className="row">
-                <div className="col-12 mt-5">{this.props.children}</div>
+                <div className="col-12 mt-5">
+                  {this.props.children}
+                </div>
               </div>
             </div>
           </div>
           <div className="footer">
-            <p>By Nucasspro</p>
+            <p>Footer</p>
           </div>
         </div>
       </React.Fragment>

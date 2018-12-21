@@ -1,0 +1,110 @@
+2018-12-14 16:59:11.528 +07:00 [Information] Request starting HTTP/1.1 OPTIONS https://localhost:5001/api/products  
+2018-12-14 16:59:11.807 +07:00 [Information] Policy execution failed.
+2018-12-14 16:59:11.809 +07:00 [Information] Request method "POST" not allowed in CORS policy.
+2018-12-14 16:59:11.863 +07:00 [Information] Request finished in 348.4282ms 204 
+2018-12-14 17:01:13.881 +07:00 [Information] Request starting HTTP/1.1 OPTIONS https://localhost:5001/api/products  
+2018-12-14 17:01:13.970 +07:00 [Information] Policy execution failed.
+2018-12-14 17:01:13.974 +07:00 [Information] Request origin "http://localhost:3000" does not have permission to access the resource.
+2018-12-14 17:01:13.995 +07:00 [Information] Request finished in 118.5519ms 204 
+2018-12-14 17:02:20.940 +07:00 [Information] Request starting HTTP/1.1 OPTIONS https://localhost:5001/api/products  
+2018-12-14 17:02:21.040 +07:00 [Information] Policy execution failed.
+2018-12-14 17:02:21.042 +07:00 [Information] Request origin "http://localhost:3000" does not have permission to access the resource.
+2018-12-14 17:02:21.052 +07:00 [Information] Request finished in 119.7059ms 204 
+2018-12-14 17:10:39.659 +07:00 [Information] Request starting HTTP/1.1 OPTIONS https://localhost:5001/api/products  
+2018-12-14 17:10:39.771 +07:00 [Information] Policy execution failed.
+2018-12-14 17:10:39.776 +07:00 [Information] Request origin "http://localhost:3000" does not have permission to access the resource.
+2018-12-14 17:10:39.818 +07:00 [Information] Request finished in 139.5491ms 204 
+2018-12-14 17:16:51.935 +07:00 [Information] Request starting HTTP/1.1 OPTIONS https://localhost:5001/api/products  
+2018-12-14 17:16:52.032 +07:00 [Information] Policy execution failed.
+2018-12-14 17:16:52.034 +07:00 [Information] Request method "POST" not allowed in CORS policy.
+2018-12-14 17:16:52.064 +07:00 [Information] Request finished in 119.6157ms 204 
+2018-12-14 17:19:33.724 +07:00 [Information] Request starting HTTP/1.1 OPTIONS https://localhost:5001/api/products  
+2018-12-14 17:19:33.854 +07:00 [Information] Policy execution failed.
+2018-12-14 17:19:33.861 +07:00 [Information] Request method "POST" not allowed in CORS policy.
+2018-12-14 17:19:33.879 +07:00 [Information] Request finished in 164.0715ms 204 
+2018-12-14 17:19:37.544 +07:00 [Information] Request starting HTTP/1.1 OPTIONS https://localhost:5001/api/products  
+2018-12-14 17:19:37.546 +07:00 [Information] Policy execution failed.
+2018-12-14 17:19:37.548 +07:00 [Information] Request method "POST" not allowed in CORS policy.
+2018-12-14 17:19:37.551 +07:00 [Information] Request finished in 7.0342ms 204 
+2018-12-14 17:20:02.126 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/products application/json 512
+2018-12-14 17:20:03.050 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-12-14 17:20:03.869 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-12-14 17:20:03.937 +07:00 [Information] Start HttpGet GetProducts() - ProductController
+2018-12-14 17:20:05.590 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-14 17:20:07.276 +07:00 [Information] Executed DbCommand ("846"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Description], [p].[Detail], [p].[DiscountId], [p].[Height], [p].[Image1], [p].[Image2], [p].[Image3], [p].[Image4], [p].[IncludeVAT], [p].[InsertedAt], [p].[Length], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[Name], [p].[ProductImage], [p].[ProductStatusTypeId], [p].[PromotionPrice], [p].[Quantity], [p].[RegularPrice], [p].[Sku], [p].[UpdatedAt], [p].[ViewCounts], [p].[Warranty], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]"
+2018-12-14 17:20:07.290 +07:00 [Information] End HttpGet GetProducts() - ProductController
+2018-12-14 17:20:07.300 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 3419.6698ms.
+2018-12-14 17:20:07.336 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-14 17:20:07.632 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 4575.3317ms
+2018-12-14 17:20:07.656 +07:00 [Information] Request finished in 5556.7912ms 200 application/json; charset=utf-8
+2018-12-14 17:20:07.671 +07:00 [Information] Connection id ""0HLJ1LMI3U0QR"", Request id ""0HLJ1LMI3U0QR:00000001"": the application completed without reading the entire request body.
+2018-12-14 17:20:32.651 +07:00 [Information] Request starting HTTP/1.1 OPTIONS https://localhost:5001/api/products  
+2018-12-14 17:20:32.653 +07:00 [Information] Policy execution failed.
+2018-12-14 17:20:32.654 +07:00 [Information] Request method "POST" not allowed in CORS policy.
+2018-12-14 17:20:32.655 +07:00 [Information] Request finished in 4.3481ms 204 
+2018-12-14 17:20:35.414 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/products application/json 512
+2018-12-14 17:20:35.415 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-12-14 17:20:35.418 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-12-14 17:20:35.420 +07:00 [Information] Start HttpGet GetProducts() - ProductController
+2018-12-14 17:20:35.422 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-14 17:20:35.436 +07:00 [Information] Executed DbCommand ("10"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Description], [p].[Detail], [p].[DiscountId], [p].[Height], [p].[Image1], [p].[Image2], [p].[Image3], [p].[Image4], [p].[IncludeVAT], [p].[InsertedAt], [p].[Length], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[Name], [p].[ProductImage], [p].[ProductStatusTypeId], [p].[PromotionPrice], [p].[Quantity], [p].[RegularPrice], [p].[Sku], [p].[UpdatedAt], [p].[ViewCounts], [p].[Warranty], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]"
+2018-12-14 17:20:35.442 +07:00 [Information] End HttpGet GetProducts() - ProductController
+2018-12-14 17:20:35.446 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 26.2085ms.
+2018-12-14 17:20:35.450 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-14 17:20:35.453 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 35.4886ms
+2018-12-14 17:20:35.457 +07:00 [Information] Request finished in 43.4661ms 200 application/json; charset=utf-8
+2018-12-14 17:20:35.458 +07:00 [Information] Connection id ""0HLJ1LMI3U0QT"", Request id ""0HLJ1LMI3U0QT:00000001"": the application completed without reading the entire request body.
+2018-12-14 17:20:39.859 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/products application/json 512
+2018-12-14 17:20:39.860 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-12-14 17:20:39.863 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-12-14 17:20:39.867 +07:00 [Information] Start HttpGet GetProducts() - ProductController
+2018-12-14 17:20:39.870 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-14 17:20:39.930 +07:00 [Information] Executed DbCommand ("54"ms) [Parameters=[""], CommandType='Text', CommandTimeout='30']"
+""SELECT [p].[Id], [p].[Description], [p].[Detail], [p].[DiscountId], [p].[Height], [p].[Image1], [p].[Image2], [p].[Image3], [p].[Image4], [p].[IncludeVAT], [p].[InsertedAt], [p].[Length], [p].[MetaDescriptions], [p].[MetaKeywords], [p].[MetaTitle], [p].[Name], [p].[ProductImage], [p].[ProductStatusTypeId], [p].[PromotionPrice], [p].[Quantity], [p].[RegularPrice], [p].[Sku], [p].[UpdatedAt], [p].[ViewCounts], [p].[Warranty], [p].[Weight], [p].[Width]
+FROM [Products] AS [p]"
+2018-12-14 17:20:39.971 +07:00 [Information] End HttpGet GetProducts() - ProductController
+2018-12-14 17:20:39.974 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 107.0856ms.
+2018-12-14 17:20:39.979 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.Domain.Entities.Product, Shop.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-14 17:20:39.981 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 118.0286ms
+2018-12-14 17:20:39.984 +07:00 [Information] Request finished in 124.2938ms 200 application/json; charset=utf-8
+2018-12-14 17:20:39.985 +07:00 [Information] Connection id ""0HLJ1LMI3U0QU"", Request id ""0HLJ1LMI3U0QU:00000001"": the application completed without reading the entire request body.
+2018-12-14 17:21:11.643 +07:00 [Information] Request starting HTTP/1.1 OPTIONS https://localhost:5001/api/products  
+2018-12-14 17:21:11.644 +07:00 [Information] Policy execution failed.
+2018-12-14 17:21:11.645 +07:00 [Information] Request method "POST" not allowed in CORS policy.
+2018-12-14 17:21:11.647 +07:00 [Information] Request finished in 3.7583ms 204 
+2018-12-14 17:21:12.055 +07:00 [Information] Request starting HTTP/1.1 POST https://localhost:5001/api/products application/json;charset=UTF-8 334
+2018-12-14 17:21:12.056 +07:00 [Information] Policy execution successful.
+2018-12-14 17:21:12.112 +07:00 [Information] Route matched with "{action = \"PostProduct\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)"
+2018-12-14 17:21:12.115 +07:00 [Information] Policy execution successful.
+2018-12-14 17:21:12.264 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)" with arguments (["Shop.Domain.Entities.Product"]) - Validation state: Valid
+2018-12-14 17:21:12.300 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-14 17:21:12.966 +07:00 [Information] Executed DbCommand ("300"ms) [Parameters=["@p0='?' (Size = 250), @p1='?' (Size = 8000) (DbType = AnsiString), @p2='?' (DbType = Int32), @p3='?', @p4='?' (Size = 100) (DbType = AnsiString), @p5='?' (Size = 100) (DbType = AnsiString), @p6='?' (Size = 100) (DbType = AnsiString), @p7='?' (Size = 100) (DbType = AnsiString), @p8='?', @p9='?' (DbType = Int32), @p10='?', @p11='?' (Size = 50), @p12='?' (Size = 50), @p13='?' (Size = 50), @p14='?' (Size = 100), @p15='?' (Size = 100) (DbType = AnsiString), @p16='?' (DbType = Int32), @p17='?', @p18='?' (DbType = Int32), @p19='?', @p20='?' (Size = 20) (DbType = AnsiString), @p21='?' (DbType = Int32), @p22='?' (DbType = Int32), @p23='?' (Size = 50), @p24='?', @p25='?'"], CommandType='Text', CommandTimeout='30']"
+""SET NOCOUNT ON;
+INSERT INTO [Products] ([Description], [Detail], [DiscountId], [Height], [Image1], [Image2], [Image3], [Image4], [IncludeVAT], [InsertedAt], [Length], [MetaDescriptions], [MetaKeywords], [MetaTitle], [Name], [ProductImage], [ProductStatusTypeId], [PromotionPrice], [Quantity], [RegularPrice], [Sku], [UpdatedAt], [ViewCounts], [Warranty], [Weight], [Width])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22, @p23, @p24, @p25);
+SELECT [Id]
+FROM [Products]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();"
+2018-12-14 17:21:13.030 +07:00 [Information] End HttpPost PostProduct(Shop.Domain.Entities.Product) - ProductController - Done
+2018-12-14 17:21:13.040 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.CreatedAtActionResult" in 763.7861ms.
+2018-12-14 17:21:13.041 +07:00 [Information] Executing ObjectResult, writing value of type '"Shop.Domain.Entities.Product"'.
+2018-12-14 17:21:13.049 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)" in 934.1835ms
+2018-12-14 17:21:13.050 +07:00 [Information] Request finished in 995.3848ms 201 application/json; charset=utf-8
+2018-12-14 17:22:04.633 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/products/18 application/json 512
+2018-12-14 17:22:04.643 +07:00 [Information] Route matched with "{action = \"GetProduct\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProduct (Shop.WebApi)"
+2018-12-14 17:22:04.646 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProduct (Shop.WebApi)" with arguments (["18"]) - Validation state: Valid
+2018-12-14 17:22:04.650 +07:00 [Information] Start HttpGet GetProduct(18) - ProductController
+2018-12-14 17:22:04.657 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-14 17:22:04.880 +07:00 [Information] Executed DbCommand ("18"ms) [Parameters=["@__id_0='?' (DbType = Int32)"], CommandType='Text', CommandTimeout='30']"
+""SELECT TOP(1) [x].[Id], [x].[Description], [x].[Detail], [x].[DiscountId], [x].[Height], [x].[Image1], [x].[Image2], [x].[Image3], [x].[Image4], [x].[IncludeVAT], [x].[InsertedAt], [x].[Length], [x].[MetaDescriptions], [x].[MetaKeywords], [x].[MetaTitle], [x].[Name], [x].[ProductImage], [x].[ProductStatusTypeId], [x].[PromotionPrice], [x].[Quantity], [x].[RegularPrice], [x].[Sku], [x].[UpdatedAt], [x].[ViewCounts], [x].[Warranty], [x].[Weight], [x].[Width]
+FROM [Products] AS [x]
+WHERE [x].[Id] = @__id_0"
+2018-12-14 17:22:04.930 +07:00 [Information] End HttpGet GetProduct(18) - ProductController - Done
+2018-12-14 17:22:04.942 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProduct (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 293.8565ms.
+2018-12-14 17:22:04.943 +07:00 [Information] Executing ObjectResult, writing value of type '"Shop.Domain.Entities.Product"'.
+2018-12-14 17:22:04.944 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProduct (Shop.WebApi)" in 300.1845ms
+2018-12-14 17:22:04.945 +07:00 [Information] Request finished in 312.095ms 200 application/json; charset=utf-8

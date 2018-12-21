@@ -16,11 +16,11 @@
 
   <ItemGroup>
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
-    <PackageReference Include="FluentValidation.AspNetCore" Version="8.0.101" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="8.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Api.Analyzers" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Log4Net.AspNetCore" Version="2.2.6" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
     <PackageReference Include="Serilog.AspNetCore" Version="2.1.1" />
@@ -33,6 +33,7 @@
     <ProjectReference Include="..\Shop.Common\Shop.Common.csproj" />
     <ProjectReference Include="..\Shop.Domain\Shop.Domain.csproj" />
     <ProjectReference Include="..\Shop.Service\Shop.Service.csproj" />
+    <ProjectReference Include="..\Shop.ViewModel\Shop.ViewModel.csproj" />
   </ItemGroup>
 
 </Project>

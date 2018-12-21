@@ -13,7 +13,7 @@ namespace Shop.Domain.SeedWork
 
         void Update(T entity);
 
-        Task DeleteAsync(T entity);
+        void Delete(T entity);
 
         Task DeleteAsync(int id);
     }

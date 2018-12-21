@@ -27,6 +27,10 @@ namespace Shop.Domain.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("CategoryStatusTypeId")
+                        .HasColumnName("CategoryStatusTypeId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Description")
                         .HasColumnName("Description")
                         .HasColumnType("nvarchar(200)");
@@ -43,9 +47,32 @@ namespace Shop.Domain.Migrations
                         .HasColumnName("Name")
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int?>("ParentId")
-                        .HasColumnName("ParentId")
+                    b.Property<int>("UpdatedAt")
+                        .HasColumnName("UpdatedAt")
                         .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CategoryStatusTypeId");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("Shop.Domain.Entities.CategoryStatusType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnName("Id")
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("InsertedAt")
+                        .HasColumnName("InsertedAt")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasColumnName("Name")
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("UpdatedAt")
                         .HasColumnName("UpdatedAt")
@@ -53,9 +80,12 @@ namespace Shop.Domain.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ParentId");
+                    b.ToTable("CategoryStatusTypes");
 
-                    b.ToTable("Categories");
+                    b.HasData(
+                        new { Id = 1, InsertedAt = 1545389342, Name = "Actived", UpdatedAt = 1545389342 },
+                        new { Id = 2, InsertedAt = 1545389342, Name = "Removed", UpdatedAt = 1545389342 }
+                    );
                 });
 
             modelBuilder.Entity("Shop.Domain.Entities.Discount", b =>
@@ -697,8 +727,9 @@ namespace Shop.Domain.Migrations
                     b.ToTable("ProductStatusTypes");
 
                     b.HasData(
-                        new { Id = 1, InsertedAt = 1543910290, Name = "Out of stock", UpdatedAt = 1543910290 },
-                        new { Id = 2, InsertedAt = 1543910290, Name = "Stock", UpdatedAt = 1543910290 }
+                        new { Id = 1, InsertedAt = 1545389343, Name = "Out of stock", UpdatedAt = 1545389343 },
+                        new { Id = 2, InsertedAt = 1545389343, Name = "Stock", UpdatedAt = 1545389343 },
+                        new { Id = 3, InsertedAt = 1545389343, Name = "Removed", UpdatedAt = 1545389343 }
                     );
                 });
 
@@ -877,6 +908,12 @@ namespace Shop.Domain.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserStatusTypes");
+
+                    b.HasData(
+                        new { Id = 1, InsertedAt = 1545389343, Name = "Deactivated", UpdatedAt = 1545389343 },
+                        new { Id = 2, InsertedAt = 1545389343, Name = "Activated", UpdatedAt = 1545389343 },
+                        new { Id = 3, InsertedAt = 1545389343, Name = "Removed", UpdatedAt = 1545389343 }
+                    );
                 });
 
             modelBuilder.Entity("Shop.Domain.Entities.Ward", b =>
@@ -920,9 +957,10 @@ namespace Shop.Domain.Migrations
 
             modelBuilder.Entity("Shop.Domain.Entities.Category", b =>
                 {
-                    b.HasOne("Shop.Domain.Entities.Category", "Parent")
-                        .WithMany()
-                        .HasForeignKey("ParentId");
+                    b.HasOne("Shop.Domain.Entities.CategoryStatusType", "CategoryStatusType")
+                        .WithMany("Categories")
+                        .HasForeignKey("CategoryStatusTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("Shop.Domain.Entities.Discount", b =>

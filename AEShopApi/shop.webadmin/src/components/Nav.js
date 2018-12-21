@@ -7,7 +7,7 @@ export default class Nav extends Component {
       <React.Fragment>
         <div className="sidebar-header">
           <div className="logo">
-            <a href="index.html">NU Shop</a>
+            <a href="index.html">NU Shop Admin</a>
           </div>
         </div>
         <div className="main-menu">
@@ -16,13 +16,18 @@ export default class Nav extends Component {
               <nav>
                 <ul className="metismenu" id="menu">
                   <li>
+                    <Link to={'/'}>
+                      <i className="ti-dashboard" /> <span>DashBoard</span>
+                    </Link>
+                  </li>
+                  <li>
                     <Link to={'/products'}>
-                      <i className="ti-dashboard" /> <span>"Product"</span>
+                      <i className="ti-dashboard" /> <span>Product</span>
                     </Link>
                   </li>
                   <li>
                     <Link to={'/categories'}>
-                      <i className="ti-dashboard" /> <span>"Category"</span>
+                      <i className="ti-dashboard" /> <span>Category</span>
                     </Link>
                     {/* <NavButton
                       href="/"

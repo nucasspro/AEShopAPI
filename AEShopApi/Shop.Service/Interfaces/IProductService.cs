@@ -14,6 +14,8 @@ namespace Shop.Service.Interfaces
 
         Task<Product> GetByIdAsync(int id);
 
+        Task<Product> GetBySkuAsync(string sku);
+
         Task InsertAsync(Product product);
 
         Task UpdateAsync(Product product);
@@ -23,5 +25,6 @@ namespace Shop.Service.Interfaces
         Task DeleteAsync(int id);
 
         bool CheckExistsById(int id);
+
     }
 }
