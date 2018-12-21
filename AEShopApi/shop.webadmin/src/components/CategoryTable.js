@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-// import CategoryDialog from './CategoryDialog';
+import CategoryDialog from './CategoryDialog';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { BASE_URL } from '../settings';
 import { withStyles } from '@material-ui/core/styles';
@@ -76,7 +76,6 @@ class CategoryTable extends Component {
   async getCategory() {
     try {
       var response = await axios.get(`${BASE_URL}/categories`);
-
       this.setState({
         categories: response.data,
         isLoading: false
@@ -128,9 +127,9 @@ class CategoryTable extends Component {
           <div className="card-body">
             <h4 className="header-title">Category Table</h4>
             <div className="btn-add-new mb-3">
-              {/* <CategoryDialog onAddProduct={this.handleAdd} /> */}
+              <CategoryDialog onAddCategory={this.handleAdd} />
             </div>
-            <div className="data-tables">
+            <div className="data-tables datatable-dark">
               <div
                 id="dataTable3_wrapper"
                 className="dataTables_wrapper dt-bootstrap4 no-footer"
@@ -141,7 +140,7 @@ class CategoryTable extends Component {
                       <CustomTableCell>Id</CustomTableCell>
                       <CustomTableCell>Name</CustomTableCell>
                       <CustomTableCell>Status</CustomTableCell>
-                      <CustomTableCell>Created At</CustomTableCell>
+                      <CustomTableCell>Inserted At</CustomTableCell>
                       <CustomTableCell>Updated At</CustomTableCell>
                       <CustomTableCell>Actions</CustomTableCell>
                     </TableRow>
@@ -154,8 +153,8 @@ class CategoryTable extends Component {
                             {row.id}
                           </CustomTableCell>
                           <CustomTableCell>{row.name}</CustomTableCell>
-                          <CustomTableCell>{row.status}</CustomTableCell>
-                          <CustomTableCell>{row.createAt}</CustomTableCell>
+                          <CustomTableCell>{(row.categoryStatusType.name)}</CustomTableCell>
+                          <CustomTableCell>{row.insertedAt}</CustomTableCell>
                           <CustomTableCell>{row.updatedAt}</CustomTableCell>
                           <CustomTableCell>
                             <Fab

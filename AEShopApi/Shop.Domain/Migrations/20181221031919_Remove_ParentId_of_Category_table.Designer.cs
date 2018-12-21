@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Shop.Domain;
 
 namespace Shop.Domain.Migrations
 {
     [DbContext(typeof(AeDbContext))]
-    partial class AeDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181221031919_Remove_ParentId_of_Category_table")]
+    partial class Remove_ParentId_of_Category_table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,7 +29,7 @@ namespace Shop.Domain.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CategoryStatusTypeId")
+                    b.Property<int?>("CategoryStatusTypeId")
                         .HasColumnName("CategoryStatusTypeId")
                         .HasColumnType("int");
 
@@ -83,8 +85,8 @@ namespace Shop.Domain.Migrations
                     b.ToTable("CategoryStatusTypes");
 
                     b.HasData(
-                        new { Id = 1, InsertedAt = 1545389342, Name = "Actived", UpdatedAt = 1545389342 },
-                        new { Id = 2, InsertedAt = 1545389342, Name = "Removed", UpdatedAt = 1545389342 }
+                        new { Id = 1, InsertedAt = 1545362357, Name = "Actived", UpdatedAt = 1545362357 },
+                        new { Id = 2, InsertedAt = 1545362357, Name = "Removed", UpdatedAt = 1545362357 }
                     );
                 });
 
@@ -727,9 +729,9 @@ namespace Shop.Domain.Migrations
                     b.ToTable("ProductStatusTypes");
 
                     b.HasData(
-                        new { Id = 1, InsertedAt = 1545389343, Name = "Out of stock", UpdatedAt = 1545389343 },
-                        new { Id = 2, InsertedAt = 1545389343, Name = "Stock", UpdatedAt = 1545389343 },
-                        new { Id = 3, InsertedAt = 1545389343, Name = "Removed", UpdatedAt = 1545389343 }
+                        new { Id = 1, InsertedAt = 1545362357, Name = "Out of stock", UpdatedAt = 1545362357 },
+                        new { Id = 2, InsertedAt = 1545362357, Name = "Stock", UpdatedAt = 1545362357 },
+                        new { Id = 3, InsertedAt = 1545362357, Name = "Removed", UpdatedAt = 1545362357 }
                     );
                 });
 
@@ -910,9 +912,9 @@ namespace Shop.Domain.Migrations
                     b.ToTable("UserStatusTypes");
 
                     b.HasData(
-                        new { Id = 1, InsertedAt = 1545389343, Name = "Deactivated", UpdatedAt = 1545389343 },
-                        new { Id = 2, InsertedAt = 1545389343, Name = "Activated", UpdatedAt = 1545389343 },
-                        new { Id = 3, InsertedAt = 1545389343, Name = "Removed", UpdatedAt = 1545389343 }
+                        new { Id = 1, InsertedAt = 1545362357, Name = "Deactivated", UpdatedAt = 1545362357 },
+                        new { Id = 2, InsertedAt = 1545362357, Name = "Activated", UpdatedAt = 1545362357 },
+                        new { Id = 3, InsertedAt = 1545362357, Name = "Removed", UpdatedAt = 1545362357 }
                     );
                 });
 
@@ -959,8 +961,7 @@ namespace Shop.Domain.Migrations
                 {
                     b.HasOne("Shop.Domain.Entities.CategoryStatusType", "CategoryStatusType")
                         .WithMany("Categories")
-                        .HasForeignKey("CategoryStatusTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("CategoryStatusTypeId");
                 });
 
             modelBuilder.Entity("Shop.Domain.Entities.Discount", b =>

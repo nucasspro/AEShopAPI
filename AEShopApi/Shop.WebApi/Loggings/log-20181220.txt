@@ -1384,3 +1384,282 @@ System.IO.IOException: Authentication failed because the remote party has closed
 2018-12-20 17:47:17.232 +07:00 [Debug] Connection id ""0HLJ6D194AKBQ"" disconnecting.
 2018-12-20 17:47:17.235 +07:00 [Debug] Connection id ""0HLJ6D194AKBQ"" sending FIN.
 2018-12-20 17:47:17.315 +07:00 [Debug] Connection id ""0HLJ6D194AKBQ"" stopped.
+2018-12-20 23:02:26.789 +07:00 [Debug] Hosting starting
+2018-12-20 23:02:27.220 +07:00 [Information] User profile is available. Using '"C:\Users\nucas\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-20 23:02:27.242 +07:00 [Debug] Reading data from file '"C:\Users\nucas\AppData\Local\ASP.NET\DataProtection-Keys\key-03a4c7ff-a146-46ff-b013-687e889677f0.xml"'.
+2018-12-20 23:02:27.379 +07:00 [Debug] Found key {03a4c7ff-a146-46ff-b013-687e889677f0}.
+2018-12-20 23:02:27.413 +07:00 [Debug] Considering key {03a4c7ff-a146-46ff-b013-687e889677f0} with expiration date 2019-01-13 06:45:15Z as default key.
+2018-12-20 23:02:27.461 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2018-12-20 23:02:27.463 +07:00 [Debug] Decrypting secret element using Windows DPAPI.
+2018-12-20 23:02:27.470 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2018-12-20 23:02:27.476 +07:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2018-12-20 23:02:27.490 +07:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2018-12-20 23:02:27.500 +07:00 [Debug] Using key {03a4c7ff-a146-46ff-b013-687e889677f0} as the default key.
+2018-12-20 23:02:27.504 +07:00 [Debug] Key ring with default key {03a4c7ff-a146-46ff-b013-687e889677f0} was loaded during application startup.
+2018-12-20 23:02:27.696 +07:00 [Debug] Compatibility switch "AllowInputFormatterExceptionMessages" in type "MvcJsonOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:02:27.772 +07:00 [Debug] Compatibility switch "AllowCombiningAuthorizeFilters" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:02:27.774 +07:00 [Debug] Compatibility switch "AllowBindingHeaderValuesToNonStringModelTypes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:02:27.775 +07:00 [Debug] Compatibility switch "AllowValidatingTopLevelNodes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:02:27.776 +07:00 [Debug] Compatibility switch "InputFormatterExceptionPolicy" in type "MvcOptions" is using compatibility value MalformedInputExceptions for version Version_2_1
+2018-12-20 23:02:27.779 +07:00 [Debug] Compatibility switch "SuppressBindingUndefinedValueToEnumType" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:02:27.813 +07:00 [Debug] Compatibility switch "AllowAreas" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:02:27.819 +07:00 [Debug] Compatibility switch "AllowMappingHeadRequestsToGetHandler" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:02:27.907 +07:00 [Debug] Compatibility switch "SuppressTempDataAttributePrefix" in type "MvcViewOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:02:28.003 +07:00 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2018-12-20 23:02:28.304 +07:00 [Debug] Failed to locate the development https certificate at 'null'.
+2018-12-20 23:02:29.226 +07:00 [Debug] Using development certificate: "CN=localhost" (Thumbprint: "667D480E1905C4A0CCB3762FAA5F488C3242E67C")
+2018-12-20 23:02:29.425 +07:00 [Debug] Hosting started
+2018-12-20 23:02:29.453 +07:00 [Debug] Loaded hosting startup assembly "Shop.WebApi"
+2018-12-20 23:03:39.811 +07:00 [Debug] Connection id ""0HLJ6IIQFV13Q"" started.
+2018-12-20 23:03:39.993 +07:00 [Debug] Connection id ""0HLJ6IIQFV13Q"" received FIN.
+2018-12-20 23:03:40.043 +07:00 [Debug] Connection id ""0HLJ6IIQFV13Q"" sending FIN.
+2018-12-20 23:03:40.106 +07:00 [Debug] Connection id ""0HLJ6IIQFV13R"" started.
+2018-12-20 23:03:40.059 +07:00 [Debug] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-12-20 23:03:40.940 +07:00 [Debug] Connection id ""0HLJ6IIQFV13Q"" stopped.
+2018-12-20 23:03:41.207 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/products application/json 459
+2018-12-20 23:03:41.259 +07:00 [Debug] Wildcard detected, all requests with hosts will be allowed.
+2018-12-20 23:03:41.455 +07:00 [Debug] The request path "" does not match the path filter
+2018-12-20 23:03:41.726 +07:00 [Debug] Request successfully matched the route with name 'null' and template '"api/Products"'.
+2018-12-20 23:03:41.757 +07:00 [Debug] Action '"Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)"' with id '"50cdb957-c58b-4241-aa61-57fa80a65bf2"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2018-12-20 23:03:41.808 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-12-20 23:03:41.819 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2018-12-20 23:03:41.826 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2018-12-20 23:03:41.841 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2018-12-20 23:03:41.867 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2018-12-20 23:03:41.879 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2018-12-20 23:03:42.451 +07:00 [Debug] An 'IServiceProvider' was created for internal use by Entity Framework.
+2018-12-20 23:03:44.108 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-12-20 23:03:45.510 +07:00 [Debug] The property '"PostCategoryId"' on entity type '"Post"' was created in shadow state because there are no eligible CLR members with a matching name.
+2018-12-20 23:03:45.831 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-20 23:03:46.984 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2859.9722ms.
+2018-12-20 23:03:47.017 +07:00 [Debug] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2018-12-20 23:03:47.039 +07:00 [Debug] No information found on request to perform content negotiation.
+2018-12-20 23:03:47.040 +07:00 [Debug] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2018-12-20 23:03:47.043 +07:00 [Debug] Attempting to select the first formatter in the output formatters list which can write the result.
+2018-12-20 23:03:47.050 +07:00 [Debug] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"' and content type '"application/json"' to write the response.
+2018-12-20 23:03:47.053 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.ViewModel.ViewModels.ProductViewModel, Shop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-20 23:03:47.367 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 5470.2666ms
+2018-12-20 23:03:47.385 +07:00 [Debug] Connection id ""0HLJ6IIQFV13R"" completed keep alive response.
+2018-12-20 23:03:47.400 +07:00 [Debug] '"AeDbContext"' disposed.
+2018-12-20 23:03:47.404 +07:00 [Information] Request finished in 6196.3395ms 200 application/json; charset=utf-8
+2018-12-20 23:03:47.425 +07:00 [Debug] Connection id ""0HLJ6IIQFV13R"", Request id ""0HLJ6IIQFV13R:00000001"": started reading request body.
+2018-12-20 23:03:47.440 +07:00 [Debug] Connection id ""0HLJ6IIQFV13R"", Request id ""0HLJ6IIQFV13R:00000001"": done reading request body.
+2018-12-20 23:03:47.447 +07:00 [Information] Connection id ""0HLJ6IIQFV13R"", Request id ""0HLJ6IIQFV13R:00000001"": the application completed without reading the entire request body.
+2018-12-20 23:15:05.527 +07:00 [Debug] Hosting starting
+2018-12-20 23:15:06.141 +07:00 [Information] User profile is available. Using '"C:\Users\nucas\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-20 23:15:06.176 +07:00 [Debug] Reading data from file '"C:\Users\nucas\AppData\Local\ASP.NET\DataProtection-Keys\key-03a4c7ff-a146-46ff-b013-687e889677f0.xml"'.
+2018-12-20 23:15:06.261 +07:00 [Debug] Found key {03a4c7ff-a146-46ff-b013-687e889677f0}.
+2018-12-20 23:15:06.323 +07:00 [Debug] Considering key {03a4c7ff-a146-46ff-b013-687e889677f0} with expiration date 2019-01-13 06:45:15Z as default key.
+2018-12-20 23:15:06.400 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2018-12-20 23:15:06.480 +07:00 [Debug] Decrypting secret element using Windows DPAPI.
+2018-12-20 23:15:06.516 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2018-12-20 23:15:06.567 +07:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2018-12-20 23:15:06.577 +07:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2018-12-20 23:15:06.592 +07:00 [Debug] Using key {03a4c7ff-a146-46ff-b013-687e889677f0} as the default key.
+2018-12-20 23:15:06.607 +07:00 [Debug] Key ring with default key {03a4c7ff-a146-46ff-b013-687e889677f0} was loaded during application startup.
+2018-12-20 23:15:07.195 +07:00 [Debug] Compatibility switch "AllowInputFormatterExceptionMessages" in type "MvcJsonOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:15:07.256 +07:00 [Debug] Compatibility switch "AllowCombiningAuthorizeFilters" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:15:07.280 +07:00 [Debug] Compatibility switch "AllowBindingHeaderValuesToNonStringModelTypes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:15:07.283 +07:00 [Debug] Compatibility switch "AllowValidatingTopLevelNodes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:15:07.294 +07:00 [Debug] Compatibility switch "InputFormatterExceptionPolicy" in type "MvcOptions" is using compatibility value MalformedInputExceptions for version Version_2_1
+2018-12-20 23:15:07.306 +07:00 [Debug] Compatibility switch "SuppressBindingUndefinedValueToEnumType" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:15:07.339 +07:00 [Debug] Compatibility switch "AllowAreas" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:15:07.343 +07:00 [Debug] Compatibility switch "AllowMappingHeadRequestsToGetHandler" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:15:07.426 +07:00 [Debug] Compatibility switch "SuppressTempDataAttributePrefix" in type "MvcViewOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:15:07.533 +07:00 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2018-12-20 23:15:07.993 +07:00 [Debug] Failed to locate the development https certificate at 'null'.
+2018-12-20 23:15:09.920 +07:00 [Debug] Using development certificate: "CN=localhost" (Thumbprint: "667D480E1905C4A0CCB3762FAA5F488C3242E67C")
+2018-12-20 23:15:10.193 +07:00 [Debug] Hosting started
+2018-12-20 23:15:10.232 +07:00 [Debug] Loaded hosting startup assembly "Shop.WebApi"
+2018-12-20 23:15:42.579 +07:00 [Debug] Connection id ""0HLJ6IPHT79PF"" started.
+2018-12-20 23:15:42.972 +07:00 [Debug] Connection id ""0HLJ6IPHT79PF"" received FIN.
+2018-12-20 23:15:43.069 +07:00 [Debug] Connection id ""0HLJ6IPHT79PF"" sending FIN.
+2018-12-20 23:15:43.494 +07:00 [Debug] Connection id ""0HLJ6IPHT79PG"" started.
+2018-12-20 23:15:43.123 +07:00 [Debug] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-12-20 23:15:43.750 +07:00 [Debug] Connection id ""0HLJ6IPHT79PF"" stopped.
+2018-12-20 23:15:44.186 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/products application/json 459
+2018-12-20 23:15:44.200 +07:00 [Debug] Wildcard detected, all requests with hosts will be allowed.
+2018-12-20 23:15:44.423 +07:00 [Debug] The request path "" does not match the path filter
+2018-12-20 23:15:44.851 +07:00 [Debug] Request successfully matched the route with name 'null' and template '"api/Products"'.
+2018-12-20 23:15:44.894 +07:00 [Debug] Action '"Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)"' with id '"abc3c07a-16a7-43af-b313-3cd495da0f85"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2018-12-20 23:15:44.974 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-12-20 23:15:44.987 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2018-12-20 23:15:45.000 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2018-12-20 23:15:45.004 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2018-12-20 23:15:45.012 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2018-12-20 23:15:45.015 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2018-12-20 23:15:45.338 +07:00 [Debug] An 'IServiceProvider' was created for internal use by Entity Framework.
+2018-12-20 23:15:47.263 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-12-20 23:15:48.664 +07:00 [Debug] The property '"PostCategoryId"' on entity type '"Post"' was created in shadow state because there are no eligible CLR members with a matching name.
+2018-12-20 23:15:48.902 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-20 23:15:49.833 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2549.669ms.
+2018-12-20 23:15:49.852 +07:00 [Debug] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2018-12-20 23:15:49.864 +07:00 [Debug] No information found on request to perform content negotiation.
+2018-12-20 23:15:49.865 +07:00 [Debug] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2018-12-20 23:15:49.867 +07:00 [Debug] Attempting to select the first formatter in the output formatters list which can write the result.
+2018-12-20 23:15:49.871 +07:00 [Debug] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"' and content type '"application/json"' to write the response.
+2018-12-20 23:15:49.887 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.ViewModel.ViewModels.ProductViewModel, Shop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-20 23:15:50.152 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 5118.5294ms
+2018-12-20 23:15:50.200 +07:00 [Debug] Connection id ""0HLJ6IPHT79PG"" completed keep alive response.
+2018-12-20 23:15:50.246 +07:00 [Debug] '"AeDbContext"' disposed.
+2018-12-20 23:15:50.263 +07:00 [Information] Request finished in 6074.136ms 200 application/json; charset=utf-8
+2018-12-20 23:15:50.280 +07:00 [Debug] Connection id ""0HLJ6IPHT79PG"", Request id ""0HLJ6IPHT79PG:00000001"": started reading request body.
+2018-12-20 23:15:50.304 +07:00 [Debug] Connection id ""0HLJ6IPHT79PG"", Request id ""0HLJ6IPHT79PG:00000001"": done reading request body.
+2018-12-20 23:15:50.347 +07:00 [Information] Connection id ""0HLJ6IPHT79PG"", Request id ""0HLJ6IPHT79PG:00000001"": the application completed without reading the entire request body.
+2018-12-20 23:16:44.123 +07:00 [Debug] Hosting starting
+2018-12-20 23:16:44.447 +07:00 [Information] User profile is available. Using '"C:\Users\nucas\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-20 23:16:44.469 +07:00 [Debug] Reading data from file '"C:\Users\nucas\AppData\Local\ASP.NET\DataProtection-Keys\key-03a4c7ff-a146-46ff-b013-687e889677f0.xml"'.
+2018-12-20 23:16:44.523 +07:00 [Debug] Found key {03a4c7ff-a146-46ff-b013-687e889677f0}.
+2018-12-20 23:16:44.556 +07:00 [Debug] Considering key {03a4c7ff-a146-46ff-b013-687e889677f0} with expiration date 2019-01-13 06:45:15Z as default key.
+2018-12-20 23:16:44.606 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2018-12-20 23:16:44.611 +07:00 [Debug] Decrypting secret element using Windows DPAPI.
+2018-12-20 23:16:44.616 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2018-12-20 23:16:44.622 +07:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2018-12-20 23:16:44.630 +07:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2018-12-20 23:16:44.637 +07:00 [Debug] Using key {03a4c7ff-a146-46ff-b013-687e889677f0} as the default key.
+2018-12-20 23:16:44.639 +07:00 [Debug] Key ring with default key {03a4c7ff-a146-46ff-b013-687e889677f0} was loaded during application startup.
+2018-12-20 23:16:44.835 +07:00 [Debug] Compatibility switch "AllowInputFormatterExceptionMessages" in type "MvcJsonOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:16:44.902 +07:00 [Debug] Compatibility switch "AllowCombiningAuthorizeFilters" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:16:44.904 +07:00 [Debug] Compatibility switch "AllowBindingHeaderValuesToNonStringModelTypes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:16:44.905 +07:00 [Debug] Compatibility switch "AllowValidatingTopLevelNodes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:16:44.919 +07:00 [Debug] Compatibility switch "InputFormatterExceptionPolicy" in type "MvcOptions" is using compatibility value MalformedInputExceptions for version Version_2_1
+2018-12-20 23:16:44.941 +07:00 [Debug] Compatibility switch "SuppressBindingUndefinedValueToEnumType" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:16:44.969 +07:00 [Debug] Compatibility switch "AllowAreas" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:16:44.971 +07:00 [Debug] Compatibility switch "AllowMappingHeadRequestsToGetHandler" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:16:45.049 +07:00 [Debug] Compatibility switch "SuppressTempDataAttributePrefix" in type "MvcViewOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:16:45.136 +07:00 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2018-12-20 23:16:45.784 +07:00 [Debug] Failed to locate the development https certificate at 'null'.
+2018-12-20 23:16:47.081 +07:00 [Debug] Using development certificate: "CN=localhost" (Thumbprint: "667D480E1905C4A0CCB3762FAA5F488C3242E67C")
+2018-12-20 23:16:47.310 +07:00 [Debug] Hosting started
+2018-12-20 23:16:47.312 +07:00 [Debug] Loaded hosting startup assembly "Shop.WebApi"
+2018-12-20 23:17:02.395 +07:00 [Debug] Connection id ""0HLJ6IQ9M8ELQ"" started.
+2018-12-20 23:17:02.542 +07:00 [Debug] Connection id ""0HLJ6IQ9M8ELQ"" received FIN.
+2018-12-20 23:17:02.598 +07:00 [Debug] Connection id ""0HLJ6IQ9M8ELQ"" sending FIN.
+2018-12-20 23:17:02.684 +07:00 [Debug] Connection id ""0HLJ6IQ9M8ELR"" started.
+2018-12-20 23:17:02.594 +07:00 [Debug] Failed to authenticate HTTPS connection.
+System.IO.IOException: Authentication failed because the remote party has closed the transport stream.
+   at System.Net.Security.SslState.StartReadFrame(Byte[] buffer, Int32 readBytes, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.StartReceiveBlob(Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ForceAuthentication(Boolean receiveFirst, Byte[] buffer, AsyncProtocolRequest asyncRequest)
+   at System.Net.Security.SslState.ProcessAuthentication(LazyAsyncResult lazyResult)
+   at System.Net.Security.SslStream.BeginAuthenticateAsServer(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken, AsyncCallback asyncCallback, Object asyncState)
+   at System.Net.Security.SslStream.<>c.<AuthenticateAsServerAsync>b__51_0(SslServerAuthenticationOptions arg1, CancellationToken arg2, AsyncCallback callback, Object state)
+   at System.Threading.Tasks.TaskFactory`1.FromAsyncImpl[TArg1,TArg2](Func`5 beginMethod, Func`2 endFunction, Action`1 endAction, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state, TaskCreationOptions creationOptions)
+   at System.Threading.Tasks.TaskFactory.FromAsync[TArg1,TArg2](Func`5 beginMethod, Action`1 endMethod, TArg1 arg1, TArg2 arg2, Object state)
+   at System.Net.Security.SslStream.AuthenticateAsServerAsync(SslServerAuthenticationOptions sslServerAuthenticationOptions, CancellationToken cancellationToken)
+   at Microsoft.AspNetCore.Server.Kestrel.Https.Internal.HttpsConnectionAdapter.InnerOnConnectionAsync(ConnectionAdapterContext context)
+2018-12-20 23:17:03.030 +07:00 [Debug] Connection id ""0HLJ6IQ9M8ELQ"" stopped.
+2018-12-20 23:17:03.662 +07:00 [Information] Request starting HTTP/1.1 GET https://localhost:5001/api/products application/json 459
+2018-12-20 23:17:03.694 +07:00 [Debug] Wildcard detected, all requests with hosts will be allowed.
+2018-12-20 23:17:03.976 +07:00 [Debug] The request path "" does not match the path filter
+2018-12-20 23:17:04.510 +07:00 [Debug] Request successfully matched the route with name 'null' and template '"api/Products"'.
+2018-12-20 23:17:04.545 +07:00 [Debug] Action '"Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)"' with id '"c486ac74-6841-4a86-be10-3e8b97fc7f22"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2018-12-20 23:17:04.625 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-12-20 23:17:04.629 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2018-12-20 23:17:04.643 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2018-12-20 23:17:04.664 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2018-12-20 23:17:04.681 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2018-12-20 23:17:04.690 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2018-12-20 23:17:05.036 +07:00 [Debug] An 'IServiceProvider' was created for internal use by Entity Framework.
+2018-12-20 23:17:07.141 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-12-20 23:17:08.511 +07:00 [Debug] The property '"PostCategoryId"' on entity type '"Post"' was created in shadow state because there are no eligible CLR members with a matching name.
+2018-12-20 23:17:08.742 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-20 23:17:09.529 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2357.6761ms.
+2018-12-20 23:17:09.617 +07:00 [Debug] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2018-12-20 23:17:09.642 +07:00 [Debug] No information found on request to perform content negotiation.
+2018-12-20 23:17:09.643 +07:00 [Debug] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2018-12-20 23:17:09.646 +07:00 [Debug] Attempting to select the first formatter in the output formatters list which can write the result.
+2018-12-20 23:17:09.649 +07:00 [Debug] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"' and content type '"application/json"' to write the response.
+2018-12-20 23:17:09.665 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.ViewModel.ViewModels.ProductViewModel, Shop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-20 23:17:09.904 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 5179.7687ms
+2018-12-20 23:17:09.938 +07:00 [Debug] Connection id ""0HLJ6IQ9M8ELR"" completed keep alive response.
+2018-12-20 23:17:09.977 +07:00 [Debug] '"AeDbContext"' disposed.
+2018-12-20 23:17:10.009 +07:00 [Information] Request finished in 6352.8125ms 200 application/json; charset=utf-8
+2018-12-20 23:17:10.062 +07:00 [Debug] Connection id ""0HLJ6IQ9M8ELR"", Request id ""0HLJ6IQ9M8ELR:00000001"": started reading request body.
+2018-12-20 23:17:10.107 +07:00 [Debug] Connection id ""0HLJ6IQ9M8ELR"", Request id ""0HLJ6IQ9M8ELR:00000001"": done reading request body.
+2018-12-20 23:17:10.113 +07:00 [Information] Connection id ""0HLJ6IQ9M8ELR"", Request id ""0HLJ6IQ9M8ELR:00000001"": the application completed without reading the entire request body.
+2018-12-20 23:24:11.458 +07:00 [Debug] Hosting starting
+2018-12-20 23:27:57.743 +07:00 [Debug] Hosting starting
+2018-12-20 23:34:58.133 +07:00 [Debug] Hosting starting
+2018-12-20 23:36:36.789 +07:00 [Debug] Hosting starting
+2018-12-20 23:36:37.309 +07:00 [Information] User profile is available. Using '"C:\Users\nucas\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest.
+2018-12-20 23:36:37.325 +07:00 [Debug] Reading data from file '"C:\Users\nucas\AppData\Local\ASP.NET\DataProtection-Keys\key-03a4c7ff-a146-46ff-b013-687e889677f0.xml"'.
+2018-12-20 23:36:37.384 +07:00 [Debug] Found key {03a4c7ff-a146-46ff-b013-687e889677f0}.
+2018-12-20 23:36:37.417 +07:00 [Debug] Considering key {03a4c7ff-a146-46ff-b013-687e889677f0} with expiration date 2019-01-13 06:45:15Z as default key.
+2018-12-20 23:36:37.565 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2018-12-20 23:36:37.566 +07:00 [Debug] Decrypting secret element using Windows DPAPI.
+2018-12-20 23:36:37.570 +07:00 [Debug] Forwarded activator type request from "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=2.1.1.0, Culture=neutral, PublicKeyToken=adb9793829ddae60" to "Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60"
+2018-12-20 23:36:37.571 +07:00 [Debug] Opening CNG algorithm '"AES"' from provider 'null' with chaining mode CBC.
+2018-12-20 23:36:37.576 +07:00 [Debug] Opening CNG algorithm '"SHA256"' from provider 'null' with HMAC.
+2018-12-20 23:36:37.582 +07:00 [Debug] Using key {03a4c7ff-a146-46ff-b013-687e889677f0} as the default key.
+2018-12-20 23:36:37.583 +07:00 [Debug] Key ring with default key {03a4c7ff-a146-46ff-b013-687e889677f0} was loaded during application startup.
+2018-12-20 23:36:37.787 +07:00 [Debug] Compatibility switch "AllowInputFormatterExceptionMessages" in type "MvcJsonOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:36:37.814 +07:00 [Debug] Compatibility switch "AllowCombiningAuthorizeFilters" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:36:37.814 +07:00 [Debug] Compatibility switch "AllowBindingHeaderValuesToNonStringModelTypes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:36:37.814 +07:00 [Debug] Compatibility switch "AllowValidatingTopLevelNodes" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:36:37.815 +07:00 [Debug] Compatibility switch "InputFormatterExceptionPolicy" in type "MvcOptions" is using compatibility value MalformedInputExceptions for version Version_2_1
+2018-12-20 23:36:37.815 +07:00 [Debug] Compatibility switch "SuppressBindingUndefinedValueToEnumType" in type "MvcOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:36:37.831 +07:00 [Debug] Compatibility switch "AllowAreas" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:36:37.832 +07:00 [Debug] Compatibility switch "AllowMappingHeadRequestsToGetHandler" in type "RazorPagesOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:36:37.907 +07:00 [Debug] Compatibility switch "SuppressTempDataAttributePrefix" in type "MvcViewOptions" is using compatibility value True for version Version_2_1
+2018-12-20 23:36:37.969 +07:00 [Debug] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider", "Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexTypeModelBinderProvider"]
+2018-12-20 23:36:38.221 +07:00 [Debug] Failed to locate the development https certificate at 'null'.
+2018-12-20 23:36:38.974 +07:00 [Debug] Hosting started
+2018-12-20 23:36:38.975 +07:00 [Debug] Loaded hosting startup assembly "Shop.WebApi"
+2018-12-20 23:36:38.975 +07:00 [Debug] Loaded hosting startup assembly "Microsoft.AspNetCore.Server.IISIntegration"
+2018-12-20 23:36:39.286 +07:00 [Debug] Connection id ""0HLJ6J58E4J40"" started.
+2018-12-20 23:36:39.463 +07:00 [Information] Request starting HTTP/1.1 DEBUG http://localhost:8878/  0
+2018-12-20 23:36:39.475 +07:00 [Debug] Wildcard detected, all requests with hosts will be allowed.
+2018-12-20 23:36:39.536 +07:00 [Debug] Connection id ""0HLJ6J58E4J40"" completed keep alive response.
+2018-12-20 23:36:39.540 +07:00 [Information] Request finished in 76.68ms 200 
+2018-12-20 23:36:53.390 +07:00 [Information] Request starting HTTP/1.1 GET http://localhost:8878/api/products/  
+2018-12-20 23:36:53.545 +07:00 [Warning] Failed to determine the https port for redirect.
+2018-12-20 23:36:53.623 +07:00 [Debug] The request path "" does not match the path filter
+2018-12-20 23:36:53.842 +07:00 [Debug] Request successfully matched the route with name 'null' and template '"api/Products"'.
+2018-12-20 23:36:53.865 +07:00 [Debug] Action '"Shop.WebApi.Controllers.ProductController.PostProduct (Shop.WebApi)"' with id '"27987758-bb3c-4f8a-b1e2-89b2d757f0f6"' did not match the constraint '"Microsoft.AspNetCore.Mvc.Internal.HttpMethodActionConstraint"'
+2018-12-20 23:36:53.897 +07:00 [Information] Route matched with "{action = \"GetProducts\", controller = \"Product\"}". Executing action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)"
+2018-12-20 23:36:53.898 +07:00 [Debug] Execution plan of "authorization" filters (in the following order): ["None"]
+2018-12-20 23:36:53.898 +07:00 [Debug] Execution plan of "resource" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2018-12-20 23:36:53.899 +07:00 [Debug] Execution plan of "action" filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)", "Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter"]
+2018-12-20 23:36:53.899 +07:00 [Debug] Execution plan of "exception" filters (in the following order): ["None"]
+2018-12-20 23:36:53.899 +07:00 [Debug] Execution plan of "result" filters (in the following order): ["Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.SaveTempDataFilter"]
+2018-12-20 23:36:54.103 +07:00 [Debug] An 'IServiceProvider' was created for internal use by Entity Framework.
+2018-12-20 23:36:55.908 +07:00 [Information] Executing action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" - Validation state: Valid
+2018-12-20 23:36:57.235 +07:00 [Debug] The property '"PostCategoryId"' on entity type '"Post"' was created in shadow state because there are no eligible CLR members with a matching name.
+2018-12-20 23:36:57.441 +07:00 [Information] Entity Framework Core "2.1.4-rtm-31024" initialized '"AeDbContext"' using provider '"Microsoft.EntityFrameworkCore.SqlServer"' with options: "None"
+2018-12-20 23:36:58.637 +07:00 [Information] Executed action method "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)", returned result "Microsoft.AspNetCore.Mvc.OkObjectResult" in 2720.7198ms.
+2018-12-20 23:36:58.666 +07:00 [Debug] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter", "Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"]
+2018-12-20 23:36:58.674 +07:00 [Debug] No information found on request to perform content negotiation.
+2018-12-20 23:36:58.674 +07:00 [Debug] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2018-12-20 23:36:58.675 +07:00 [Debug] Attempting to select the first formatter in the output formatters list which can write the result.
+2018-12-20 23:36:58.676 +07:00 [Debug] Selected output formatter '"Microsoft.AspNetCore.Mvc.Formatters.JsonOutputFormatter"' and content type '"application/json"' to write the response.
+2018-12-20 23:36:58.679 +07:00 [Information] Executing ObjectResult, writing value of type '"System.Collections.Generic.List`1[[Shop.ViewModel.ViewModels.ProductViewModel, Shop.ViewModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]"'.
+2018-12-20 23:36:58.935 +07:00 [Information] Executed action "Shop.WebApi.Controllers.ProductController.GetProducts (Shop.WebApi)" in 5016.2996ms
+2018-12-20 23:36:58.957 +07:00 [Debug] Connection id ""0HLJ6J58E4J40"" completed keep alive response.
+2018-12-20 23:36:58.967 +07:00 [Debug] '"AeDbContext"' disposed.
+2018-12-20 23:36:58.969 +07:00 [Information] Request finished in 5579.6896ms 200 application/json; charset=utf-8

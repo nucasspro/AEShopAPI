@@ -20,7 +20,7 @@ class ProductDialog extends React.Component {
       name: null,
       sku: null,
       quantity: null,
-      ProductStatusId: 1,
+      ProductStatusTypeId: 1,
       description: null,
       detail: null,
       weight: null,
@@ -73,7 +73,7 @@ class ProductDialog extends React.Component {
 
   handleChangeProduct = name => event => {
     if (
-      name === 'ProductStatusId' &&
+      name === 'ProductStatusTypeId' &&
       event.target.value > 2 &&
       event.target.value < 1
     ) {
@@ -318,7 +318,7 @@ class ProductDialog extends React.Component {
                 label="Is stock?"
                 style={{ margin: 8, width: 209 }}
                 value={this.state.product.ProductStatusId}
-                onChange={this.handleChangeProduct('ProductStatusId')}
+                onChange={this.handleChangeProduct('ProductStatusTypeId')}
                 margin="normal"
                 variant="outlined"
               >

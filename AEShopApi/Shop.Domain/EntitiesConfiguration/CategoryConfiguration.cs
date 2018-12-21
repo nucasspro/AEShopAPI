@@ -13,10 +13,7 @@ namespace Shop.Domain.EntitiesConfiguration
             builder.Property(x => x.Description).IsRequired(false).HasColumnName("Description").HasColumnType("nvarchar(200)");
             builder.Property(x => x.Image).IsRequired(false).HasColumnName("Image").HasColumnType("varchar(100)");
 
-            builder.Property(x => x.ParentId).IsRequired(false).HasColumnName("ParentId").HasColumnType("int");
-            builder.HasOne(x => x.Parent).WithMany().HasForeignKey(z => z.ParentId);
-
-            builder.Property(x => x.CategoryStatusTypeId).IsRequired(false).HasColumnName("CategoryStatusTypeId").HasColumnType("int");
+            builder.Property(x => x.CategoryStatusTypeId).IsRequired(true).HasColumnName("CategoryStatusTypeId").HasColumnType("int");
             builder.HasOne(x => x.CategoryStatusType).WithMany(y => y.Categories).HasForeignKey(z => z.CategoryStatusTypeId);
         }
     }

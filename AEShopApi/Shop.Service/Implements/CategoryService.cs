@@ -1,9 +1,11 @@
 ﻿using Shop.Domain.Entities;
+using Shop.Domain.Enumerations;
 using Shop.Domain.Repositories.Interfaces;
 using Shop.Domain.SeedWork;
 using Shop.Service.Interfaces;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Shop.Service.Implements
 {
@@ -31,13 +33,20 @@ namespace Shop.Service.Implements
 
         public async Task DeleteAsync(int id)
         {
-            await _categoryRepository.DeleteAsync(id);
+            await _categoryRepository.Delete(id);
             await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Category>> GetAllAsync()
         {
-            return await _categoryRepository.GetAllAsync();
+            var categoryStatusTypes = await _categoryRepository.GetCategoryStatusTypes();
+            var categories = await _categoryRepository.GetCategoriesAsync();
+            foreach (var item in categories)
+            {
+                item.CategoryStatusType = categoryStatusTypes.SingleOrDefault(x => x.Id == item.CategoryStatusTypeId);
+            }
+
+            return categories;
         }
 
         public async Task<Category> GetByIdAsync(int id)

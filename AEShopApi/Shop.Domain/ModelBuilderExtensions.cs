@@ -16,11 +16,11 @@ namespace Shop.Domain
 
 
             modelBuilder.Entity<Category>().HasData(
-                new Category { Id = 1, Name = "Category001", ParentId = 1, InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) },
-                new Category { Id = 2, Name = "Category002", ParentId = 1, InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) },
-                new Category { Id = 3, Name = "Category003", ParentId = 2, InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) },
-                new Category { Id = 4, Name = "Category004", ParentId = 2, InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) },
-                new Category { Id = 5, Name = "Category005", ParentId = 1, InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) }
+                new Category { Id = 1, Name = "Category001", InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) },
+                new Category { Id = 2, Name = "Category002", InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) },
+                new Category { Id = 3, Name = "Category003", InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) },
+                new Category { Id = 4, Name = "Category004", InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) },
+                new Category { Id = 5, Name = "Category005", InsertedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now), UpdatedAt = ConvertDatetime.ConvertToTimeSpan(DateTime.Now) }
             );
 
             //modelBuilder.Entity<Product>().HasData(

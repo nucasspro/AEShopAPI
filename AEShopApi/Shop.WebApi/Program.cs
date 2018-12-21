@@ -17,7 +17,7 @@ namespace Shop.WebApi
             .CreateDefaultBuilder(args)
             .ConfigureAppConfiguration((hostingContext, config) =>
             {
-                var env = hostingContext.HostingEnvironment;
+                IHostingEnvironment env = hostingContext.HostingEnvironment;
 
                 config
                     .SetBasePath(env.ContentRootPath)
@@ -27,17 +27,5 @@ namespace Shop.WebApi
             })
             .UseStartup<Startup>()
             .UseSerilog();
-
-        //public static IWebHostBuilder ConfigureAppConfiguration(WebHostBuilderContext hostingContext, IConfiguration config)
-        //{
-        //    var env = hostingContext.HostingEnvironment;
-
-        //    config
-        //        .SetBasePath(env.ContentRootPath)
-        //        .AddJsonFile("appsettings.json", optional: true, reloadOnChange: false)
-        //        .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: false)
-        //        .AddEnvironmentVariables();
-        //    return config;
-        //}
     }
 }

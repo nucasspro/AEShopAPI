@@ -35,7 +35,9 @@ export default class DashBoard extends Component {
         </AppBar>
         {value === 0 && (
           <TabContainer>
-            <ProductTable />
+            {/* <ProductTable /> */}
+            <CategoryTable />
+
           </TabContainer>
         )}
         {value === 1 && (

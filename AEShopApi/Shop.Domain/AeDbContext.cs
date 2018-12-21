@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Shop.Domain.Entities;
 using Shop.Domain.EntitiesConfiguration;
+using System;
 
 namespace Shop.Domain
 {

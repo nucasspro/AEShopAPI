@@ -1,17 +1,16 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace Shop.ViewModel.ViewModels
 {
-    public class CategoryViewModel
+    public class CategoryViewModel : BaseViewModel
     {
-        public int Id { get; set; }
-        public int? CategoryStatusTypeId { get; set; }
-        public virtual CategoryStatusTypeViewModel CategoryStatusType { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Image { get; set; }
-        public virtual CategoryViewModel Parent { get; set; }
-        public string InsertedAt { get; set; }
-        public string UpdatedAt { get; set; }
+
+        //public int CategoryStatusTypeId { get; set; } 
+        public virtual CategoryStatusTypeViewModel CategoryStatusType { get; set; }
+
+        //public ICollection<ProductCategoryViewModel> Products { get; set; }
     }
 }

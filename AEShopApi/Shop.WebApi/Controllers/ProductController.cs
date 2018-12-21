@@ -54,9 +54,8 @@ namespace Shop.WebApi.Controllers
                 return NotFound();
             }
 
-            var productsMapping = _mapper.Map<IEnumerable<ProductViewModel>>(products);
             //_logger.LogInformation("End HttpGet GetProducts() - ProductController");
-            return Ok(productsMapping);
+            return Ok(_mapper.Map<IEnumerable<ProductViewModel>>(products));
         }
 
         #endregion GET: api/Products
@@ -111,10 +110,9 @@ namespace Shop.WebApi.Controllers
                 //_logger.LogInformation($"End HttpGet GetProduct({id}) - ProductController - NotFound");
                 return NotFound();
             }
-            var productViewModel = _mapper.Map<ProductViewModel>(product);
 
             //_logger.LogInformation($"End HttpGet GetProduct({id}) - ProductController - Done");
-            return Ok(productViewModel);
+            return Ok(_mapper.Map<ProductViewModel>(product));
         }
 
         #endregion GET: api/Products/5

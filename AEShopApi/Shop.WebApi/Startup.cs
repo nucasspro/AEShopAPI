@@ -26,7 +26,7 @@ namespace Shop.WebApi
     {
         public IConfiguration Configuration { get; }
 
-        public Startup(IHostingEnvironment environment, IConfiguration configuration)
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
 
@@ -48,7 +48,7 @@ namespace Shop.WebApi
             #endregion Dependency Injection for Fluent Validators
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddFluentValidation();
-            services.AddDbContext<AeDbContext>(options => options.UseSqlServer(Configuration["Data:ConnectionStrings:DefaultConnection"]));
+            services.AddDbContext<AeDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
@@ -141,6 +141,9 @@ namespace Shop.WebApi
             {
                 options.AddPolicy("AllowMyOrigin",
                     builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+
+                options.AddPolicy("Localhost",
+                    builder => builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod());
                 // options.AddPolicy("AllowMyOrigin",
                 // builder => builder.AllowAnyOrigin());
             });
@@ -152,8 +155,8 @@ namespace Shop.WebApi
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            //loggerFactory.AddConsole(Configuration.GetSection("Logging"));
-            //loggerFactory.AddConsole();
+            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddConsole();
             loggerFactory.AddDebug();
             loggerFactory.AddSerilog();
 
@@ -171,7 +174,7 @@ namespace Shop.WebApi
             app.UseSwagger();
             app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "Core API"); });
             //app.UseAuthentication();
-            app.UseCors("AllowMyOrigin");
+            app.UseCors("Localhost");
             app.UseMvc();
         }
     }
